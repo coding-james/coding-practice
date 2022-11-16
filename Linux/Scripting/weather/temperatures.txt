@@ -1,0 +1,5 @@
+London 13
+Edinburgh 11
+Dublin 11
+Cardiff 13
+Auckland 16
