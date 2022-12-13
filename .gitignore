@@ -1,0 +1,6 @@
+.*
+C#\sandbox\src\Sandbox\obj
+C#\sandbox\src\Sandbox\bin
+
+# Exclude from ignore
+!.gitignore
