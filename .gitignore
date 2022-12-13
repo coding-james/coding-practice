@@ -1,6 +1,30 @@
 .*
 C#\sandbox\src\Sandbox\obj
 C#\sandbox\src\Sandbox\bin
+C#/sandbox/src/Sandbox/bin/Debug/net7.0/Sandbox.deps.json
+C#/sandbox/src/Sandbox/bin/Debug/net7.0/Sandbox.dll
+C#/sandbox/src/Sandbox/bin/Debug/net7.0/Sandbox.exe
+C#/sandbox/src/Sandbox/bin/Debug/net7.0/Sandbox.pdb
+C#/sandbox/src/Sandbox/bin/Debug/net7.0/Sandbox.runtimeconfig.json
+C#/sandbox/src/Sandbox/obj/project.assets.json
+C#/sandbox/src/Sandbox/obj/project.nuget.cache
+C#/sandbox/src/Sandbox/obj/Sandbox.csproj.nuget.dgspec.json
+C#/sandbox/src/Sandbox/obj/Sandbox.csproj.nuget.g.props
+C#/sandbox/src/Sandbox/obj/Sandbox.csproj.nuget.g.targets
+C#/sandbox/src/Sandbox/obj/Debug/net7.0/apphost.exe
+C#/sandbox/src/Sandbox/obj/Debug/net7.0/Sandbox.AssemblyInfo.cs
+C#/sandbox/src/Sandbox/obj/Debug/net7.0/Sandbox.AssemblyInfoInputs.cache
+C#/sandbox/src/Sandbox/obj/Debug/net7.0/Sandbox.assets.cache
+C#/sandbox/src/Sandbox/obj/Debug/net7.0/Sandbox.csproj.AssemblyReference.cache
+C#/sandbox/src/Sandbox/obj/Debug/net7.0/Sandbox.csproj.CoreCompileInputs.cache
+C#/sandbox/src/Sandbox/obj/Debug/net7.0/Sandbox.csproj.FileListAbsolute.txt
+C#/sandbox/src/Sandbox/obj/Debug/net7.0/Sandbox.dll
+C#/sandbox/src/Sandbox/obj/Debug/net7.0/Sandbox.GeneratedMSBuildEditorConfig.editorconfig
+C#/sandbox/src/Sandbox/obj/Debug/net7.0/Sandbox.genruntimeconfig.cache
+C#/sandbox/src/Sandbox/obj/Debug/net7.0/Sandbox.GlobalUsings.g.cs
+C#/sandbox/src/Sandbox/obj/Debug/net7.0/Sandbox.pdb
+C#/sandbox/src/Sandbox/obj/Debug/net7.0/ref/Sandbox.dll
+C#/sandbox/src/Sandbox/obj/Debug/net7.0/refint/Sandbox.dll
 
 # Exclude from ignore
 !.gitignore
