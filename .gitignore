@@ -1,0 +1,8 @@
+.*
+C#/sandbox/src/Sandbox/bin/
+C#/sandbox/src/Sandbox/obj/
+C#/sandbox/test/Sandbox.Tests/bin
+C#/sandbox/test/Sandbox.Tests/obj
+
+# Exclude from ignore
+!.gitignore
