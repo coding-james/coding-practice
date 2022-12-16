@@ -21,7 +21,7 @@ namespace Sandbox.Tests
         }
 
         [Fact]
-        public void UnitTestGetStatistics()
+        public void UnitTestBookCalculatesStatistics()
         {
             // Arrange Section
             var book = new Book("");
