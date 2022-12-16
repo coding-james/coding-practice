@@ -1,6 +1,6 @@
-namespace GradeBook
+namespace Sandbox
 {
-    class Book
+    public class Book
     {
         // CONSTRUCTORS
         public Book(string name)
@@ -16,18 +16,23 @@ namespace GradeBook
             grades.Add(grade);
         }
 
-        public void ShowStatistics()
+        public Statistics GetStatistics()
         {
-            var gradeResult = 0.0;
-            var highGrade = double.MinValue; //MinValue provides lowest possible double number
-            var lowGrade = double.MaxValue;
-            foreach (double number in grades)
+            var gradeResult = new Statistics();
+            gradeResult.Total = 0.0;
+            gradeResult.Average = 0.0;
+            gradeResult.High = double.MinValue; //MinValue provides lowest possible double number
+            gradeResult.Low = double.MaxValue;
+            
+            foreach (double grade in grades)
             {
-                highGrade = Math.Max(number, highGrade);
-                lowGrade = Math.Min(number, lowGrade);
-                gradeResult += number;
+                gradeResult.High = Math.Max(grade, gradeResult.High);
+                gradeResult.Low = Math.Min(grade, gradeResult.Low);
+                gradeResult.Total += grade;
             }
-            Console.WriteLine($"--- GRADES ---\nTotal: {gradeResult} \nAverage: {gradeResult / grades.Count:N2} \nLowest: {lowGrade:N2} \nHighest: {highGrade:N2}"); //N2 formats to two decimal places
+            
+            gradeResult.Average = gradeResult.Total / grades.Count;
+            return gradeResult;
         }
 
         private List<double> grades;
