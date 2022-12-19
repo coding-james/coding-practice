@@ -13,7 +13,7 @@ Console.WriteLine($"--- GRADES ---\nTotal: {stats.Total} \nAverage: {stats.Avera
 Console.WriteLine("CODEWARS:");
 // Console.WriteLine(Sandbox.CodeWars.EvenOrOdd(4));
 // Console.WriteLine(Sandbox.CodeWars.MultiOf3or5(10));
-
-Console.WriteLine(Sandbox.CodeWars.Disemvowel("This website is for losers LOL!"));
-Console.WriteLine(Sandbox.CodeWars.Disemvowel("No offense but,\nYour writing is among the worst I've ever read"));
-Console.WriteLine(Sandbox.CodeWars.Disemvowel("What are you, a communist?"));
+// Console.WriteLine(Sandbox.CodeWars.Disemvowel("This website is for losers LOL!"));
+// Console.WriteLine(Sandbox.CodeWars.Disemvowel("No offense but,\nYour writing is among the worst I've ever read"));
+// Console.WriteLine(Sandbox.CodeWars.Disemvowel("What are you, a communist?"));
+Console.WriteLine(Sandbox.CodeWars.SquareDigits(9119));
