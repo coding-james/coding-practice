@@ -8,3 +8,7 @@ book.AddGrade(77.5);
 var stats = book.GetStatistics();
 
 Console.WriteLine($"--- GRADES ---\nTotal: {stats.Total} \nAverage: {stats.Average:N2} \nLowest: {stats.Low:N2} \nHighest: {stats.High:N2}"); //N2 formats to two decimal places
+
+//Codewars check
+Console.WriteLine(Sandbox.CodeWars.EvenOrOdd(4));
+Console.WriteLine(Sandbox.CodeWars.MultiOf3or5(10));
