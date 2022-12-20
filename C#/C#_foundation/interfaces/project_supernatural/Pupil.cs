@@ -1,4 +1,4 @@
-/ Pupil.cs
+// Pupil.cs
 using System;
 
 namespace MagicalInheritance
