@@ -77,23 +77,56 @@ namespace Sandbox
                 foreach (int num in seq)
                 {
                     int count = 0;
-                    for (int i = 0; i < seq.Length; i++ )
+                    for (int i = 0; i < seq.Length; i++)
                     {
-                        
+
                         if (num == seq[i])
                         {
                             count++;
                         }
                     }
-                    
+
                     if (count % 2 != 0)
                     {
                         odd = num;
                     }
 
-                }                
+                }
             }
             return odd.Value;
+        }
+
+        public static int[] Divisors(int n)
+        {
+            List<int> result = new List<int>();
+
+            for (int i = 2; i < n; i++)
+            {
+                if (n % i == 0)
+                {
+                    // System.Console.WriteLine($"i = {i}");
+                    result.Add(i);
+                }
+            }
+            // int testIndex = 1;
+            // Console.WriteLine($"Value in Index 0: {result[0]}");
+            // Console.WriteLine($"Value in Index testIndex: {result[testIndex]}");
+            // Console.WriteLine($"Count: {result.Count}");
+
+            if (result.Count != 0)
+            {
+                int[] resultArray = new int[result.Count];
+
+                for (int index = 0; index < result.Count; index++)
+                {
+                    // System.Console.WriteLine($"Result at index {index}: {result[index]}");
+                    resultArray[index] = result[index];
+                    // System.Console.WriteLine($"Result at resultArray {index}: {resultArray[index]}");
+                }
+                return resultArray;
+            } else {
+                return null;    
+            }
         }
     }
 }

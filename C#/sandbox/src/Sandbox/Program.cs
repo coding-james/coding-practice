@@ -1,13 +1,13 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 // OBJECTS AND CLASSES
-Sandbox.Book book = new Sandbox.Book("Tony's GradeBook");
-book.AddGrade(89.1);
-book.AddGrade(90.5);
-book.AddGrade(77.5);
-var stats = book.GetStatistics();
+// Sandbox.Book book = new Sandbox.Book("Tony's GradeBook");
+// book.AddGrade(89.1);
+// book.AddGrade(90.5);
+// book.AddGrade(77.5);
+// var stats = book.GetStatistics();
 
-Console.WriteLine($"--- GRADES ---\nTotal: {stats.Total} \nAverage: {stats.Average:N2} \nLowest: {stats.Low:N2} \nHighest: {stats.High:N2}"); //N2 formats to two decimal places
+// Console.WriteLine($"--- GRADES ---\nTotal: {stats.Total} \nAverage: {stats.Average:N2} \nLowest: {stats.Low:N2} \nHighest: {stats.High:N2}"); //N2 formats to two decimal places
 
 // CODEWARS CHECK
 Console.WriteLine("CODEWARS:");
@@ -21,8 +21,10 @@ Console.WriteLine("CODEWARS:");
 // Console.WriteLine(Sandbox.CodeWars.IsPrime(1));
 // Console.WriteLine(Sandbox.CodeWars.IsPrime(2));
 
-Console.WriteLine(Sandbox.CodeWars.find_it(new int[] {7})); //7
-Console.WriteLine(Sandbox.CodeWars.find_it(new int[] {0})); //0
-Console.WriteLine(Sandbox.CodeWars.find_it(new int[] {1,1,2})); //2
-Console.WriteLine(Sandbox.CodeWars.find_it(new int[] {0,1,0,1,0})); //0
-Console.WriteLine(Sandbox.CodeWars.find_it(new int[] {1,2,2,3,3,3,4,3,3,3,2,2,1})); //4
+// Console.WriteLine(Sandbox.CodeWars.find_it(new int[] {7})); //7
+// Console.WriteLine(Sandbox.CodeWars.find_it(new int[] {0})); //0
+// Console.WriteLine(Sandbox.CodeWars.find_it(new int[] {1,1,2})); //2
+// Console.WriteLine(Sandbox.CodeWars.find_it(new int[] {0,1,0,1,0})); //0
+// Console.WriteLine(Sandbox.CodeWars.find_it(new int[] {1,2,2,3,3,3,4,3,3,3,2,2,1})); //4
+
+Console.WriteLine(Sandbox.CodeWars.Divisors(8));
