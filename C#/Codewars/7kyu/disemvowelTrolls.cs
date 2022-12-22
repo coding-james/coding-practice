@@ -14,3 +14,6 @@ public static class Kata
         }
     }
 }
+// Console.WriteLine(Sandbox.CodeWars.Disemvowel("This website is for losers LOL!"));
+// Console.WriteLine(Sandbox.CodeWars.Disemvowel("No offense but,\nYour writing is among the worst I've ever read"));
+// Console.WriteLine(Sandbox.CodeWars.Disemvowel("What are you, a communist?"));

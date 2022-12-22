@@ -15,3 +15,4 @@ public class Kata
             return Int32.Parse(resultStr);
   }
 }
+// Console.WriteLine(Sandbox.CodeWars.SquareDigits(9119));
