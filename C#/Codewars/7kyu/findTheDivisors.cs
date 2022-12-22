@@ -31,3 +31,5 @@ public class Kata
         }
     }
 }
+
+// Console.WriteLine(Sandbox.CodeWars.Divisors(8));

@@ -17,3 +17,4 @@ namespace Solution
     }
   }
 }
+// Console.WriteLine(Sandbox.CodeWars.EvenOrOdd(4));

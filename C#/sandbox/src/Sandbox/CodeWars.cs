@@ -104,14 +104,9 @@ namespace Sandbox
             {
                 if (n % i == 0)
                 {
-                    // System.Console.WriteLine($"i = {i}");
                     result.Add(i);
                 }
             }
-            // int testIndex = 1;
-            // Console.WriteLine($"Value in Index 0: {result[0]}");
-            // Console.WriteLine($"Value in Index testIndex: {result[testIndex]}");
-            // Console.WriteLine($"Count: {result.Count}");
 
             if (result.Count != 0)
             {
@@ -119,14 +114,35 @@ namespace Sandbox
 
                 for (int index = 0; index < result.Count; index++)
                 {
-                    // System.Console.WriteLine($"Result at index {index}: {result[index]}");
                     resultArray[index] = result[index];
-                    // System.Console.WriteLine($"Result at resultArray {index}: {resultArray[index]}");
                 }
                 return resultArray;
-            } else {
-                return null;    
             }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static int[] ArrayDiff(int[] a, int[] b)
+        {
+            int[] result = new int[a.Length];
+            int index = 0;
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (!(Array.Exists(b, element => element == a[i])))
+                {
+                    result[index] = a[i];
+                    index++;
+                }
+            }
+
+            int[] resultArray = new int[index];
+            for (int x = 0; x < resultArray.Length; x++)
+            {
+                resultArray[x] = result[x];
+            }
+            return resultArray;
         }
     }
 }
