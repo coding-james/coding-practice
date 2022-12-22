@@ -20,3 +20,6 @@ public static class Kata
         }
   
 }
+// Console.WriteLine(Sandbox.CodeWars.IsPrime(0));
+// Console.WriteLine(Sandbox.CodeWars.IsPrime(1));
+// Console.WriteLine(Sandbox.CodeWars.IsPrime(2));

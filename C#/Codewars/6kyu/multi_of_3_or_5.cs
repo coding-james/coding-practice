@@ -13,3 +13,4 @@ public static class Kata
         return result;
     }
 }
+// Console.WriteLine(Sandbox.CodeWars.MultiOf3or5(10));
