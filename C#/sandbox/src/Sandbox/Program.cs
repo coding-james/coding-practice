@@ -9,15 +9,6 @@
 
 // Console.WriteLine($"--- GRADES ---\nTotal: {stats.Total} \nAverage: {stats.Average:N2} \nLowest: {stats.Low:N2} \nHighest: {stats.High:N2}"); //N2 formats to two decimal places
 
-// CODEWARS CHECK
+// CODEWARS
 Console.WriteLine("CODEWARS:");
-// Console.WriteLine(Sandbox.CodeWars.METHOD(VALUE));
-
-
-
-
-
-
-
-
-
+// Console.WriteLine($"{Sandbox.CodeWars.METHOD(VALUE)} = RESULT");
