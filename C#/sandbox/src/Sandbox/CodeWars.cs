@@ -151,7 +151,7 @@ namespace Sandbox
             int oddCount = 0;
             int lastEven = int.MinValue;
             int lastOdd = int.MinValue;
-            
+
             foreach (int num in integers)
             {
                 if (num % 2 == 0)
@@ -174,6 +174,62 @@ namespace Sandbox
             {
                 return lastOdd;
             }
+        }
+
+        public static bool Scramble(string str1, string str2)
+        {
+            var countLetterStr1 = str1.GroupBy(ch => ch).ToDictionary(group => group.Key, group => group.Count());
+            var countLetterStr2 = str2.GroupBy(ch => ch).ToDictionary(group => group.Key, group => group.Count());
+            return countLetterStr2.All(letterCount => countLetterStr1.ContainsKey(letterCount.Key) && letterCount.Value <= countLetterStr1[letterCount.Key]);
+        }
+
+        public static int DigitalRoot(long n)
+        {
+            // System.Console.WriteLine($"\nStart {n}");
+            string nStr = n.ToString();
+            int result = 0;
+            List<int> nList = new List<int>();
+            do
+            {
+
+                //split digits
+                foreach (char nChar in nStr)
+                {
+                    int num = nChar - '0';
+                    nList.Add(num);
+                }
+
+                // sum together to get result
+                result = 0;
+                foreach (int nValue in nList)
+                {
+                    result += nValue;
+                }
+                nStr = result.ToString();
+                nList.Clear();
+                // System.Console.WriteLine(result);
+            }
+            while (result.ToString().Length > 1);
+            return result;
+        }
+
+        public static string Likes(string[] name)
+        {
+            switch (name.Length)
+            {
+                case 1:
+                    return $"{name[0]} likes this";
+                case 2:
+                    return $"{name[0]} and {name[1]} like this";
+                case 3:
+                    return $"{name[0]}, {name[1]} and {name[2]} like this";
+                case >= 4:
+                    int extra = name.Length - 2;
+                    return $"{name[0]}, {name[1]} and {extra} others like this";
+                default:
+                    return "no one likes this";
+            }
+
         }
     }
 }
