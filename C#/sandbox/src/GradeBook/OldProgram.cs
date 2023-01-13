@@ -1,4 +1,4 @@
-namespace Sandbox
+namespace Gradebook
 {
 
     public class Intro

@@ -252,5 +252,66 @@ namespace Sandbox
                 return "Player 2 won!";
             }
         }
+
+        public static int DuplicateCount(string str)
+        {
+            System.Console.WriteLine($"\n{str}");
+            int count = 0;
+            var countLetterStr = str.ToLower().GroupBy(ch => ch).ToDictionary(group => group.Key, group => group.Count());
+            foreach (var letter in countLetterStr)
+            {
+                System.Console.WriteLine($" - {letter.Key} = {letter.Value}");
+                if (letter.Value > 1)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        // TODO : Fails random test?
+        public static int GetUnique(IEnumerable<int> numbers)
+        {
+            int numOne = ((int[])numbers)[0];
+            int numTwo = Int32.MinValue;
+            int numOneCount = 0;
+            int numTwoCount = 0;
+            int index = 0;
+            for (int i = 0; i < ((int[])numbers).Length; i++)
+            {
+                if ((numOneCount == 1 && numTwoCount > 2) || (numOneCount > 2 && numTwoCount == 1))
+                {
+                    return numOneCount < numTwoCount ? numOne : numTwo;
+                }
+                else if (((int[])numbers)[index] == numOne)
+                {
+                    numOneCount++;
+                    index++;
+                }
+                else if (((int[])numbers)[index] == numTwo)
+                {
+                    numTwoCount++;
+                    index++;
+                }
+                else
+                {
+                    numTwo = ((int[])numbers)[index];
+                    numTwoCount++;
+                    index++;
+                }
+            }
+            return numOneCount < numTwoCount ? numOne : numTwo;
+        }
+
+        public static bool IsSquare(int n)
+        {
+            if (n >= 0)
+            {
+                int sr = (int)Math.Sqrt(n);
+                return (sr * sr == n);
+            }
+            return false;
+        }
+
     }
 }

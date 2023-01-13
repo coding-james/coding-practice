@@ -11,4 +11,11 @@
 
 // CODEWARS
 Console.WriteLine("CODEWARS:");
-// Console.WriteLine($"{Sandbox.CodeWars.METHOD(VALUE)} = RESULT");
+// Console.WriteLine($"Answer: {Sandbox.CodeWars.METHOD(VALUE)} Expected: RESULT");
+// Console.WriteLine($"Answer: {Sandbox.CodeWars.GetUnique(new [] {1, 2, 2, 2})} Expected: 1");
+// Console.WriteLine($"Answer: {Sandbox.CodeWars.GetUnique(new [] {-2, 2, 2, 2})} Expected: -2");
+// Console.WriteLine($"Answer: {Sandbox.CodeWars.GetUnique(new [] {11, 11, 14, 11, 11})} Expected: 14");
+// Console.WriteLine($"Answer: {Sandbox.CodeWars.GetUnique(new [] {11, 11, 14, 11, 11, 11, 11, 11, 11, 11})} Expected: 14");
+// Console.WriteLine($"Answer: {Sandbox.CodeWars.GetUnique(new [] {11, 11, 11, 11, 11, 11, 11, 11, 11, 14})} Expected: 14");
+
+// System.Console.WriteLine(CWars.Kata.CreatePhoneNumber(new int[]{1,2,3,4,5,6,7,8,9,0}));
