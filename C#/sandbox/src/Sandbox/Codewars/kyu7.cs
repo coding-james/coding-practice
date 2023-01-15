@@ -1,43 +1,108 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
 namespace CWars
 {
     public class kyu7
     {
-        // CODEWARS: Take a Ten Minute Walk
-        public static bool IsValidWalk(string[] walk)
+        // CODEWARS: Disemvowel Trolls
+        public static string Disemvowel(string str)
         {
-            int nCount = 0;
-            int eCount = 0;
-            int sCount = 0;
-            int wCount = 0;
-
-            for (int i = 0; i < walk.Length; i++)
+            if (str.Length > 0)
             {
-                switch (walk[i])
+                return str = str.Replace("a", "").Replace("e", "").Replace("i", "").Replace("o", "").Replace("u", "").Replace("A", "").Replace("E", "").Replace("I", "").Replace("O", "").Replace("U", "");
+            }
+            else
+            {
+                return str;
+            }
+        }
+        // Console.WriteLine(CWars.kyu7.Disemvowel("This website is for losers LOL!"));
+        // Console.WriteLine(CWars.kyu7.Disemvowel("No offense but,\nYour writing is among the worst I've ever read"));
+        // Console.WriteLine(CWars.kyu7.Disemvowel("What are you, a communist?"));
+
+
+        // CODEWARS - Find the divisors!
+        public static int[] Divisors(int n)
+        {
+            List<int> result = new List<int>();
+
+            for (int i = 2; i < n; i++)
+            {
+                if (n % i == 0)
                 {
-                    case "n":
-                        nCount++;
-                        break;
-                    case "e":
-                        eCount++;
-                        break;
-                    case "s":
-                        sCount++;
-                        break;
-                    case "w":
-                        wCount++;
-                        break;
-                    default:
-                        break;
+                    result.Add(i);
                 }
             }
 
-            return walk.Length == 10 && nCount == sCount && eCount == wCount ? true : false;
-        }
+            if (result.Count != 0)
+            {
+                int[] resultArray = new int[result.Count];
 
-        // Console.WriteLine($"Answer: {CWars.kyu7.IsValidWalk(new string[] {"n","s","n","s","n","s","n","s","n","s"})} Expected: true");
-        // Console.WriteLine($"Answer: {CWars.kyu7.IsValidWalk(new string[] {"w","e","w","e","w","e","w","e","w","e","w","e"})} Expected: false");
-        // Console.WriteLine($"Answer: {CWars.kyu7.IsValidWalk(new string[] {"w"})} Expected: false");
-        // Console.WriteLine($"Answer: {CWars.kyu7.IsValidWalk(new string[] {"n","n","n","s","n","s","n","s","n","s"})} Expected: false");
+                for (int index = 0; index < result.Count; index++)
+                {
+                    resultArray[index] = result[index];
+                }
+                return resultArray;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        // Console.WriteLine(CWars.kyu7.Divisors(8));
+
+
+        // CODEWARS - You're a square!
+        public static bool IsSquare(int n)
+        {
+            if (n >= 0)
+            {
+                int sr = (int)Math.Sqrt(n);
+                return (sr * sr == n);
+            }
+            return false;
+        }
+        // Console.WriteLine($"Answer: {CWars.kyu7.IsSquare(-1)} Expected: false");
+        // Console.WriteLine($"Answer: {CWars.kyu7.IsSquare(0)} Expected: true");
+        // Console.WriteLine($"Answer: {CWars.kyu7.IsSquare(3)} Expected: false");
+        // Console.WriteLine($"Answer: {CWars.kyu7.IsSquare(4)} Expected: true");
+        // Console.WriteLine($"Answer: {CWars.kyu7.IsSquare(25)} Expected: true");
+        // Console.WriteLine($"Answer: {CWars.kyu7.IsSquare(26)} Expected: false");
+        // Console.WriteLine($"Answer: {CWars.kyu7.IsSquare(605493)} Expected: false");
+
+
+        // CODEWARS: Square Every Digit
+        public static int SquareDigits(int n)
+        {
+            string nStr = n.ToString();
+            string resultStr = "";
+            for (int i = 0; i < n.ToString().Length; i++)
+            {
+                int num = (int)Char.GetNumericValue(nStr[i]);
+                int calc = num * num;
+                resultStr += calc.ToString();
+            }
+            return Int32.Parse(resultStr);
+        }
+        // Console.WriteLine(CWars.kyu7.SquareDigits(9119));
+
+        // CODEWARS: Vowel Count
+        public static int GetVowelCount(string str)
+        {
+            int vowelCount = 0;
+            var vowels = new[] { "a", "e", "i", "o", "u" };
+            for (int item = 0; item < str.Length; item++)
+            {
+                string search = str[item].ToString();
+                if (vowels.Any(search.Contains))
+                {
+                    vowelCount++;
+                }
+            }
+            return vowelCount;
+        }
 
     }
 }
