@@ -322,5 +322,63 @@ namespace CWars
             // Console.WriteLine(textPos);
             return textPos;
         }
+
+        // Find the unique number
+        // TODO : Fails random test?
+        public static int GetUnique(IEnumerable<int> numbers)
+        {
+            int numOne = ((int[])numbers)[0];
+            int numTwo = Int32.MinValue;
+            int numOneCount = 0;
+            int numTwoCount = 0;
+            int index = 0;
+            for (int i = 0; i < ((int[])numbers).Length; i++)
+            {
+                if ((numOneCount == 1 && numTwoCount > 2) || (numOneCount > 2 && numTwoCount == 1))
+                {
+                    return numOneCount < numTwoCount ? numOne : numTwo;
+                }
+                else if (((int[])numbers)[index] == numOne)
+                {
+                    numOneCount++;
+                    index++;
+                }
+                else if (((int[])numbers)[index] == numTwo)
+                {
+                    numTwoCount++;
+                    index++;
+                }
+                else
+                {
+                    numTwo = ((int[])numbers)[index];
+                    numTwoCount++;
+                    index++;
+                }
+            }
+            return numOneCount < numTwoCount ? numOne : numTwo;
+        }
+
+        // CODEWARS: Convert string to camel case
+        public static string ToCamelCase(string str)
+        {
+            string StrNew = str;
+            string StrFinal = "";
+            for (int i = 0; i < StrNew.Length; i++)
+            {
+                char letter = char.Parse(StrNew.Substring(i, 1));
+                if (!char.IsLetter(letter))
+                {
+                    StrFinal += (StrNew.Substring(i + 1, 1)).ToUpper();
+                    i++;
+                }
+                else
+                {
+                    StrFinal += StrNew.Substring(i, 1);
+                }
+            }
+            return StrFinal;
+        }
+        // Console.WriteLine($"Answer: {CWars.kyu6.ToCamelCase("the_stealth_warrior")} Expected: theStealthWarrior");
+        // Console.WriteLine($"Answer: {CWars.kyu6.ToCamelCase("The-Stealth-Warrior")} Expected: TheStealthWarrior");
     }
 }
