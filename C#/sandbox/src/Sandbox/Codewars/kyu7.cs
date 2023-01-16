@@ -104,5 +104,15 @@ namespace CWars
             return vowelCount;
         }
 
+        // CODEWARS: Get the Middle Character
+        public static string GetMiddle(string s)
+        {
+            return s.Length % 2 == 0 ? s.Substring((s.Length / 2) - 1, 2) : s.Substring(Convert.ToInt32(Math.Floor((double)s.Length / 2)), 1);
+        }
+        // Console.WriteLine($"Answer: {CWars.kyu7.GetMiddle("test")} Expected: es");
+        // Console.WriteLine($"Answer: {CWars.kyu7.GetMiddle("testing")} Expected: t");
+        // Console.WriteLine($"Answer: {CWars.kyu7.GetMiddle("middle")} Expected: dd");
+        // Console.WriteLine($"Answer: {CWars.kyu7.GetMiddle("A")} Expected: A");
+
     }
 }
