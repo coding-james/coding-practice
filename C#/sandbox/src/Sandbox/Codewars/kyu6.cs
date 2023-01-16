@@ -311,7 +311,7 @@ namespace CWars
             for (int item = 0; item < replaced.Length; item++)
             {
                 string search = replaced[item].ToString();
-                int pos = Array.IndexOf(letters, search); //TODO - why does this line not work? works in other instance?
+                int pos = Array.IndexOf(letters, search);
                 textPos = textPos + (pos + 1).ToString();
 
                 if (item < (replaced.Length - 1))
@@ -322,6 +322,8 @@ namespace CWars
             // Console.WriteLine(textPos);
             return textPos;
         }
+        // Console.WriteLine($"Answer:   {CWars.kyu6.AlphabetPosition("The sunset sets at twelve o' clock.")} \nExpected: 20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11");
+        // Console.WriteLine($"Answer:   {CWars.kyu6.AlphabetPosition("The narwhal bacons at midnight.")} \nExpected: 20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20");
 
         // Find the unique number
         // TODO : Fails random test?
