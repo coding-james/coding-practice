@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace CWars
 {
@@ -114,5 +115,32 @@ namespace CWars
         // Console.WriteLine($"Answer: {CWars.kyu7.GetMiddle("middle")} Expected: dd");
         // Console.WriteLine($"Answer: {CWars.kyu7.GetMiddle("A")} Expected: A");
 
+
+        //CODEWARS: Descending Order
+        public static int DescendingOrder(int num)
+        {
+            string nStr = num.ToString();
+            int[] nStrArray = new int[nStr.Length];
+            for (int i = 0; i < nStr.Length; i++)
+            {
+                nStrArray[i] = Int32.Parse(nStr.Substring(i,1));                
+            }
+
+            nStr = "";
+            Array.Sort(nStrArray);
+            Array.Reverse(nStrArray);
+            foreach (int c in nStrArray)
+            {
+                nStr += c.ToString();
+            }
+
+            int nResult = Int32.Parse(nStr);
+
+            return nResult;
+        }
+        // Console.WriteLine($"Answer: {CWars.kyu7.DescendingOrder(0)} Expected: 0");
+        // Console.WriteLine($"Answer: {CWars.kyu7.DescendingOrder(42145)} Expected: 54421");
+        // Console.WriteLine($"Answer: {CWars.kyu7.DescendingOrder(145263)} Expected: 654321");
+        // Console.WriteLine($"Answer: {CWars.kyu7.DescendingOrder(123456789)} Expected: 987654321");
     }
 }
