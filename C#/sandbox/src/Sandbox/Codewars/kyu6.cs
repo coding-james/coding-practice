@@ -567,5 +567,23 @@ namespace CWars
         // Console.WriteLine($"Answer: {CWars.kyu6.RomanConvert(2014)} Expected: IMMXIV");
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS: Two Sum
+        public static int[] TwoSum(int[] numbers, int target)
+        {
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                for (int x = i + 1; x < numbers.Length; x++)
+                {
+                    if (numbers[i] + numbers[x] == target)
+                    {
+                        // return new int[] { i, x };
+                    }
+                }
+            }
+            throw new ArgumentException("Bad numbers");
+        }
+        // Console.WriteLine($"Answer: {CWars.kyu6.TwoSum(new [] { 1, 2, 3 }, 4)} Expected: 0,2");
+        // Console.WriteLine($"Answer: {CWars.kyu6.TwoSum(new [] { 1234, 5678, 9012 }, 14690)} Expected: 1,2");
+        // Console.WriteLine($"Answer: {CWars.kyu6.TwoSum(new [] { 2, 2, 3 }, 4)} Expected: 0,1");
     }
 }
