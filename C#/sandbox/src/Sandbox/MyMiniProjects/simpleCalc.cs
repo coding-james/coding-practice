@@ -43,3 +43,4 @@ namespace MyMiniProjects
         }
     }
 }
+// MyMiniProjects.simpleCalc.SimpleCalc();
