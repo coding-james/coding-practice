@@ -2,13 +2,14 @@ namespace CWars
 {
     public class kyu8
     {
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Convert a Number to a String!
         public static string NumberToString(int num)
         {
             return num.ToString();
         }
 
-
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Even or Odd
         public static string EvenOrOdd(int number)
         {
@@ -23,7 +24,7 @@ namespace CWars
         }
         // Console.WriteLine(CWars.kyu8.EvenOrOdd(4));
 
-
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Rock Paper Scissors!
         public string Rps(string p1, string p2)
         {
@@ -45,14 +46,14 @@ namespace CWars
         // Console.WriteLine($"{CWars.kyu8.Rps("scissors", "paper")} = Player 1 won!");
         // Console.WriteLine($"{CWars.kyu8.Rps("paper", "rock")} = Player 1 won!");
 
-
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Opposite Number
         public static int Opposite(int number)
         {
             return number - (number * 2);
         }
 
-
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Multiply
         public static int multiply(int a, int b)
         {

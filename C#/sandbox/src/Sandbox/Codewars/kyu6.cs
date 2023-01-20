@@ -7,6 +7,7 @@ namespace CWars
 {
     public class kyu6
     {
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Take a Ten Minute Walk
         public static bool IsValidWalk(string[] walk)
         {
@@ -44,6 +45,7 @@ namespace CWars
         // Console.WriteLine($"Answer: {CWars.kyu6.IsValidWalk(new string[] {"n","n","n","s","n","s","n","s","n","s"})} Expected: false");
 
 
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS - Array.diff
         public static int[] ArrayDiff(int[] a, int[] b)
         {
@@ -74,6 +76,7 @@ namespace CWars
         // System.Console.WriteLine(CWars.kyu6.ArrayDiff(new int[] {1, 2, 3}, new int[] {1, 2}));
 
 
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS - Counting Duplicates
         public static int DuplicateCount(string str)
         {
@@ -97,6 +100,8 @@ namespace CWars
         // Console.WriteLine($"{CWars.kyu6.DuplicateCount("Indivisibility")} = 1");
         // Console.WriteLine($"{CWars.kyu6.DuplicateCount("Indivisibilities")} = 2");
 
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS - Create Phone Number
         public static string CreatePhoneNumber(int[] numbers)
         {
@@ -105,6 +110,7 @@ namespace CWars
         // Console.WriteLine($"{CWars.kyu6.CreatePhoneNumber(new int[]{1,2,3,4,5,6,7,8,9,0})} = (123) 456-7890");
 
 
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Sum of Digits / Digital Root
         public static int DigitalRoot(long n) //static removed from solution on CodeWars
         {
@@ -142,6 +148,7 @@ namespace CWars
         // Console.WriteLine($"{CWars.kyu6.DigitalRoot(493193)} = 2");
 
 
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Duplicate Encoder
         public static string DuplicateEncode(string word)
         {
@@ -167,6 +174,7 @@ namespace CWars
         // Console.WriteLine($"Answer: {CWars.kyu6.DuplicateEncode("(( @")} Expected: ))((");
 
 
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         //CODEWARS: Find the odd int
         public static int find_it(int[] seq)
         {
@@ -201,6 +209,7 @@ namespace CWars
         // Console.WriteLine(CWars.kyu6.find_it(new int[] {1,2,2,3,3,3,4,3,3,3,2,2,1})); //4
 
 
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Find the Parity Outlier
         public static int Find(int[] integers)
         {
@@ -236,7 +245,7 @@ namespace CWars
         // Console.WriteLine(CWars.kyu6.Find(new int[] {206847684,1056521,7,17,1901,21104421,7,1,35521,1,7781}));
         // Console.WriteLine(CWars.kyu6.Find(new int[] { int.MaxValue, 0, 1 }));
 
-
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Is a number prime?
         public static bool IsPrime(int n)
         {
@@ -259,6 +268,7 @@ namespace CWars
         // Console.WriteLine(CWars.kyu6.IsPrime(1));
         // Console.WriteLine(CWars.kyu6.IsPrime(2));
 
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Mutliple of 3 or 5
         public static int MultiOf3or5(int value)
         {
@@ -274,7 +284,7 @@ namespace CWars
         }
         // Console.WriteLine(CWars.kyu6.MultiOf3or5(10));     
 
-
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS - Who likes it?
         public static string Likes(string[] name)
         {
@@ -299,8 +309,8 @@ namespace CWars
         // Console.WriteLine($"{CWars.kyu6.Likes(new string[] {"Max", "John", "Mark"})} = Max, John and Mark like this");
         // Console.WriteLine($"{CWars.kyu6.Likes(new string[] {"Alex", "Jacob", "Mark", "Max"})} = Alex, Jacob and 2 others like this");
 
-
-        // Codewars: Replace With Alphabet Position
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS: Replace With Alphabet Position
         public static string AlphabetPosition(string text)
         {
             Regex reg = new Regex("[^A-Za-z]");
@@ -325,15 +335,32 @@ namespace CWars
         // Console.WriteLine($"Answer:   {CWars.kyu6.AlphabetPosition("The sunset sets at twelve o' clock.")} \nExpected: 20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11");
         // Console.WriteLine($"Answer:   {CWars.kyu6.AlphabetPosition("The narwhal bacons at midnight.")} \nExpected: 20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20");
 
-        // Find the unique number
-        // TODO : Fails random test?
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS: Find the unique number
         public static int GetUnique(IEnumerable<int> numbers)
+        {
+            int unique = 0;
+            var countN = numbers.GroupBy(i => i).ToDictionary(group => group.Key, group => group.Count());
+
+            foreach (var number in countN)
+            {
+                if (number.Value == 1)
+                {
+                    unique += number.Key;
+                }
+            }
+            return unique;
+        }
+
+        // Original attempt, works but fails Random Test?
+        public static int GetUniqueOLD(IEnumerable<int> numbers)
         {
             int numOne = ((int[])numbers)[0];
             int numTwo = Int32.MinValue;
             int numOneCount = 0;
             int numTwoCount = 0;
             int index = 0;
+
             for (int i = 0; i < ((int[])numbers).Length; i++)
             {
                 if ((numOneCount == 1 && numTwoCount > 2) || (numOneCount > 2 && numTwoCount == 1))
@@ -359,7 +386,13 @@ namespace CWars
             }
             return numOneCount < numTwoCount ? numOne : numTwo;
         }
+        // Console.WriteLine($"Answer: {CWars.kyu6.GetUnique(new [] {1, 2, 2, 2})} Expected: 1");
+        // Console.WriteLine($"Answer: {CWars.kyu6.GetUnique(new [] {-2, 2, 2, 2})} Expected: -2");
+        // Console.WriteLine($"Answer: {CWars.kyu6.GetUnique(new [] {11, 11, 14, 11, 11})} Expected: 14");
+        // Console.WriteLine($"Answer: {CWars.kyu6.GetUnique(new [] {11, 11, 14, 11, 11, 11, 11, 11, 11, 11})} Expected: 14");
+        // Console.WriteLine($"Answer: {CWars.kyu6.GetUnique(new [] {11, 11, 11, 11, 11, 11, 11, 11, 11, 14})} Expected: 14");
 
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Convert string to camel case
         public static string ToCamelCase(string str)
         {
@@ -382,5 +415,206 @@ namespace CWars
         }
         // Console.WriteLine($"Answer: {CWars.kyu6.ToCamelCase("the_stealth_warrior")} Expected: theStealthWarrior");
         // Console.WriteLine($"Answer: {CWars.kyu6.ToCamelCase("The-Stealth-Warrior")} Expected: TheStealthWarrior");
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS: Roman Numerals Encoder
+        public static string RomanConvert(int n)
+        {
+            string nStr = n.ToString();
+            string result = "";
+
+            for (int i = 0; i < nStr.Length; i++)
+            {
+                char digit = char.Parse(nStr.Substring(i, 1));
+
+                if (nStr.Length == 4 && i == 0)
+                {
+                    switch (digit)
+                    {
+                        case '1':
+                            result += "M";
+                            break;
+                        case '2':
+                            result += "MM";
+                            break;
+                        case '3':
+                            result += "MMM";
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else if (nStr.Length >= 3 && nStr.Length - i == 3)
+                {
+                    switch (digit)
+                    {
+                        case '1':
+                            result += "C";
+                            break;
+                        case '2':
+                            result += "CC";
+                            break;
+                        case '3':
+                            result += "CCC";
+                            break;
+                        case '4':
+                            result += "CD";
+                            break;
+                        case '5':
+                            result += "D";
+                            break;
+                        case '6':
+                            result += "DC";
+                            break;
+                        case '7':
+                            result += "DCC";
+                            break;
+                        case '8':
+                            result += "DCCC";
+                            break;
+                        case '9':
+                            result += "CM";
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else if (nStr.Length >= 2 && nStr.Length - i == 2)
+                {
+                    switch (digit)
+                    {
+                        case '1':
+                            result += "X";
+                            break;
+                        case '2':
+                            result += "XX";
+                            break;
+                        case '3':
+                            result += "XXX";
+                            break;
+                        case '4':
+                            result += "XL";
+                            break;
+                        case '5':
+                            result += "L";
+                            break;
+                        case '6':
+                            result += "LX";
+                            break;
+                        case '7':
+                            result += "LXX";
+                            break;
+                        case '8':
+                            result += "LXXX";
+                            break;
+                        case '9':
+                            result += "XC";
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else if (nStr.Length >= 1 && nStr.Length - i == 1)
+                {
+                    switch (digit)
+                    {
+                        case '1':
+                            result += "I";
+                            break;
+                        case '2':
+                            result += "II";
+                            break;
+                        case '3':
+                            result += "III";
+                            break;
+                        case '4':
+                            result += "IV";
+                            break;
+                        case '5':
+                            result += "V";
+                            break;
+                        case '6':
+                            result += "VI";
+                            break;
+                        case '7':
+                            result += "VII";
+                            break;
+                        case '8':
+                            result += "VIII";
+                            break;
+                        case '9':
+                            result += "IX";
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else
+                {
+                    result += "";
+                }
+            }
+            return result;
+        }
+        // Console.WriteLine($"Answer: {CWars.kyu6.RomanConvert(1)} Expected: I");
+        // Console.WriteLine($"Answer: {CWars.kyu6.RomanConvert(2)} Expected: II");
+        // Console.WriteLine($"Answer: {CWars.kyu6.RomanConvert(4)} Expected: IV");
+        // Console.WriteLine($"Answer: {CWars.kyu6.RomanConvert(500)} Expected: D");
+        // Console.WriteLine($"Answer: {CWars.kyu6.RomanConvert(1000)} Expected: M");
+        // Console.WriteLine($"Answer: {CWars.kyu6.RomanConvert(1954)} Expected: MCMLIV");
+        // Console.WriteLine($"Answer: {CWars.kyu6.RomanConvert(1990)} Expected: MCMXC");
+        // Console.WriteLine($"Answer: {CWars.kyu6.RomanConvert(2008)} Expected: MMVIII");
+        // Console.WriteLine($"Answer: {CWars.kyu6.RomanConvert(2014)} Expected: IMMXIV");
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS: Two Sum
+        public static int[] TwoSum(int[] numbers, int target)
+        {
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                for (int x = i + 1; x < numbers.Length; x++)
+                {
+                    if (numbers[i] + numbers[x] == target)
+                    {
+                        // return new int[] { i, x };
+                    }
+                }
+            }
+            throw new ArgumentException("Bad numbers");
+        }
+        // Console.WriteLine($"Answer: {CWars.kyu6.TwoSum(new [] { 1, 2, 3 }, 4)} Expected: 0,2");
+        // Console.WriteLine($"Answer: {CWars.kyu6.TwoSum(new [] { 1234, 5678, 9012 }, 14690)} Expected: 1,2");
+        // Console.WriteLine($"Answer: {CWars.kyu6.TwoSum(new [] { 2, 2, 3 }, 4)} Expected: 0,1");
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS: Split Strings
+        public static string[] SplitString(string str)
+        {
+            int loops = Convert.ToInt32(Math.Ceiling((double)str.Length / 2));
+            // System.Console.WriteLine(loops);
+            string[] result = new string[loops];
+            int pair = 0;
+            for (int i = 0; i < (double)str.Length / 2; i++)
+            {
+                if ((str.Length % 2 == 0) || (i < (loops - 1) && str.Length % 2 != 0))
+                {
+                    result[i] = str.Substring(pair, 2);
+                    pair += 2;
+                }
+                else
+                {
+                    result[i] = str.Substring(pair, 1) + "_";
+                    pair += 2;
+                }
+            }
+
+            // foreach (string s in result)
+            // {
+            //     System.Console.WriteLine(s);
+            // }
+            return result;
+        }
+        // Console.WriteLine($"Answer: {CWars.kyu6.SplitString("abc")} Expected: ab, c_");
+        // Console.WriteLine($"Answer: {CWars.kyu6.SplitString("abcdef")} Expected: ab, cd, ef");
     }
 }

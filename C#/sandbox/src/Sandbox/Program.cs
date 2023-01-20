@@ -12,10 +12,3 @@
 // CODEWARS
 Console.WriteLine("CODEWARS:");
 // Console.WriteLine($"Answer: {CWars.kyu#.METHOD(VALUE)} Expected: RESULT");
-// Console.WriteLine($"Answer: {Sandbox.CodeWars.GetUnique(new [] {1, 2, 2, 2})} Expected: 1");
-// Console.WriteLine($"Answer: {Sandbox.CodeWars.GetUnique(new [] {-2, 2, 2, 2})} Expected: -2");
-// Console.WriteLine($"Answer: {Sandbox.CodeWars.GetUnique(new [] {11, 11, 14, 11, 11})} Expected: 14");
-// Console.WriteLine($"Answer: {Sandbox.CodeWars.GetUnique(new [] {11, 11, 14, 11, 11, 11, 11, 11, 11, 11})} Expected: 14");
-// Console.WriteLine($"Answer: {Sandbox.CodeWars.GetUnique(new [] {11, 11, 11, 11, 11, 11, 11, 11, 11, 14})} Expected: 14");
-
-// TODO: kyu6 - GetUnique

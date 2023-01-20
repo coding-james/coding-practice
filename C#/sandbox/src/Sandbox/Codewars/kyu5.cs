@@ -5,6 +5,7 @@ namespace CWars
 {
     public class kyu5
     {
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS - Scramblies
         // Final Attempt - Using https://www.youtube.com/watch?app=desktop&v=474OLJd2UKg as guidance
         public static bool Scramble(string str1, string str2)
