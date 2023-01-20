@@ -1,11 +1,13 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace CWars
 {
     public class kyu7
     {
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Disemvowel Trolls
         public static string Disemvowel(string str)
         {
@@ -22,7 +24,7 @@ namespace CWars
         // Console.WriteLine(CWars.kyu7.Disemvowel("No offense but,\nYour writing is among the worst I've ever read"));
         // Console.WriteLine(CWars.kyu7.Disemvowel("What are you, a communist?"));
 
-
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS - Find the divisors!
         public static int[] Divisors(int n)
         {
@@ -53,7 +55,7 @@ namespace CWars
         }
         // Console.WriteLine(CWars.kyu7.Divisors(8));
 
-
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS - You're a square!
         public static bool IsSquare(int n)
         {
@@ -72,7 +74,7 @@ namespace CWars
         // Console.WriteLine($"Answer: {CWars.kyu7.IsSquare(26)} Expected: false");
         // Console.WriteLine($"Answer: {CWars.kyu7.IsSquare(605493)} Expected: false");
 
-
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Square Every Digit
         public static int SquareDigits(int n)
         {
@@ -88,6 +90,7 @@ namespace CWars
         }
         // Console.WriteLine(CWars.kyu7.SquareDigits(9119));
 
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Vowel Count
         public static int GetVowelCount(string str)
         {
@@ -104,6 +107,7 @@ namespace CWars
             return vowelCount;
         }
 
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Get the Middle Character
         public static string GetMiddle(string s)
         {
@@ -114,5 +118,34 @@ namespace CWars
         // Console.WriteLine($"Answer: {CWars.kyu7.GetMiddle("middle")} Expected: dd");
         // Console.WriteLine($"Answer: {CWars.kyu7.GetMiddle("A")} Expected: A");
 
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        //CODEWARS: Descending Order
+        public static int DescendingOrder(int num)
+        {
+            string nStr = num.ToString();
+            int[] nStrArray = new int[nStr.Length];
+            for (int i = 0; i < nStr.Length; i++)
+            {
+                nStrArray[i] = Int32.Parse(nStr.Substring(i,1));                
+            }
+
+            nStr = "";
+            Array.Sort(nStrArray);
+            Array.Reverse(nStrArray);
+            foreach (int c in nStrArray)
+            {
+                nStr += c.ToString();
+            }
+
+            int nResult = Int32.Parse(nStr);
+
+            return nResult;
+        }
+        // Console.WriteLine($"Answer: {CWars.kyu7.DescendingOrder(0)} Expected: 0");
+        // Console.WriteLine($"Answer: {CWars.kyu7.DescendingOrder(42145)} Expected: 54421");
+        // Console.WriteLine($"Answer: {CWars.kyu7.DescendingOrder(145263)} Expected: 654321");
+        // Console.WriteLine($"Answer: {CWars.kyu7.DescendingOrder(123456789)} Expected: 987654321");
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     }
 }
