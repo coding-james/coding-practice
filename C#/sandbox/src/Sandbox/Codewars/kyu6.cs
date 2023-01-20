@@ -585,5 +585,36 @@ namespace CWars
         // Console.WriteLine($"Answer: {CWars.kyu6.TwoSum(new [] { 1, 2, 3 }, 4)} Expected: 0,2");
         // Console.WriteLine($"Answer: {CWars.kyu6.TwoSum(new [] { 1234, 5678, 9012 }, 14690)} Expected: 1,2");
         // Console.WriteLine($"Answer: {CWars.kyu6.TwoSum(new [] { 2, 2, 3 }, 4)} Expected: 0,1");
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS: Split Strings
+        public static string[] SplitString(string str)
+        {
+            int loops = Convert.ToInt32(Math.Ceiling((double)str.Length / 2));
+            // System.Console.WriteLine(loops);
+            string[] result = new string[loops];
+            int pair = 0;
+            for (int i = 0; i < (double)str.Length / 2; i++)
+            {
+                if ((str.Length % 2 == 0) || (i < (loops - 1) && str.Length % 2 != 0))
+                {
+                    result[i] = str.Substring(pair, 2);
+                    pair += 2;
+                }
+                else
+                {
+                    result[i] = str.Substring(pair, 1) + "_";
+                    pair += 2;
+                }
+            }
+
+            // foreach (string s in result)
+            // {
+            //     System.Console.WriteLine(s);
+            // }
+            return result;
+        }
+        // Console.WriteLine($"Answer: {CWars.kyu6.SplitString("abc")} Expected: ab, c_");
+        // Console.WriteLine($"Answer: {CWars.kyu6.SplitString("abcdef")} Expected: ab, cd, ef");
     }
 }
