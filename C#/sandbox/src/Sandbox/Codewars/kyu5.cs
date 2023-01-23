@@ -60,5 +60,33 @@ namespace CWars
         // Console.WriteLine($"8: {CWars.kyu5.Scramble("aabbcamaomsccdd","commas")} = true");
         // Console.WriteLine($"9: {CWars.kyu5.Scramble("commas","commas")} = true");
         // Console.WriteLine($"10: {CWars.kyu5.Scramble("sammoc","commas")} = true");
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS - Human Readable Time
+        public static string GetReadableTime(int seconds)
+        {
+            //hours
+            decimal hoursR = seconds % 3600;
+            int hours = seconds / 3600;
+
+            //mins
+            decimal minsR = hoursR % 60;
+            int mins = Convert.ToInt32(Math.Floor(hoursR)) / 60;
+
+            //secs
+            int sec = Convert.ToInt32(minsR % 60);
+
+            string hoursStr = hours < 10 ? "0" + hours : hours.ToString();
+            string minsStr = mins < 10 ? "0" + mins : mins.ToString();
+            string secStr = sec < 10 ? "0" + sec : sec.ToString();
+
+            return $"{hoursStr}:{minsStr}:{secStr}";
+        }
+        // Console.WriteLine($"Answer: {CWars.kyu5.GetReadableTime(0)} Expected: 00:00:00");
+        // Console.WriteLine($"Answer: {CWars.kyu5.GetReadableTime(5)} Expected: 00:00:05");
+        // Console.WriteLine($"Answer: {CWars.kyu5.GetReadableTime(60)} Expected: 00:01:00");
+        // Console.WriteLine($"Answer: {CWars.kyu5.GetReadableTime(86399)} Expected: 23:59:59");
+        // Console.WriteLine($"Answer: {CWars.kyu5.GetReadableTime(359999)} Expected: 99:59:59");
+
     }
 }
