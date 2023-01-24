@@ -60,5 +60,49 @@ namespace CWars
         // Console.WriteLine($"8: {CWars.kyu5.Scramble("aabbcamaomsccdd","commas")} = true");
         // Console.WriteLine($"9: {CWars.kyu5.Scramble("commas","commas")} = true");
         // Console.WriteLine($"10: {CWars.kyu5.Scramble("sammoc","commas")} = true");
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS - Human Readable Time
+        public static string GetReadableTime(int seconds)
+        {
+            //hours
+            decimal hoursR = seconds % 3600;
+            int hours = seconds / 3600;
+
+            //mins
+            decimal minsR = hoursR % 60;
+            int mins = Convert.ToInt32(Math.Floor(hoursR)) / 60;
+
+            //secs
+            int sec = Convert.ToInt32(minsR % 60);
+
+            string hoursStr = hours < 10 ? "0" + hours : hours.ToString();
+            string minsStr = mins < 10 ? "0" + mins : mins.ToString();
+            string secStr = sec < 10 ? "0" + sec : sec.ToString();
+
+            return $"{hoursStr}:{minsStr}:{secStr}";
+        }
+        // Console.WriteLine($"Answer: {CWars.kyu5.GetReadableTime(0)} Expected: 00:00:00");
+        // Console.WriteLine($"Answer: {CWars.kyu5.GetReadableTime(5)} Expected: 00:00:05");
+        // Console.WriteLine($"Answer: {CWars.kyu5.GetReadableTime(60)} Expected: 00:01:00");
+        // Console.WriteLine($"Answer: {CWars.kyu5.GetReadableTime(86399)} Expected: 23:59:59");
+        // Console.WriteLine($"Answer: {CWars.kyu5.GetReadableTime(359999)} Expected: 99:59:59");
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS - Count IP Addresses
+        // each number can be between 0 - 255
+        public static long IpsBetween(string start, string end)
+        {
+            return ConvertIPtoValue(end) - ConvertIPtoValue(start);
+        }
+
+        public static long ConvertIPtoValue(string ip)
+        {
+            List<long> ipValue = new List<long>(Array.ConvertAll(ip.Split('.'), long.Parse));
+            return (ipValue[0] * 256 * 256 * 256) + (ipValue[1] * 256 * 256) + (ipValue[2] * 256) + ipValue[3];
+        }
+        //Console.WriteLine($"Answer: {CWars.kyu5.IpsBetween("10.0.0.0", "10.0.0.50")} Expected: 50");
+        //Console.WriteLine($"Answer: {CWars.kyu5.IpsBetween("20.0.0.10", "20.0.1.0")} Expected: 246");
+        //Console.WriteLine($"Answer: {CWars.kyu5.IpsBetween("20.0.0.0", "20.0.1.0")} Expected: 256");
     }
 }
