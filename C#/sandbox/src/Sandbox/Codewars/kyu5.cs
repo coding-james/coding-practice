@@ -88,5 +88,21 @@ namespace CWars
         // Console.WriteLine($"Answer: {CWars.kyu5.GetReadableTime(86399)} Expected: 23:59:59");
         // Console.WriteLine($"Answer: {CWars.kyu5.GetReadableTime(359999)} Expected: 99:59:59");
 
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS - Count IP Addresses
+        // each number can be between 0 - 255
+        public static long IpsBetween(string start, string end)
+        {
+            return ConvertIPtoValue(end) - ConvertIPtoValue(start);
+        }
+
+        public static long ConvertIPtoValue(string ip)
+        {
+            List<long> ipValue = new List<long>(Array.ConvertAll(ip.Split('.'), long.Parse));
+            return (ipValue[0] * 256 * 256 * 256) + (ipValue[1] * 256 * 256) + (ipValue[2] * 256) + ipValue[3];
+        }
+        //Console.WriteLine($"Answer: {CWars.kyu5.IpsBetween("10.0.0.0", "10.0.0.50")} Expected: 50");
+        //Console.WriteLine($"Answer: {CWars.kyu5.IpsBetween("20.0.0.10", "20.0.1.0")} Expected: 246");
+        //Console.WriteLine($"Answer: {CWars.kyu5.IpsBetween("20.0.0.0", "20.0.1.0")} Expected: 256");
     }
 }
