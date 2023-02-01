@@ -109,5 +109,78 @@ namespace CWars
         // Console.WriteLine($"Answer: {CWars.kyu4.formatDuration(242062374)} Expected: 7 years, 246 days, 15 hours, 32 minutes and 54 seconds");
         // Console.WriteLine($"Answer: {CWars.kyu4.formatDuration(101956166)} Expected: 3 years, 85 days, 1 hour, 9 minutes and 26 seconds");
         // Console.WriteLine($"Answer: {CWars.kyu4.formatDuration(33243586)} Expected: 1 year, 19 days, 18 hours, 19 minutes and 46 seconds");
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS: Sum Strings as Numbers - without using BigInteger
+        public static string sumStrings(string a, string b)
+        {
+            List<int> aList = numList(a);
+            List<int> bList = numList(b);
+            string sumString = "";
+
+            if (aList.Count == bList.Count)
+            {
+                string result = "";
+                int carryForward = 0;
+                for (int i = aList.Count - 1; i >= 0; i--)
+                {
+                    int tempResult = aList[i] + bList[i] + (carryForward / 10);
+                    result = (tempResult % 10).ToString() + result;
+                    carryForward = tempResult - tempResult % 10;
+                }
+                // return result;
+                sumString = (carryForward / 10) == 0 ? result : (carryForward / 10).ToString() + result;
+            }
+            else if (aList.Count > bList.Count)
+            {
+                sumString = addLists(aList, bList);
+            }
+            else
+            {
+                sumString = addLists(bList, aList);
+            }
+
+            return sumString.Substring(0, 1) == "0" ? sumString.Substring(1, sumString.Length - 1) : sumString;
+        }
+
+        private static List<int> numList(string str)
+        {
+            List<int> strList = new List<int>();
+            foreach (char s in str)
+            {
+                strList.Add(Convert.ToInt32(s.ToString()));
+            }
+            return strList;
+        }
+
+        private static string addLists(List<int> larger, List<int> smaller)
+        {
+            string result2 = "";
+            int carryForward2 = 0;
+            int diff = larger.Count - smaller.Count;
+
+            for (int i = larger.Count - 1; i >= 0; i--)
+            {
+                if (i - diff < smaller.Count && i - diff >= 0)
+                {
+                    int tempResult2 = larger[i] + smaller[i - diff] + (carryForward2 / 10);
+                    result2 = (tempResult2 % 10).ToString() + result2;
+                    carryForward2 = tempResult2 - tempResult2 % 10;
+                }
+                else
+                {
+                    int tempResult3 = larger[i] + (carryForward2 / 10);
+                    result2 = (tempResult3 % 10).ToString() + result2;
+                    carryForward2 = tempResult3 - tempResult3 % 10;
+                }
+            }
+
+            return (carryForward2 / 10) == 0 ? result2 : (carryForward2 / 10).ToString() + result2;
+        }
+        // Console.WriteLine($"Answer: {CWars.kyu4.sumStrings("123","456")} Expected: 579");
+        // Console.WriteLine($"Answer: {CWars.kyu4.sumStrings("12","456")} Expected: 468");
+        // Console.WriteLine($"Answer: {CWars.kyu4.sumStrings("5123","321")} Expected: 5444");
+        // Console.WriteLine($"Answer: {CWars.kyu4.sumStrings("99","8888")} Expected: 8987");
+        // Console.WriteLine($"Answer: {CWars.kyu4.sumStrings("9999","99")} Expected: 10098");
     }
 }
