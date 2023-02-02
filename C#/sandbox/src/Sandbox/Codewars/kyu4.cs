@@ -16,9 +16,6 @@ namespace CWars
             // return (UInt64.Parse(a) + UInt64.Parse(b)).ToString();
             return (BigInteger.Parse(a) + BigInteger.Parse(b)).ToString();
         }
-        // Console.WriteLine($"Answer: {CWars.kyu4.Add("91","19")} Expected: 110");
-        // Console.WriteLine($"Answer: {CWars.kyu4.Add("123456789", "987654322")} Expected: 1111111111");
-        // Console.WriteLine($"Answer: {CWars.kyu4.Add("999999999", "1")} Expected: 1000000000");
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Human readable duration format
@@ -82,7 +79,7 @@ namespace CWars
             return result;
         }
 
-        public static string ConvertTime(int time, string type)
+        private static string ConvertTime(int time, string type)
         {
             if (time > 0 && time <= 1)
             {
@@ -97,19 +94,7 @@ namespace CWars
                 return "remove";
             }
         }
-        // Console.WriteLine($"Answer: {CWars.kyu4.formatDuration(0)} Expected: now");
-        // Console.WriteLine($"Answer: {CWars.kyu4.formatDuration(1)} Expected: 1 second");
-        // Console.WriteLine($"Answer: {CWars.kyu4.formatDuration(62)} Expected: 1 minute and 2 seconds");
-        // Console.WriteLine($"Answer: {CWars.kyu4.formatDuration(120)} Expected: 2 minutes");
-        // Console.WriteLine($"Answer: {CWars.kyu4.formatDuration(3662)} Expected: 1 hour, 1 minute and 2 seconds");
-        // Console.WriteLine($"Answer: {CWars.kyu4.formatDuration(15731080)} Expected: 182 days, 1 hour, 44 minutes and 40 seconds");
-        // Console.WriteLine($"Answer: {CWars.kyu4.formatDuration(132030240)} Expected: Expected: 4 years, 68 days, 3 hours and 4 minutes");
-        // Console.WriteLine($"Answer: {CWars.kyu4.formatDuration(205851834)} 6 years, 192 days, 13 hours, 3 minutes and 54 seconds");
-        // Console.WriteLine($"Answer: {CWars.kyu4.formatDuration(253374061)} Expected: 8 years, 12 days, 13 hours, 41 minutes and 1 second");
-        // Console.WriteLine($"Answer: {CWars.kyu4.formatDuration(242062374)} Expected: 7 years, 246 days, 15 hours, 32 minutes and 54 seconds");
-        // Console.WriteLine($"Answer: {CWars.kyu4.formatDuration(101956166)} Expected: 3 years, 85 days, 1 hour, 9 minutes and 26 seconds");
-        // Console.WriteLine($"Answer: {CWars.kyu4.formatDuration(33243586)} Expected: 1 year, 19 days, 18 hours, 19 minutes and 46 seconds");
-
+        
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Sum Strings as Numbers - without using BigInteger
         public static string sumStrings(string a, string b)
@@ -177,10 +162,5 @@ namespace CWars
 
             return (carryForward2 / 10) == 0 ? result2 : (carryForward2 / 10).ToString() + result2;
         }
-        // Console.WriteLine($"Answer: {CWars.kyu4.sumStrings("123","456")} Expected: 579");
-        // Console.WriteLine($"Answer: {CWars.kyu4.sumStrings("12","456")} Expected: 468");
-        // Console.WriteLine($"Answer: {CWars.kyu4.sumStrings("5123","321")} Expected: 5444");
-        // Console.WriteLine($"Answer: {CWars.kyu4.sumStrings("99","8888")} Expected: 8987");
-        // Console.WriteLine($"Answer: {CWars.kyu4.sumStrings("9999","99")} Expected: 10098");
     }
 }
