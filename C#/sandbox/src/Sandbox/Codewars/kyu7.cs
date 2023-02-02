@@ -20,13 +20,10 @@ namespace CWars
                 return str;
             }
         }
-        // Console.WriteLine(CWars.kyu7.Disemvowel("This website is for losers LOL!"));
-        // Console.WriteLine(CWars.kyu7.Disemvowel("No offense but,\nYour writing is among the worst I've ever read"));
-        // Console.WriteLine(CWars.kyu7.Disemvowel("What are you, a communist?"));
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS - Find the divisors!
-        public static int[] Divisors(int n)
+        public static int[]? Divisors(int n)
         {
             List<int> result = new List<int>();
 
@@ -53,7 +50,6 @@ namespace CWars
                 return null;
             }
         }
-        // Console.WriteLine(CWars.kyu7.Divisors(8));
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS - You're a square!
@@ -66,16 +62,9 @@ namespace CWars
             }
             return false;
         }
-        // Console.WriteLine($"Answer: {CWars.kyu7.IsSquare(-1)} Expected: false");
-        // Console.WriteLine($"Answer: {CWars.kyu7.IsSquare(0)} Expected: true");
-        // Console.WriteLine($"Answer: {CWars.kyu7.IsSquare(3)} Expected: false");
-        // Console.WriteLine($"Answer: {CWars.kyu7.IsSquare(4)} Expected: true");
-        // Console.WriteLine($"Answer: {CWars.kyu7.IsSquare(25)} Expected: true");
-        // Console.WriteLine($"Answer: {CWars.kyu7.IsSquare(26)} Expected: false");
-        // Console.WriteLine($"Answer: {CWars.kyu7.IsSquare(605493)} Expected: false");
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-        // CODEWARS: Square Every Digit
+        // CODEWARS: Square Every Digit / Digit*Digit
         public static int SquareDigits(int n)
         {
             string nStr = n.ToString();
@@ -88,7 +77,6 @@ namespace CWars
             }
             return Int32.Parse(resultStr);
         }
-        // Console.WriteLine(CWars.kyu7.SquareDigits(9119));
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Vowel Count
@@ -113,10 +101,6 @@ namespace CWars
         {
             return s.Length % 2 == 0 ? s.Substring((s.Length / 2) - 1, 2) : s.Substring(Convert.ToInt32(Math.Floor((double)s.Length / 2)), 1);
         }
-        // Console.WriteLine($"Answer: {CWars.kyu7.GetMiddle("test")} Expected: es");
-        // Console.WriteLine($"Answer: {CWars.kyu7.GetMiddle("testing")} Expected: t");
-        // Console.WriteLine($"Answer: {CWars.kyu7.GetMiddle("middle")} Expected: dd");
-        // Console.WriteLine($"Answer: {CWars.kyu7.GetMiddle("A")} Expected: A");
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         //CODEWARS: Descending Order
@@ -141,11 +125,5 @@ namespace CWars
 
             return nResult;
         }
-        // Console.WriteLine($"Answer: {CWars.kyu7.DescendingOrder(0)} Expected: 0");
-        // Console.WriteLine($"Answer: {CWars.kyu7.DescendingOrder(42145)} Expected: 54421");
-        // Console.WriteLine($"Answer: {CWars.kyu7.DescendingOrder(145263)} Expected: 654321");
-        // Console.WriteLine($"Answer: {CWars.kyu7.DescendingOrder(123456789)} Expected: 987654321");
-
-        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     }
 }
