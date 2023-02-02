@@ -22,11 +22,10 @@ namespace CWars
                 return "Odd";
             }
         }
-        // Console.WriteLine(CWars.kyu8.EvenOrOdd(4));
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Rock Paper Scissors!
-        public string Rps(string p1, string p2)
+        public static string Rps(string p1, string p2)
         {
             if (p1 == p2)
                 return "Draw!";
@@ -42,9 +41,6 @@ namespace CWars
                 return "Player 2 won!";
             }
         }
-        // Console.WriteLine($"{CWars.kyu8.Rps("rock", "scissors")} = Player 1 won!");
-        // Console.WriteLine($"{CWars.kyu8.Rps("scissors", "paper")} = Player 1 won!");
-        // Console.WriteLine($"{CWars.kyu8.Rps("paper", "rock")} = Player 1 won!");
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Opposite Number

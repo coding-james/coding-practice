@@ -39,11 +39,6 @@ namespace CWars
 
             return walk.Length == 10 && nCount == sCount && eCount == wCount ? true : false;
         }
-        // Console.WriteLine($"Answer: {CWars.kyu6.IsValidWalk(new string[] {"n","s","n","s","n","s","n","s","n","s"})} Expected: true");
-        // Console.WriteLine($"Answer: {CWars.kyu6.IsValidWalk(new string[] {"w","e","w","e","w","e","w","e","w","e","w","e"})} Expected: false");
-        // Console.WriteLine($"Answer: {CWars.kyu6.IsValidWalk(new string[] {"w"})} Expected: false");
-        // Console.WriteLine($"Answer: {CWars.kyu6.IsValidWalk(new string[] {"n","n","n","s","n","s","n","s","n","s"})} Expected: false");
-
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS - Array.diff
@@ -69,12 +64,6 @@ namespace CWars
             return resultArray;
 
         }
-        // System.Console.WriteLine(CWars.kyu6.ArrayDiff(new int[] {1, 2}, new int[] {1}));
-        // System.Console.WriteLine(CWars.kyu6.ArrayDiff(new int[] {1, 2, 2}, new int[] {1}));
-        // System.Console.WriteLine(CWars.kyu6.ArrayDiff(new int[] {1, 2, 2}, new int[] {2}));
-        // System.Console.WriteLine(CWars.kyu6.ArrayDiff(new int[] {}, new int[] {1, 2}));
-        // System.Console.WriteLine(CWars.kyu6.ArrayDiff(new int[] {1, 2, 3}, new int[] {1, 2}));
-
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS - Counting Duplicates
@@ -93,13 +82,6 @@ namespace CWars
             }
             return count;
         }
-        // Console.WriteLine($"{CWars.kyu6.DuplicateCount("")} = 0");
-        // Console.WriteLine($"{CWars.kyu6.DuplicateCount("abcde")} = 0");
-        // Console.WriteLine($"{CWars.kyu6.DuplicateCount("aabbcde")} = 2");
-        // Console.WriteLine($"{CWars.kyu6.DuplicateCount("aabBcde")} = 2");
-        // Console.WriteLine($"{CWars.kyu6.DuplicateCount("Indivisibility")} = 1");
-        // Console.WriteLine($"{CWars.kyu6.DuplicateCount("Indivisibilities")} = 2");
-
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS - Create Phone Number
@@ -107,8 +89,6 @@ namespace CWars
         {
             return $"({string.Join("", numbers[0..3])}) {string.Join("", numbers[3..6])}-{string.Join("", numbers[6..10])}";
         }
-        // Console.WriteLine($"{CWars.kyu6.CreatePhoneNumber(new int[]{1,2,3,4,5,6,7,8,9,0})} = (123) 456-7890");
-
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Sum of Digits / Digital Root
@@ -142,11 +122,6 @@ namespace CWars
             while (result.ToString().Length > 1);
             return result;
         }
-        // Console.WriteLine($"{CWars.kyu6.DigitalRoot(16)} = 7");
-        // Console.WriteLine($"{CWars.kyu6.DigitalRoot(456)} = 6");
-        // Console.WriteLine($"{CWars.kyu6.DigitalRoot(132189)} = 6");
-        // Console.WriteLine($"{CWars.kyu6.DigitalRoot(493193)} = 2");
-
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Duplicate Encoder
@@ -168,11 +143,6 @@ namespace CWars
             }
             return wordReplace;
         }
-        // Console.WriteLine($"Answer: {CWars.kyu6.DuplicateEncode("din")} Expected: (((");
-        // Console.WriteLine($"Answer: {CWars.kyu6.DuplicateEncode("recede")} Expected: ()()()");
-        // Console.WriteLine($"Answer: {CWars.kyu6.DuplicateEncode("Success")} Expected: )())())");
-        // Console.WriteLine($"Answer: {CWars.kyu6.DuplicateEncode("(( @")} Expected: ))((");
-
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         //CODEWARS: Find the odd int
@@ -202,12 +172,6 @@ namespace CWars
             }
             return odd.Value;
         }
-        // Console.WriteLine(CWars.kyu6.find_it(new int[] {7})); //7
-        // Console.WriteLine(CWars.kyu6.find_it(new int[] {0})); //0
-        // Console.WriteLine(CWars.kyu6.find_it(new int[] {1,1,2})); //2
-        // Console.WriteLine(CWars.kyu6.find_it(new int[] {0,1,0,1,0})); //0
-        // Console.WriteLine(CWars.kyu6.find_it(new int[] {1,2,2,3,3,3,4,3,3,3,2,2,1})); //4
-
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Find the Parity Outlier
@@ -241,9 +205,6 @@ namespace CWars
                 return lastOdd;
             }
         }
-        // Console.WriteLine(CWars.kyu6.Find(new int[] {2,6,8,-10,3}));
-        // Console.WriteLine(CWars.kyu6.Find(new int[] {206847684,1056521,7,17,1901,21104421,7,1,35521,1,7781}));
-        // Console.WriteLine(CWars.kyu6.Find(new int[] { int.MaxValue, 0, 1 }));
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Is a number prime?
@@ -264,9 +225,6 @@ namespace CWars
 
             return true;
         }
-        // Console.WriteLine(CWars.kyu6.IsPrime(0));
-        // Console.WriteLine(CWars.kyu6.IsPrime(1));
-        // Console.WriteLine(CWars.kyu6.IsPrime(2));
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Mutliple of 3 or 5
@@ -282,7 +240,6 @@ namespace CWars
             }
             return result;
         }
-        // Console.WriteLine(CWars.kyu6.MultiOf3or5(10));     
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS - Who likes it?
@@ -303,11 +260,6 @@ namespace CWars
                     return "no one likes this";
             }
         }
-        // Console.WriteLine($"{CWars.kyu6.Likes(new string[0])} = no one likes this");
-        // Console.WriteLine($"{CWars.kyu6.Likes(new string[] {"Peter"})} = Peter likes this");
-        // Console.WriteLine($"{CWars.kyu6.Likes(new string[] {"Jacob", "Alex"})} = Jacob and Alex like this");
-        // Console.WriteLine($"{CWars.kyu6.Likes(new string[] {"Max", "John", "Mark"})} = Max, John and Mark like this");
-        // Console.WriteLine($"{CWars.kyu6.Likes(new string[] {"Alex", "Jacob", "Mark", "Max"})} = Alex, Jacob and 2 others like this");
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Replace With Alphabet Position
@@ -332,8 +284,6 @@ namespace CWars
             // Console.WriteLine(textPos);
             return textPos;
         }
-        // Console.WriteLine($"Answer:   {CWars.kyu6.AlphabetPosition("The sunset sets at twelve o' clock.")} \nExpected: 20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11");
-        // Console.WriteLine($"Answer:   {CWars.kyu6.AlphabetPosition("The narwhal bacons at midnight.")} \nExpected: 20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20");
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Find the unique number
@@ -386,11 +336,6 @@ namespace CWars
             }
             return numOneCount < numTwoCount ? numOne : numTwo;
         }
-        // Console.WriteLine($"Answer: {CWars.kyu6.GetUnique(new [] {1, 2, 2, 2})} Expected: 1");
-        // Console.WriteLine($"Answer: {CWars.kyu6.GetUnique(new [] {-2, 2, 2, 2})} Expected: -2");
-        // Console.WriteLine($"Answer: {CWars.kyu6.GetUnique(new [] {11, 11, 14, 11, 11})} Expected: 14");
-        // Console.WriteLine($"Answer: {CWars.kyu6.GetUnique(new [] {11, 11, 14, 11, 11, 11, 11, 11, 11, 11})} Expected: 14");
-        // Console.WriteLine($"Answer: {CWars.kyu6.GetUnique(new [] {11, 11, 11, 11, 11, 11, 11, 11, 11, 14})} Expected: 14");
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Convert string to camel case
@@ -413,8 +358,6 @@ namespace CWars
             }
             return StrFinal;
         }
-        // Console.WriteLine($"Answer: {CWars.kyu6.ToCamelCase("the_stealth_warrior")} Expected: theStealthWarrior");
-        // Console.WriteLine($"Answer: {CWars.kyu6.ToCamelCase("The-Stealth-Warrior")} Expected: TheStealthWarrior");
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Roman Numerals Encoder
@@ -556,15 +499,6 @@ namespace CWars
             }
             return result;
         }
-        // Console.WriteLine($"Answer: {CWars.kyu6.RomanConvert(1)} Expected: I");
-        // Console.WriteLine($"Answer: {CWars.kyu6.RomanConvert(2)} Expected: II");
-        // Console.WriteLine($"Answer: {CWars.kyu6.RomanConvert(4)} Expected: IV");
-        // Console.WriteLine($"Answer: {CWars.kyu6.RomanConvert(500)} Expected: D");
-        // Console.WriteLine($"Answer: {CWars.kyu6.RomanConvert(1000)} Expected: M");
-        // Console.WriteLine($"Answer: {CWars.kyu6.RomanConvert(1954)} Expected: MCMLIV");
-        // Console.WriteLine($"Answer: {CWars.kyu6.RomanConvert(1990)} Expected: MCMXC");
-        // Console.WriteLine($"Answer: {CWars.kyu6.RomanConvert(2008)} Expected: MMVIII");
-        // Console.WriteLine($"Answer: {CWars.kyu6.RomanConvert(2014)} Expected: IMMXIV");
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Two Sum
@@ -576,15 +510,12 @@ namespace CWars
                 {
                     if (numbers[i] + numbers[x] == target)
                     {
-                        // return new int[] { i, x };
+                        return new int[] { i, x };
                     }
                 }
             }
             throw new ArgumentException("Bad numbers");
         }
-        // Console.WriteLine($"Answer: {CWars.kyu6.TwoSum(new [] { 1, 2, 3 }, 4)} Expected: 0,2");
-        // Console.WriteLine($"Answer: {CWars.kyu6.TwoSum(new [] { 1234, 5678, 9012 }, 14690)} Expected: 1,2");
-        // Console.WriteLine($"Answer: {CWars.kyu6.TwoSum(new [] { 2, 2, 3 }, 4)} Expected: 0,1");
 
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Split Strings
@@ -614,7 +545,5 @@ namespace CWars
             // }
             return result;
         }
-        // Console.WriteLine($"Answer: {CWars.kyu6.SplitString("abc")} Expected: ab, c_");
-        // Console.WriteLine($"Answer: {CWars.kyu6.SplitString("abcdef")} Expected: ab, cd, ef");
     }
 }
