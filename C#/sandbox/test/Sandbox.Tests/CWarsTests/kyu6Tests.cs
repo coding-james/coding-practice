@@ -164,7 +164,7 @@ namespace Sandbox.Tests
         [InlineData("MCMLIV", 1954)]
         [InlineData("MCMXC", 1990)]
         [InlineData("MMVIII", 2008)]
-        [InlineData("IMMXIV", 2014)]
+        [InlineData("MMXIV", 2014)]
 
         public void RomanConvert(string expected, int input)
         {
