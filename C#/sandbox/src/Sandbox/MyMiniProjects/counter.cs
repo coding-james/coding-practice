@@ -6,7 +6,6 @@ namespace MyMiniProjects
     {
         public static void Counter()
         {
-            string answer;
             int counter = 0;
             Console.WriteLine("\nEnter your counter increment:");
             int n1 = Convert.ToInt32(Console.ReadLine());
