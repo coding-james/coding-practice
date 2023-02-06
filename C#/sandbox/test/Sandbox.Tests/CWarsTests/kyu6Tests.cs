@@ -192,5 +192,14 @@ namespace Sandbox.Tests
         {
             Assert.Equal(expected, CWars.kyu6.SplitString(input));
         }
+
+        // CODEWARS: Decode the Morse code
+        [Theory]
+        [InlineData("HEY JUDE",".... . -.--   .--- ..- -.. .")]
+
+        public void Decode(string expected, string input)
+        {
+            Assert.Equal(expected, CWars.kyu6.Decode(input));
+        }
     }
 }
