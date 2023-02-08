@@ -55,5 +55,20 @@ namespace Sandbox.Tests
         {
             Assert.Equal(expected, CWars.kyu5.MoveZeroes(input));
         }
+
+        // CODEWARS: Let's Play Darts
+        [Theory]
+        [InlineData("X", -133.69d, -147.38d)]
+        [InlineData("DB", 4.06d, 0.71d)]
+        [InlineData("SB", 2.38d, -6.06d)]
+        [InlineData("20", -5.43d, 117.95d)]
+        [InlineData("7", -73.905d, -95.94d)]
+        [InlineData("T2", 55.53d, -87.95d)]
+        [InlineData("D9", -145.19d, 86.53d)]
+
+        public void GetScore(string expected, double inputX, double inputY)
+        {
+            Assert.Equal(expected, CWars.kyu5.GetScore(inputX, inputY));
+        }
     }
 }

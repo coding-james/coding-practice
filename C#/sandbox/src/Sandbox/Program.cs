@@ -1,4 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Sandbox.Cave;
+// See https://aka.ms/new-console-template for more information
 
 // OBJECTS AND CLASSES
 // Sandbox.Book book = new Sandbox.Book("Tony's GradeBook");
@@ -12,3 +13,6 @@
 // CODEWARS
 Console.WriteLine("CODEWARS:");
 // Console.WriteLine($"Answer: {CWars.kyu#.METHOD(VALUE)} Expected: RESULT");
+
+Console.WriteLine("Cave C#");
+RunCave.Run();
