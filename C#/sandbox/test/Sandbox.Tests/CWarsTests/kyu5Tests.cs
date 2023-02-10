@@ -83,5 +83,20 @@ namespace Sandbox.Tests
         {
             Assert.Equal(expected, CWars.kyu5.Alphanumeric(input));
         }
+
+        // CODEWARS: First non-repeating character
+        [Theory]
+        [InlineData("a", "a")]
+        [InlineData("t", "stress")]
+        [InlineData("t", "StRess")]
+        [InlineData("e", "moonmen")]
+        [InlineData("", "")]
+        [InlineData("", "aaaaaa")]
+        [InlineData("", "Aaaaaa")]
+
+        public void FirstNonRepeatingLetter(string expected, string input)
+        {
+            Assert.Equal(expected, CWars.kyu5.FirstNonRepeatingLetter(input));
+        }
     }
 }
