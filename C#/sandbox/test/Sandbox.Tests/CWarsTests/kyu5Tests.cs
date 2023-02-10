@@ -70,5 +70,18 @@ namespace Sandbox.Tests
         {
             Assert.Equal(expected, CWars.kyu5.GetScore(inputX, inputY));
         }
+
+        // CODEWARS: Not Very Secure
+        [Theory]
+        [InlineData(true, "Mazinkaiser")]
+        [InlineData(false, "hello world_")]
+        [InlineData(true, "PassW0rd")]
+        [InlineData(false, "     ")]
+        [InlineData(false, "")]
+
+        public void Alphanumeric(bool expected, string input)
+        {
+            Assert.Equal(expected, CWars.kyu5.Alphanumeric(input));
+        }
     }
 }

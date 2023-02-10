@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace CWars
 {
@@ -222,6 +223,13 @@ namespace CWars
                 }
             }
             return result;
+        }
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS - Not very secure
+        public static bool Alphanumeric(string str)
+        {
+            return (Regex.IsMatch(str, "^[a-zA-Z0-9]*$") && str != "");
         }
     }
 }
