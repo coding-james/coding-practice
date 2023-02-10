@@ -17,23 +17,7 @@ namespace Sandbox.Cave
         
         public override string Inventory()
         {
-            return $"\nThere {(Qty == 1? $"is 1 helmet": $"are {Qty} helmets")}, the cost to replace is £{Qty * ReplaceUnitCost}";
-        }
-
-        public string PriceChange()
-        {
-            if (ReplaceUnitCost == OrgUnitCost)
-            {
-                return $"\nThe cost has not changed from £{OrgUnitCost}";
-            }
-            else if (ReplaceUnitCost > OrgUnitCost) 
-            {
-                return $"\nThe cost has increased by £{ReplaceUnitCost - OrgUnitCost} to £{ReplaceUnitCost}";
-            }
-            else
-            {
-                return $"\nThe cost has decreased by £{OrgUnitCost - ReplaceUnitCost} to £{ReplaceUnitCost}";
-            }
+            return $"\nThere {(Qty == 1? $"is 1 helmet": $"are {Qty} helmets")}, the cost to replace is £{(Qty * ReplaceUnitCost).ToString("0.00")}";
         }
     }
 }

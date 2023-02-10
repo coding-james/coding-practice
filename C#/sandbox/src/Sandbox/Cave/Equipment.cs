@@ -20,6 +20,36 @@ namespace Sandbox.Caves
         public string Shop { get; protected set; }
 
         // Constructors / Overloading
+        public Equipment(string equipName, string equipType, string equipSubType, string equipColour, string purchaseDate, string condition, int qty, double orgUnitCost, string shop)
+        {
+            EquipName = equipName;
+            EquipType = equipType;
+            EquipSubType = equipSubType;
+            EquipColour = equipColour;
+            PurchaseDate = purchaseDate;
+            Condition = condition;
+            Qty = qty;
+            OrgUnitCost = orgUnitCost;
+            ReplaceUnitCost = orgUnitCost;
+            Shop = shop;
+        }
+
+        // As per top constructor but doesn't ask for type
+        public Equipment(string equipName, string equipSubType, string equipColour, string purchaseDate, string condition, int qty, double orgUnitCost, string shop)
+        {
+            EquipName = equipName;
+            EquipType = ""; // defaults to blank
+            EquipSubType = equipSubType;
+            EquipColour = equipColour;
+            PurchaseDate = purchaseDate;
+            Condition = condition;
+            Qty = qty;
+            OrgUnitCost = orgUnitCost;
+            ReplaceUnitCost = orgUnitCost;
+            Shop = shop;
+        }
+
+        // As per top constructor but doesn't ask for type or subtype
         public Equipment(string equipName, string equipColour, string purchaseDate, string condition, int qty, double orgUnitCost, string shop)
         {
             EquipName = equipName;
@@ -31,20 +61,6 @@ namespace Sandbox.Caves
             Qty = qty;
             OrgUnitCost = orgUnitCost;
             ReplaceUnitCost = orgUnitCost;
-            Shop = shop;
-        }
-
-        public Equipment(string equipName, string equipType, string equipSubType, string equipColour, string purchaseDate, string condition, int qty, double orgUnitCost, double replaceUnitCost, string shop)
-        {
-            EquipName = equipName;
-            EquipType = equipType;
-            EquipSubType = equipSubType;
-            EquipColour = equipColour;
-            PurchaseDate = purchaseDate;
-            Condition = condition;
-            Qty = qty;
-            OrgUnitCost = orgUnitCost;
-            ReplaceUnitCost = replaceUnitCost;
             Shop = shop;
         }
 
@@ -74,6 +90,22 @@ namespace Sandbox.Caves
         public virtual string Details()
         {
             return $"\n{EquipName} is a {(EquipSubType == EquipType? EquipType: $"{EquipSubType} of {EquipType}s")} and was purchased from {Shop}";
+        }
+
+        public string PriceChange()
+        {
+            if (ReplaceUnitCost == OrgUnitCost)
+            {
+                return $"\nThe cost of {EquipName} has not changed from £{OrgUnitCost.ToString("0.00")}";
+            }
+            else if (ReplaceUnitCost > OrgUnitCost)
+            {
+                return $"\nThe cost of {EquipName} has increased by £{(ReplaceUnitCost - OrgUnitCost).ToString("0.00")} to £{ReplaceUnitCost.ToString("0.00")}";
+            }
+            else
+            {
+                return $"\nThe cost of {EquipName} has decreased by £{(OrgUnitCost - ReplaceUnitCost).ToString("0.00")} to £{ReplaceUnitCost.ToString("0.00")}";
+            }
         }
     }
 }
