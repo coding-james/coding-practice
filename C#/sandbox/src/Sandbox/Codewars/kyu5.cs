@@ -298,5 +298,33 @@ namespace CWars
             while (startLen != endLen);
             return tempDir.ToArray();
         }
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS - Valid Parentheses
+        public static bool ValidParentheses(string input)
+        {
+            int countOpen = 0;
+            int countClose = 0;
+            foreach (char c in input)
+            {
+                if (c == Char.Parse("(") && countOpen >= countClose)
+                {
+                    countOpen++;
+                }
+                else if (c == Char.Parse(")") && countOpen >= countClose)
+                {
+                    countClose++;
+                }
+                else if (c == Char.Parse(")"))
+                {
+                    return false;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            return countOpen == countClose ? true : false;
+        }
     }
 }

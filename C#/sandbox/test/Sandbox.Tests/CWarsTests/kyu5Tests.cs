@@ -109,5 +109,17 @@ namespace Sandbox.Tests
         {
             Assert.Equal(expected, CWars.kyu5.dirReduc(input));
         }
+
+        // CODEWARS: Valid Parentheses
+        [Theory]
+        [InlineData(true, "()")]
+        [InlineData(false, ")(()))")]
+        [InlineData(false, "(")]
+        [InlineData(true, "(())((()())())")]
+
+        public void ValidParentheses(bool expected, string input)
+        {
+            Assert.Equal(expected, CWars.kyu5.ValidParentheses(input));
+        }
     }
 }
