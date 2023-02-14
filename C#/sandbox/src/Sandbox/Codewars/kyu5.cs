@@ -239,7 +239,7 @@ namespace CWars
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS - First non-repeating character
         public static string FirstNonRepeatingLetter(string s)
-        {           
+        {
             var countLetter = s.ToLower().GroupBy(ch => ch).ToDictionary(group => group.Key, group => group.Count());
             string first = "";
             int found = 0;
@@ -252,6 +252,51 @@ namespace CWars
                 }
             }
             return first;
+        }
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS - Directions Reduction
+        public static string[] dirReduc(String[] arr)
+        {
+            List<string> tempDir = new List<string>(arr);
+            int startLen = 0;
+            int endLen = 0;
+
+            do
+            {
+                startLen = tempDir.Count;
+                for (int i = 0; i < tempDir.Count - 1; i++)
+                {
+                    string opposite = "";
+
+                    switch (tempDir[i])
+                    {
+                        case "NORTH":
+                            opposite = "SOUTH";
+                            break;
+                        case "SOUTH":
+                            opposite = "NORTH";
+                            break;
+                        case "WEST":
+                            opposite = "EAST";
+                            break;
+                        case "EAST":
+                            opposite = "WEST";
+                            break;
+                        default:
+                            break;
+                    }
+
+                    if (tempDir[i + 1] == opposite)
+                    {
+                        tempDir.RemoveAt(i);
+                        tempDir.RemoveAt(i);
+                    }
+                }
+                endLen = tempDir.Count;
+            }
+            while (startLen != endLen);
+            return tempDir.ToArray();
         }
     }
 }
