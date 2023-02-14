@@ -4,16 +4,16 @@ namespace Sandbox.Tests
     {
         // CODEWARS: Scramblies
         [Theory]
-        [InlineData(true, "rkqodlw","world")]
-        [InlineData(true, "cedewaraaossoqqyt","codewars")]
-        [InlineData(false, "katas","steak")]
-        [InlineData(false, "scriptjavx","javascript")]
-        [InlineData(true, "scriptingjava","javascript")]
-        [InlineData(true, "scriptsjava","javascripts")]
-        [InlineData(false, "javscripts","javascript")]
-        [InlineData(true, "aabbcamaomsccdd","commas")]
-        [InlineData(true, "commas","commas")]
-        [InlineData(true, "sammoc","commas")]
+        [InlineData(true, "rkqodlw", "world")]
+        [InlineData(true, "cedewaraaossoqqyt", "codewars")]
+        [InlineData(false, "katas", "steak")]
+        [InlineData(false, "scriptjavx", "javascript")]
+        [InlineData(true, "scriptingjava", "javascript")]
+        [InlineData(true, "scriptsjava", "javascripts")]
+        [InlineData(false, "javscripts", "javascript")]
+        [InlineData(true, "aabbcamaomsccdd", "commas")]
+        [InlineData(true, "commas", "commas")]
+        [InlineData(true, "sammoc", "commas")]
 
         public void scramble(bool expected, string input1, string input2)
         {
@@ -69,6 +69,57 @@ namespace Sandbox.Tests
         public void GetScore(string expected, double inputX, double inputY)
         {
             Assert.Equal(expected, CWars.kyu5.GetScore(inputX, inputY));
+        }
+
+        // CODEWARS: Not Very Secure
+        [Theory]
+        [InlineData(true, "Mazinkaiser")]
+        [InlineData(false, "hello world_")]
+        [InlineData(true, "PassW0rd")]
+        [InlineData(false, "     ")]
+        [InlineData(false, "")]
+
+        public void Alphanumeric(bool expected, string input)
+        {
+            Assert.Equal(expected, CWars.kyu5.Alphanumeric(input));
+        }
+
+        // CODEWARS: First non-repeating character
+        [Theory]
+        [InlineData("a", "a")]
+        [InlineData("t", "stress")]
+        [InlineData("t", "StRess")]
+        [InlineData("e", "moonmen")]
+        [InlineData("", "")]
+        [InlineData("", "aaaaaa")]
+        [InlineData("", "Aaaaaa")]
+
+        public void FirstNonRepeatingLetter(string expected, string input)
+        {
+            Assert.Equal(expected, CWars.kyu5.FirstNonRepeatingLetter(input));
+        }
+
+        // CODEWARS: Directions Reduction
+        [Theory]
+        [InlineData(new string[] { "SOUTH", "WEST", "WEST" }, new string[] { "NORTH", "SOUTH", "SOUTH", "WEST", "WEST" })]
+        [InlineData(new string[] { }, new string[] { "NORTH", "SOUTH", "EAST", "WEST" })]
+        [InlineData(new string[] { "WEST" }, new string[] { "NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST" })]
+
+        public void dirReduc(string[] expected, string[] input)
+        {
+            Assert.Equal(expected, CWars.kyu5.dirReduc(input));
+        }
+
+        // CODEWARS: Valid Parentheses
+        [Theory]
+        [InlineData(true, "()")]
+        [InlineData(false, ")(()))")]
+        [InlineData(false, "(")]
+        [InlineData(true, "(())((()())())")]
+
+        public void ValidParentheses(bool expected, string input)
+        {
+            Assert.Equal(expected, CWars.kyu5.ValidParentheses(input));
         }
     }
 }
