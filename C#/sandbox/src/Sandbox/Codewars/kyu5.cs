@@ -1,5 +1,10 @@
 using System;
+using System.Collections.Generic;
+using System.Diagnostics.Metrics;
+using System.Globalization;
 using System.Linq;
+using System.Text.RegularExpressions;
+using System.Xml;
 
 namespace CWars
 {
@@ -101,9 +106,9 @@ namespace CWars
                     result[i] = a;
                     i++;
                 }
-                else 
-                { 
-                    zeroCount++; 
+                else
+                {
+                    zeroCount++;
                 }
             }
 
@@ -222,6 +227,104 @@ namespace CWars
                 }
             }
             return result;
+        }
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS - Not very secure
+        public static bool Alphanumeric(string str)
+        {
+            return (Regex.IsMatch(str, "^[a-zA-Z0-9]*$") && str != "");
+        }
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS - First non-repeating character
+        public static string FirstNonRepeatingLetter(string s)
+        {
+            var countLetter = s.ToLower().GroupBy(ch => ch).ToDictionary(group => group.Key, group => group.Count());
+            string first = "";
+            int found = 0;
+            foreach (var letter in countLetter)
+            {
+                if (letter.Value == 1 && found < 1)
+                {
+                    first = s.Substring(s.ToLower().IndexOf(letter.Key), 1);
+                    found += 1;
+                }
+            }
+            return first;
+        }
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS - Directions Reduction
+        public static string[] dirReduc(String[] arr)
+        {
+            List<string> tempDir = new List<string>(arr);
+            int startLen = 0;
+            int endLen = 0;
+
+            do
+            {
+                startLen = tempDir.Count;
+                for (int i = 0; i < tempDir.Count - 1; i++)
+                {
+                    string opposite = "";
+
+                    switch (tempDir[i])
+                    {
+                        case "NORTH":
+                            opposite = "SOUTH";
+                            break;
+                        case "SOUTH":
+                            opposite = "NORTH";
+                            break;
+                        case "WEST":
+                            opposite = "EAST";
+                            break;
+                        case "EAST":
+                            opposite = "WEST";
+                            break;
+                        default:
+                            break;
+                    }
+
+                    if (tempDir[i + 1] == opposite)
+                    {
+                        tempDir.RemoveAt(i);
+                        tempDir.RemoveAt(i);
+                    }
+                }
+                endLen = tempDir.Count;
+            }
+            while (startLen != endLen);
+            return tempDir.ToArray();
+        }
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS - Valid Parentheses
+        public static bool ValidParentheses(string input)
+        {
+            int countOpen = 0;
+            int countClose = 0;
+            foreach (char c in input)
+            {
+                if (c == Char.Parse("(") && countOpen >= countClose)
+                {
+                    countOpen++;
+                }
+                else if (c == Char.Parse(")") && countOpen >= countClose)
+                {
+                    countClose++;
+                }
+                else if (c == Char.Parse(")"))
+                {
+                    return false;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            return countOpen == countClose ? true : false;
         }
     }
 }
