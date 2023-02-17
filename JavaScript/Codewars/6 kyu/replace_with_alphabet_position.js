@@ -16,4 +16,4 @@ function alphabetPosition(text) {
     return textPos;
   }
 
-console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+module.exports = alphabetPosition;

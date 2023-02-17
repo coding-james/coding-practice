@@ -2,7 +2,7 @@
 // convert the number to a roman numeral
 // https://en.wikipedia.org/wiki/Roman_numerals
 
-function solution(number) {
+function RomanNumerals(number) {
     numberStr = number.toString();
     result = "";
 
@@ -127,20 +127,4 @@ function solution(number) {
     // return `Digits = ${numberStr.length} - ${number} becomes ${result}`;
 }
 
-// Test
-console.log(solution(1));
-console.log(solution(2));
-console.log(solution(3));
-console.log(solution(4));
-console.log(solution(5));
-console.log(solution(9));
-console.log(solution(10));
-console.log(solution(11));
-console.log(solution(19));
-console.log(solution(22));
-console.log(solution(15));
-console.log(solution(1000));
-console.log(solution(1001));
-console.log(solution(1990));
-console.log(solution(2007));
-console.log(solution(2008));
+module.exports = RomanNumerals;
