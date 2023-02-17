@@ -10,8 +10,4 @@ function solution(number) {
     // console.log(result);
 }
 
-solution(10);
-solution(3);
-solution(0);
-solution(-3);
-solution(9);
+module.exports = solution;
