@@ -17,7 +17,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/coding-james/coding-practice">
-    <img src="images/codingLight.png" alt="Logo" width="80" height="80" style="background-color:navy;padding:5px";>
+    <img src="images/codingBlue.png" alt="Logo" width="150" height="150">
   </a>
 
 <h3 align="center">Coding Practice</h3>
