@@ -1,15 +1,9 @@
 // CODEWARS.COM - Unique in order
 var uniqueInOrder = function (iterable) {
     let unique = [];
-    if (iterable.length == 1 && iterable.includes('') && iterable.constructor === Array) {
-        // console.log("I'm an emptry string in an array");
-        unique = [''];
-        return unique;
-    } else if (iterable.length == 1 && iterable.includes(' ') && iterable.constructor === Array) {
-        // console.log("I'm an emptry string in an array");
-        unique = [''];
-        return unique;
-    } else if (iterable.constructor === String) {
+    if (iterable.length == 1 && (iterable.includes('') || iterable.includes(' ')) && iterable.constructor === Array) {
+        return [''];
+    } else if (iterable.constructor === String && iterable.length > 0) {
         unique = [iterable.charAt(0)];
         for (let char = 0; char < iterable.length; char++) {
             if (iterable.charAt(char) != unique[unique.length - 1]) {
@@ -26,19 +20,8 @@ var uniqueInOrder = function (iterable) {
         }
         return unique;
     } else {
-        unique = [''];
         return unique;
     }
 }
 
-console.log(uniqueInOrder('AAAABBBCCDAABBB'));
-console.log(uniqueInOrder('ABBCcAD'));
-console.log(uniqueInOrder([1, 2, 2, 3, 3]));
-console.log(uniqueInOrder([]));
-console.log(uniqueInOrder([""]));
-console.log(uniqueInOrder(['']));
-console.log(uniqueInOrder(['A']));
-console.log(uniqueInOrder(['a']));
-console.log(uniqueInOrder([' ']));
-console.log(uniqueInOrder("A"));
-console.log(uniqueInOrder([ '' ]));
+module.exports = uniqueInOrder;
