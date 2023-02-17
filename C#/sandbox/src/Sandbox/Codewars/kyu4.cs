@@ -94,7 +94,7 @@ namespace CWars
                 return "remove";
             }
         }
-        
+
         // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // CODEWARS: Sum Strings as Numbers - without using BigInteger
         public static string sumStrings(string a, string b)
@@ -161,6 +161,45 @@ namespace CWars
             }
 
             return (carryForward2 / 10) == 0 ? result2 : (carryForward2 / 10).ToString() + result2;
+        }
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // CODEWARS: Next bigger number with the same digits
+        public static long NextBiggerNumber(long n)
+        {
+            // Create a List for digits
+            List<int> nList = new List<int>();
+
+            // Add digits to list
+            foreach (char digit in n.ToString())
+            {
+                nList.Add((digit - '0'));
+            }
+
+            // from right to left, check for a larger digit, if found then replace
+            for (int i = nList.Count - 1; i >= 1; --i)
+            {
+                int xTmp = nList[i - 1];
+
+                if (nList[i] > xTmp)
+                {
+                    nList[i - 1] = nList[i];
+                    nList[i] = xTmp;
+                    string result = "";
+                    foreach (int digit in nList)
+                    {
+                        result += digit.ToString();
+                    }
+
+                    //TO DO - Add in a check if not last two digits of list, sort remaining numbers after the above change
+                    return long.Parse(result);
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            return -1;
         }
     }
 }
