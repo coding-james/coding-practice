@@ -65,5 +65,23 @@ namespace Sandbox.Tests
         [InlineData("10098", "9999", "99")]
 
         public void sumStrings(string expected, string input1, string input2) => Assert.Equal(expected, CWars.kyu4.sumStrings(input1, input2));
+
+        // CODEWARS: Next bigger number with the same digits
+        [Theory]
+        [InlineData(21, 12)]
+        [InlineData(531, 513)]
+        [InlineData(2071, 2017)]
+        [InlineData(441, 414)]
+        [InlineData(414, 144)]
+        [InlineData(-1, 9)]
+        [InlineData(-1, 111)]
+        [InlineData(-1, 531)]
+        [InlineData(1234567908, 1234567890)]
+        [InlineData(960315268, 960312865)]
+
+        public void NextBiggerNumber(long expected, long input)
+        {
+            Assert.Equal(expected, CWars.kyu4.NextBiggerNumber(input));
+        }
     }
 }
