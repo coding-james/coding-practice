@@ -2,6 +2,7 @@ const {expect} = require("chai");
 const domainName = require("../5 kyu/domain_name");
 const persistence = require("../5 kyu/persistent_bugger");
 const maxSequence = require("../5 kyu/maximum_sum_subarray");
+const generateHashtag = require("../5 kyu/hashtag_generator");
 
 // CODEWARS: Extract the domain name from a URL
 describe("Extract the domain name from a URL Tests", () => {
@@ -52,6 +53,30 @@ describe("Maximum subarray sum", () => {
     tests.forEach(({arg, expected}) => {
         it(`should return ${expected}`, () => {
             expect(maxSequence(arg)).to.equal(expected);
+        });
+    });
+});
+
+// CODEWARS: The Hashtag Generator
+describe("The Hashtag Generator", () => {
+    const tests = [
+        {arg: "", expected: false},
+        {arg: " Hello there thanks for trying my Kata", expected: "#HelloThereThanksForTryingMyKata"},
+        {arg: "    Hello     World   ", expected: "#HelloWorld"},
+        {arg: " ".repeat(200), expected: false},
+        {arg: "Do We have A Hashtag", expected: "#DoWeHaveAHashtag"},
+        {arg: "Codewars", expected: "#Codewars"},
+        {arg: "Codewars is nice", expected: "#CodewarsIsNice"},
+        {arg: "Codewars Is Nice", expected: "#CodewarsIsNice"},
+        {arg: "code" + " ".repeat(140) + "wars", expected: "#CodeWars"},
+        {arg: "Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong Cat", expected: false},
+        {arg: "a".repeat(139), expected: "#A" + "a".repeat(138)},
+        {arg: "a".repeat(140), expected: false},
+    ];  
+
+    tests.forEach(({arg, expected}) => {
+        it(`should return ${expected}`, () => {
+            expect(generateHashtag(arg)).to.equal(expected);
         });
     });
 });
