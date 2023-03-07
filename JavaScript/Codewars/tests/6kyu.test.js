@@ -4,6 +4,7 @@ const alphabetPosition = require("../6 kyu/replace_with_alphabet_position");
 const RomanNumerals = require("../6 kyu/roman_no_enconder");
 const isPangram = require("../6 kyu/detect_pangram");
 const uniqueInOrder = require("../6 kyu/unique_in_order");
+const comp = require("../6 kyu/are_they_the_same");
 
 // CODEWARS: Detect Pangram
 describe("Detect Pangram", () => {
@@ -83,7 +84,7 @@ describe("Unique in order", () => {
     const tests = [
         { arg: 'AAAABBBCCDAABBB', expected: ['A', 'B', 'C', 'D', 'A', 'B'] },
         { arg: 'ABBCcAD', expected: ['A', 'B', 'C', 'c', 'A', 'D'] },
-        { arg: [1,2,2,3,3], expected: [1,2,3] },
+        { arg: [1, 2, 2, 3, 3], expected: [1, 2, 3] },
         { arg: [], expected: [] },
         { arg: [""], expected: [''] },
         { arg: [''], expected: [''] },
@@ -91,12 +92,28 @@ describe("Unique in order", () => {
         { arg: ['a'], expected: ['a'] },
         { arg: [' '], expected: [''] },
         { arg: "A", expected: ['A'] },
-        { arg: [ '' ], expected: [''] },
+        { arg: [''], expected: [''] },
     ];
 
     tests.forEach(({ arg, expected }) => {
         it(`should return ${expected}`, () => {
             assert.deepEqual(uniqueInOrder(arg), expected);
+        });
+    });
+});
+
+// CODEWARS: Are they the "same"?
+describe("Are they the same?", () => {
+    const tests = [
+        { arg: [[121, 144, 19, 161, 19, 144, 19, 11], [121, 14641, 20736, 361, 25921, 361, 20736, 361]], expected: true },
+        { arg: [[121, 144, 19, 161, 19, 144, 19, 11], [11 * 11, 121 * 121, 144 * 144, 19 * 19, 161 * 161, 19 * 19, 144 * 144, 19 * 19]], expected: true },
+        { arg: [[121, 144, 19, 161, 19, 144, 19, 11], [132, 14641, 20736, 361, 25921, 361, 20736, 361]], expected: false },
+        { arg: [[121, 144, 19, 161, 19, 144, 19, 11], [121, 14641, 20736, 36100, 25921, 361, 20736, 361]], expected: false },
+    ];
+
+    tests.forEach(({ arg, expected }) => {
+        it(`should return ${expected}`, () => {
+            expect(comp(arg[0], arg[1])).to.equal(expected);
         });
     });
 });
