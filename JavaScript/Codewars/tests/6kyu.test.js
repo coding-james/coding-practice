@@ -5,6 +5,7 @@ const RomanNumerals = require("../6 kyu/roman_no_enconder");
 const isPangram = require("../6 kyu/detect_pangram");
 const uniqueInOrder = require("../6 kyu/unique_in_order");
 const comp = require("../6 kyu/are_they_the_same");
+const wave = require("../6 kyu/mexican_wave");
 
 // CODEWARS: Detect Pangram
 describe("Detect Pangram", () => {
@@ -114,6 +115,23 @@ describe("Are they the same?", () => {
     tests.forEach(({ arg, expected }) => {
         it(`should return ${expected}`, () => {
             expect(comp(arg[0], arg[1])).to.equal(expected);
+        });
+    });
+});
+
+// CODEWARS: Mexican Wave
+describe("Mexican Wave", () => {
+    const tests = [
+        { arg: "hello", expected: ["Hello", "hEllo", "heLlo", "helLo", "hellO"] },
+        { arg: "codewars", expected: ["Codewars", "cOdewars", "coDewars", "codEwars", "codeWars", "codewArs", "codewaRs", "codewarS"] },
+        { arg: "", expected: [] },
+        { arg: "two words", expected: ["Two words", "tWo words", "twO words", "two Words", "two wOrds", "two woRds", "two worDs", "two wordS"] },
+        { arg: " gap ", expected: [" Gap ", " gAp ", " gaP "] },
+    ];
+
+    tests.forEach(({ arg, expected }) => {
+        it(`should return ${expected}`, () => {
+            assert.deepEqual(wave(arg), expected);
         });
     });
 });
