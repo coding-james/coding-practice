@@ -2,6 +2,7 @@ const { assert } = require("chai");
 const topThreeWords = require("../4 kyu/top3words");
 const snail = require("../4 kyu/snail");
 const nextSmaller = require("../4 kyu/next_smaller_number");
+const permutations = require("../4 kyu/so_many_permutations");
 
 // CODEWARS: Most frequently used words in a text
 describe("Most frequently used words in a text", () => {
@@ -62,6 +63,22 @@ describe("Next smaller number with the same digits", () => {
     tests.forEach(({ arg, expected }) => {
         it(`${arg} should return ${expected}`, () => {
             assert.equal(nextSmaller(arg), expected);
+        });
+    });
+});
+
+// CODEWARS: So Many Permutations!
+describe("So Many Permutations!", () => {
+    const tests = [
+        { arg: 'a', expected: ['a'] },
+        { arg: 'ab', expected: ['ab', 'ba'] },
+        { arg: 'aabb', expected: ['aabb', 'abab', 'abba', 'baab', 'baba', 'bbaa'] },
+        { arg: 'abc', expected: [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ] },
+    ];
+
+    tests.forEach(({ arg, expected }) => {
+        it(`should return ${expected}`, () => {
+            assert.deepEqual(permutations(arg), expected.sort());
         });
     });
 });
