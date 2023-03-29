@@ -18,6 +18,8 @@ namespace Sandbox.Tests
             [InlineData("", "", 3)]
             [InlineData("ABC", "ABC", 3)]
             [InlineData("AB", "AB", 2)]
+            [InlineData("Tacotvyohtakhua eea dt b slhyi wIa t t dwolt  yyhtou' uehed aei ovd bahoidy yyeeg tt s 'wo  sot  a erou,sit'asbgher woltnnlowot hAomaaoyeuon gtnnee dbetnneo d hrd of  abna yo oId yu nbw yo", "Today is gonna be the day that they're gonna throw it back to you And by now, you should've somehow realised what you gotta do I don't believe that anybody feels the way I do about you now", 15)]
+            [InlineData("T'yieaoyrbnlsivobdeedoaeledoahgnwedetIuytoA,rwbhytitnuywhtaaysanoooa'twoghayuhtnaeuottoseyonhnnyhthmodytonarkoouIbswadocusgoolbewaleoddeehibdvtayett'tf", "Todayisgonnabethedaythatthey'regonnathrowitbacktoyouAndbynow,youshould'vesomehowrealisedwhatyougottadoIdon'tbelievethatanybodyfeelsthewayIdoaboutyounow", 15)]
 
             public void RailFenceCipher_Encode(string expected, string input1, int input2)
             {
@@ -31,6 +33,8 @@ namespace Sandbox.Tests
             [InlineData("", "", 3)]
             [InlineData("ABC", "ABC", 3)]
             [InlineData("AB", "AB", 2)]
+            [InlineData("Today is gonna be the day that they're gonna throw it back to you And by now, you should've somehow realised what you gotta do I don't believe that anybody feels the way I do about you now", "Tacotvyohtakhua eea dt b slhyi wIa t t dwolt  yyhtou' uehed aei ovd bahoidy yyeeg tt s 'wo  sot  a erou,sit'asbgher woltnnlowot hAomaaoyeuon gtnnee dbetnneo d hrd of  abna yo oId yu nbw yo", 15)]
+            [InlineData("Todayisgonnabethedaythatthey'regonnathrowitbacktoyouAndbynow,youshould'vesomehowrealisedwhatyougottadoIdon'tbelievethatanybodyfeelsthewayIdoaboutyounow", "T'yieaoyrbnlsivobdeedoaeledoahgnwedetIuytoA,rwbhytitnuywhtaaysanoooa'twoghayuhtnaeuottoseyonhnnyhthmodytonarkoouIbswadocusgoolbewaleoddeehibdvtayett'tf", 15)]
 
             public void RailFenceCipher_Decode(string expected, string input1, int input2)
             {
