@@ -11,7 +11,7 @@ namespace MyMiniProjects
             int n1 = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Do you want to increase or decrease (+,-)");
-            string symbol = Console.ReadLine();
+            string symbol = Console.ReadLine() ?? string.Empty;
 
             do
             {
@@ -21,7 +21,7 @@ namespace MyMiniProjects
                     n1 = Convert.ToInt32(Console.ReadLine());
 
                     Console.WriteLine("Do you want to increase or decrease (+,-)");
-                    symbol = Console.ReadLine();
+                    symbol = Console.ReadLine() ?? string.Empty;
                 }
 
                 switch (symbol)
@@ -39,7 +39,7 @@ namespace MyMiniProjects
                         break;
                 }
                 Console.WriteLine("\nDo you want to increase (+), decrease (-), change increment value (c) or exit (x)?");
-                symbol = Console.ReadLine();
+                symbol = Console.ReadLine() ?? string.Empty;
             }
             while (symbol.ToLower() == "c" || symbol == "+" || symbol == "-");
         }

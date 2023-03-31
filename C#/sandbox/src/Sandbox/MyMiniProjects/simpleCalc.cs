@@ -16,7 +16,7 @@ namespace MyMiniProjects
                 int n2 = Convert.ToInt32(Console.ReadLine());
 
                 Console.WriteLine("Select your operator (/,+,-,*)");
-                string symbol = Console.ReadLine();
+                string symbol = Console.ReadLine() ?? string.Empty;
 
                 switch (symbol)
                 {
@@ -37,7 +37,7 @@ namespace MyMiniProjects
                         break;
                 }
                 Console.WriteLine("\nDo you want to continue (y/n)?");
-                answer = Console.ReadLine();
+                answer = Console.ReadLine() ?? string.Empty;
             }
             while (answer.ToUpper() == "Y");
         }
