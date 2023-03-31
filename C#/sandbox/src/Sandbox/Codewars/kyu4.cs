@@ -167,8 +167,10 @@ namespace CWars
         // CODEWARS: Next bigger number with the same digits
         public static long NextBiggerNumber(long n)
         {
-            // Create a List for digits
+            // Create a List and subList for digits
             List<int> nList = new List<int>();
+            List<int> subList = new List<int>();
+            string result = "";
 
             // Add digits to list
             foreach (char digit in n.ToString())
@@ -176,30 +178,170 @@ namespace CWars
                 nList.Add((digit - '0'));
             }
 
-            // from right to left, check for a larger digit, if found then replace
-            for (int i = nList.Count - 1; i >= 1; --i)
+            // from right to left, check for a lower digit, add to subList until a lower digit found then replace
+            for (int i = nList.Count - 1; i >= 1; i--)
             {
-                int xTmp = nList[i - 1];
-
-                if (nList[i] > xTmp)
+                if (nList[i] > nList[i - 1])
                 {
-                    nList[i - 1] = nList[i];
-                    nList[i] = xTmp;
-                    string result = "";
-                    foreach (int digit in nList)
+                    subList.Add(nList[i]);
+                    subList.Add(nList[i - 1]);
+                    subList.Sort();
+                    // if nList[i] is smaller than subList num, then replace and remove from list.
+                    // then for remaining replace remaining nList nums with subList nums
+                    for (int s = 0; s < subList.Count; s++)
                     {
-                        result += digit.ToString();
-                    }
+                        if (nList[i - 1] < subList[s])
+                        {
+                            nList[i - 1] = subList[s];
+                            subList.RemoveAt(s);
 
-                    //TO DO - Add in a check if not last two digits of list, sort remaining numbers after the above change
-                    return long.Parse(result);
+                            foreach (int num in subList)
+                            {
+                                nList[i] = num;
+                                i++;
+                            }
+
+                            foreach (int digit in nList)
+                            {
+                                result += digit.ToString();
+                            }
+                            return long.Parse(result);
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
                 }
                 else
                 {
-                    continue;
+                    subList.Add(nList[i]);
                 }
             }
             return -1;
+        }
+
+        // CODEWARS: Range Extraction
+        public static string Extract(int[] args)
+        {
+            string result = "";
+            for (int index = 0; index < args.Length; index++)
+            {
+                // FOR each number in args, check if next two are in sequence, if so keep working through sequence, recording start and end numbers in sequence
+                if (args.Length > index + 2 && args[index + 1] == args[index] + 1 && args[index + 2] == args[index] + 2)
+                {
+                    int start = args[index];
+                    int end = args[index + 2];
+                    int endIndex = index + 2;
+                    for (int x = endIndex; x < args.Length; x++)
+                    {
+                        if (args.Length > x + 1 && args[x] + 1 == args[x + 1])
+                        {
+                            end = args[x + 1];
+                            endIndex = x + 1;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    result += endIndex + 1 < args.Length ? $"{start}-{end}," : $"{start}-{end}";
+                    index = endIndex; // when sequence ends, start at index after sequence
+                }
+                else
+                {
+                    // otherwise just add number to string
+                    result += index + 1 < args.Length ? $"{args[index]}," : args[index].ToString();
+                }
+            }
+            return result;
+        }
+
+        // CODEWARS: Sum of Intervals
+        // working with (int,int)[] https://stackoverflow.com/questions/59907372/how-to-use-this-combined-data-type-int-int
+        public static int SumIntervals((int, int)[] intervals)
+        {
+            int result = 0;
+            List<int> ranges = new List<int>();
+
+            if (intervals != null && intervals.Length != 0)
+            {
+                for (int i = 0; i < intervals.Length; i++)
+                {
+                    ranges = collapseRange(intervals[i].Item1, intervals[i].Item2, ranges);
+                }
+            }
+
+            // Cycle through again until ranges no longer reduces in size
+            int currentRangeCount = 0;
+            int newRangeCount = 0;
+            do
+            {
+                currentRangeCount = ranges.Count;
+                List<int> rangesNew = new List<int>();
+                for (int i = 0; i < ranges.Count; i += 2)
+                {
+                    rangesNew = collapseRange(ranges[i], ranges[i + 1], rangesNew);
+                }
+                ranges = rangesNew;
+                newRangeCount = ranges.Count;
+            }
+            while (currentRangeCount != newRangeCount);
+
+            if (ranges.Count > 0)
+            {
+                for (int i = 0; i < ranges.Count; i += 2)
+                {
+                    result += ranges[i + 1] - ranges[i];
+                }
+            }
+            return result;
+        }
+
+        private static List<int> collapseRange(int start, int end, List<int> inputRange)
+        {
+            List<int> rangesTmp = inputRange;
+            if (rangesTmp.Count == 0)
+            {
+                rangesTmp.Add(start);
+                rangesTmp.Add(end);
+            }
+            else // check if it overlaps with an existing one
+            {
+                for (int j = 0; j < rangesTmp.Count; j += 2)
+                {
+                    if (start >= rangesTmp[j] && end <= rangesTmp[j + 1]) // if interval sits within an existing range
+                    {
+                        break;
+                    }
+                    else if (start < rangesTmp[j] && end > rangesTmp[j + 1]) // extend top and bottom if larger range
+                    {
+                        rangesTmp[j] = start;
+                        rangesTmp[j + 1] = end;
+                        break;
+                    }
+                    else if (start >= rangesTmp[j] && start <= rangesTmp[j + 1]) // extend top of range
+                    {
+                        rangesTmp[j + 1] = end;
+                        break;
+                    }
+                    else if (end <= rangesTmp[j + 1] && end >= rangesTmp[j]) // lower end of range
+                    {
+                        rangesTmp[j] = start;
+                        break;
+                    }
+                    else if (j == rangesTmp.Count - 2) // on last loop add to ranges
+                    {
+                        rangesTmp.Add(start);
+                        rangesTmp.Add(end);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+            }
+            return rangesTmp;
         }
     }
 }
