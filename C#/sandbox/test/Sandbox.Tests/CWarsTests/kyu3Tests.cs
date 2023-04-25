@@ -23,7 +23,7 @@ namespace Sandbox.Tests
 
             public void RailFenceCipher_Encode(string expected, string input1, int input2)
             {
-                Assert.Equal(expected, CWars.kyu3.Encode(input1, input2));
+                Assert.Equal(expected, Codewars.kyu3.RailFenceCipher.Encode(input1, input2));
             }
 
             [Theory]
@@ -38,7 +38,7 @@ namespace Sandbox.Tests
 
             public void RailFenceCipher_Decode(string expected, string input1, int input2)
             {
-                Assert.Equal(expected, CWars.kyu3.Decode(input1, input2));
+                Assert.Equal(expected, Codewars.kyu3.RailFenceCipher.Decode(input1, input2));
             }
         }
 

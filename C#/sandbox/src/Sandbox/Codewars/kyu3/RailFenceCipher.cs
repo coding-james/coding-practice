@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CWars
+namespace Sandbox.Codewars.kyu3
 {
-    public class kyu3
+    public class RailFenceCipher
     {
         // CODEWARS: Rail Fence Cipher: Encoding and Decoding
         public static string Encode(string s, int n)
