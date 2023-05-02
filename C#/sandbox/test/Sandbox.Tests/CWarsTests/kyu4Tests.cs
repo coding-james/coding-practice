@@ -1,3 +1,4 @@
+using Sandbox.Codewars.kyu4;
 using Xunit;
 // TODO: take a look at https://stackoverflow.com/questions/42467244/xunit-and-multiple-data-records-for-a-test
 // https://learn.microsoft.com/en-us/visualstudio/test/walkthrough-creating-and-running-unit-tests-for-managed-code?view=vs-2022
@@ -159,6 +160,135 @@ namespace Sandbox.Tests
             public void ShouldHandleLargeRandomIntervals()
             {
                 Assert.Equal(461476477, CWars.kyu4.SumIntervals(new Interval[] { (-573528343, -571443363), (-404938234, -396893974), (-247571308, -238405012), (-630492169, -622051206), (-954703734, -951452445), (16977492, 26384115), (-46420694, -37011236), (25182514, 29886867), (927981456, 937720825), (635518698, 640898831), (893880536, 895402307), (789961613, 793176771), (-661958883, -660707722), (-225081790, -215429208), (-744126808, -738583557), (-671908501, -667796544), (13735989, 16822008), (-142362877, -136590466), (-176574521, -175124974), (-542581752, -534579489), (-958525369, -954868609), (-641501655, -631680661), (623564313, 629895314), (-358451001, -357238595), (623042781, 628743187), (-301469560, -292579480), (637244718, 643336245), (762711780, 769192762), (807266386, 810716075), (695230808, 701289613), (964324701, 973735567), (-767828304, -766096865), (950040452, 959392007), (-28145107, -21437885), (-716947927, -711542037), (-122305075, -114684576), (642159714, 646197638), (-295854353, -293828857), (-565968776, -560100007), (559690829, 564602559), (-123545469, -121841837), (267746742, 274847034), (716228515, 724349487), (-481079162, -471982827), (319316845, 320752658), (-338273878, -330550502), (419632788, 425361538), (535957971, 542161340), (676975262, 681299647), (-658082407, -649132895), (745130308, 747968138), (-287561072, -279283181), (940154513, 942117860), (-742655783, -732714073), (298901660, 306999992), (247151253, 256528874), (156737087, 166460027), (-659285928, -649332820), (532869533, 535480692), (583179549, 584591226), (737146021, 744977839), (-562188862, -555352730), (-516257678, -510870225), (-322867347, -316380159), (-731898428, -729884390), (949186102, 957537853), (-88265906, -78710731), (-93289935, -86477806), (-521761810, -512713449), (-410338618, -407902713), (804939463, 811140715), (174837828, 176593930), (-103434715, -98735003), (574033874, 582937262), (189222990, 195697627), (681982011, 684059949), (-239589707, -232418724), (79826651, 85064036), (-801800449, -793565620), (117364838, 126714305), (841093585, 849668073), (557415525, 560819039), (627921265, 634696106), (-816689836, -810345159), (-124856019, -119756628), (61297258, 68096981), (-236607103, -234943462), (-122425504, -118035993) }));
+            }
+        }
+
+        // CODEWARS: Most frequently used words in a text
+        public class Top3Words
+        {
+            [Fact]
+            public void SampleTests()
+            {
+                Assert.Equal(new List<string> { "house", "cat" }, freqWords.Top3("house house house house cat cat cat"));
+                Assert.Equal(new List<string> { "house", "cat", "dog" }, freqWords.Top3("house house house house cat cat cat dog dog elephant"));
+                Assert.Equal(new List<string> { "house", "cat", "dog" }, freqWords.Top3("elephant dog dog cat cat cat house house house house"));
+                Assert.Equal(new List<string> { "house", "cat", "dog" }, freqWords.Top3("house  house  house  house  cat  cat  cat  dog  dog  elephant"));
+                Assert.Equal(new List<string> { "house", "cat" }, freqWords.Top3("house house house house HOUSE cat cat cat CAT"));
+                Assert.Equal(new List<string> { "house", "cat" }, freqWords.Top3("house house house house #cat cat cat"));
+                Assert.Equal(new List<string> { "won't", "wont", "dog" }, freqWords.Top3("won't won't won't won't wont wont wont dog dog elephant"));
+                Assert.Equal(new List<string> { "house", "cat", "dog" }, freqWords.Top3("house house house house \ncat cat cat dog dog elephant"));
+                Assert.Equal(new List<string> { "e", "d", "a" }, freqWords.Top3("a a a  b  c c  d d d d  e e e e e"));
+                Assert.Equal(new List<string> { "e", "ddd", "aa" }, freqWords.Top3("e e e e DDD ddd DdD: ddd ddd aa aA Aa, bb cc cC e e e"));
+                Assert.Equal(new List<string> { "won't", "wont" }, freqWords.Top3("  //wont won't won't "));
+                Assert.Equal(new List<string> { "e" }, freqWords.Top3("  , e   .. "));
+                Assert.Equal(new List<string> { }, freqWords.Top3("  ...  "));
+                Assert.Equal(new List<string> { }, freqWords.Top3("  '  "));
+                Assert.Equal(new List<string> { }, freqWords.Top3("  '''  "));
+                Assert.Equal(new List<string> { "a", "of", "on" }, freqWords.Top3(
+                    string.Join("\n", new string[]{"In a village of La Mancha, the name of which I have no desire to call to",
+                  "mind, there lived not long since one of those gentlemen that keep a lance",
+                  "in the lance-rack, an old buckler, a lean hack, and a greyhound for",
+                  "coursing. An olla of rather more beef than mutton, a salad on most",
+                  "nights, scraps on Saturdays, lentils on Fridays, and a pigeon or so extra",
+                  "on Sundays, made away with three-quarters of his income." })));
+            }
+        }
+
+        // CODEWARS: Roman Numerals Helper
+        public class RomanNumerals
+        {
+            [Theory]
+            [InlineData(1, "I")]
+            [InlineData(2, "II")]
+            [InlineData(4, "IV")]
+            [InlineData(5, "V")]
+            [InlineData(10, "X")]
+            [InlineData(21, "XXI")]
+            [InlineData(25, "XXV")]
+            [InlineData(50, "L")]
+            [InlineData(100, "C")]
+            [InlineData(500, "D")]
+            [InlineData(1000, "M")]
+            [InlineData(2000, "MM")]
+            [InlineData(3000, "MMM")]
+            [InlineData(1954, "MCMLIV")]
+            [InlineData(1990, "MCMXC")]
+            [InlineData(2008, "MMVIII")]
+            [InlineData(2014, "MMXIV")]
+
+            public void RomanNumerals_To_Roman(int input, string expected)
+            {
+                Assert.Equal(expected, Codewars.kyu4.romanNumeralHelper.ToRoman(input));
+            }
+
+            [Theory]
+            [InlineData(1, "I")]
+            [InlineData(2, "II")]
+            [InlineData(4, "IV")]
+            [InlineData(5, "V")]
+            [InlineData(10, "X")]
+            [InlineData(21, "XXI")]
+            [InlineData(25, "XXV")]
+            [InlineData(50, "L")]
+            [InlineData(100, "C")]
+            [InlineData(500, "D")]
+            [InlineData(1000, "M")]
+            [InlineData(2000, "MM")]
+            [InlineData(3000, "MMM")]
+            [InlineData(1954, "MCMLIV")]
+            [InlineData(1990, "MCMXC")]
+            [InlineData(2008, "MMVIII")]
+            [InlineData(2014, "MMXIV")]
+
+            public void RomanNumerals_From_Roman(int expected, string input)
+            {
+                Assert.Equal(expected, Codewars.kyu4.romanNumeralHelper.FromRoman(input));
+            }
+        }
+
+        // CODEWARS: Connect 4
+        public class Connect4
+        {
+            [Fact]
+            public void YellowWins()
+            {
+                List<string> input = new List<string> { "A_Red", "B_Yellow", "A_Red", "B_Yellow", "A_Red", "B_Yellow", "G_Red", "B_Yellow" };
+                Assert.Equal("Yellow", Codewars.kyu4.connect4.WhoIsWinner(input));
+            }
+
+            [Fact]
+            public void YellowWins_LongGame()
+            {
+                List<string> input = new List<string> { "C_Yellow", "E_Red", "G_Yellow", "B_Red", "D_Yellow", "B_Red", "B_Yellow", "G_Red", "C_Yellow", "C_Red", "D_Yellow", "F_Red", "E_Yellow", "A_Red", "A_Yellow", "G_Red", "A_Yellow", "F_Red", "F_Yellow", "D_Red", "B_Yellow", "E_Red", "D_Yellow", "A_Red", "G_Yellow", "D_Red", "D_Yellow", "C_Red" };
+                Assert.Equal("Yellow", Codewars.kyu4.connect4.WhoIsWinner(input));
+            }
+
+            [Fact]
+            public void RedWins()
+            {
+                List<string> input = new List<string> { "A_Yellow", "B_Red", "B_Yellow", "C_Red", "G_Yellow", "C_Red", "C_Yellow", "D_Red", "G_Yellow", "D_Red", "G_Yellow", "D_Red", "F_Yellow", "E_Red", "D_Yellow" };
+                Assert.Equal("Red", Codewars.kyu4.connect4.WhoIsWinner(input));
+            }
+
+            [Fact]
+            public void RedWins_FirstToFour()
+            {
+                List<string> input = new List<string> { "A_Red", "B_Yellow", "A_Red", "B_Yellow", "A_Red", "B_Yellow", "A_Red", "B_Yellow" };
+                Assert.Equal("Red", Codewars.kyu4.connect4.WhoIsWinner(input));
+            }
+
+            [Fact]
+            public void YellowWins_JustYellow()
+            {
+                List<string> input = new List<string> { "B_Yellow", "B_Yellow", "B_Yellow", "B_Yellow" };
+                Assert.Equal("Yellow", Codewars.kyu4.connect4.WhoIsWinner(input));
+            }
+
+            [Fact]
+            public void Draw()
+            {
+                List<string> input = new List<string> { "A_Red", "B_Yellow", "A_Red", "B_Yellow", "A_Red", "B_Yellow", "G_Red", "G_Yellow" };
+                Assert.Equal("Draw", Codewars.kyu4.connect4.WhoIsWinner(input));
             }
         }
     }
