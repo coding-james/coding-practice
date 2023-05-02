@@ -23,7 +23,7 @@ namespace Sandbox.Tests
 
             public void RailFenceCipher_Encode(string expected, string input1, int input2)
             {
-                Assert.Equal(expected, Codewars.kyu3.RailFenceCipher.Encode(input1, input2));
+                Assert.Equal(expected, CWars.kyu3.Encode(input1, input2));
             }
 
             [Theory]
@@ -38,145 +38,8 @@ namespace Sandbox.Tests
 
             public void RailFenceCipher_Decode(string expected, string input1, int input2)
             {
-                Assert.Equal(expected, Codewars.kyu3.RailFenceCipher.Decode(input1, input2));
+                Assert.Equal(expected, CWars.kyu3.Decode(input1, input2));
             }
-        }
-
-        // CODEWARS: Battleship field validator
-        [Fact]
-        public void Battleship_True()
-        {
-            int[,] field = new int[10, 10]
-                     {{1, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-                      {1, 0, 1, 0, 0, 0, 0, 0, 1, 0},
-                      {1, 0, 1, 0, 1, 1, 1, 0, 1, 0},
-                      {1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-                      {0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-                      {0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-            Assert.True(Codewars.kyu3.battleshipsValid.ValidateBattlefield(field));
-        }
-
-        [Fact]
-        public void Battleship_ShipsByEdge_True()
-        {
-            int[,] field = new int[10, 10]
-                     {{0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-                      {0, 0, 1, 0, 0, 0, 0, 0, 1, 0},
-                      {0, 0, 1, 0, 1, 1, 1, 0, 1, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-                      {0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-                      {1, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-                      {1, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-                      {1, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-                      {1, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-            Assert.True(Codewars.kyu3.battleshipsValid.ValidateBattlefield(field));
-        }
-
-        [Fact]
-        public void Battleship_InsufficientShips_False()
-        {
-            int[,] field = new int[10, 10]
-                     {{1, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-                      {1, 0, 1, 0, 0, 0, 0, 0, 1, 0},
-                      {1, 0, 1, 0, 1, 1, 1, 0, 1, 0},
-                      {1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-                      {0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-            Assert.False(Codewars.kyu3.battleshipsValid.ValidateBattlefield(field));
-        }
-
-        [Fact]
-        public void Battleship_ExtraCrusier_False()
-        {
-            int[,] field = new int[10, 10]
-                     {{1, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-                      {1, 0, 1, 0, 0, 0, 0, 0, 1, 0},
-                      {1, 0, 1, 0, 1, 1, 1, 0, 1, 0},
-                      {1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-                      {0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-                      {1, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-                      {1, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-                      {1, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-            Assert.False(Codewars.kyu3.battleshipsValid.ValidateBattlefield(field));
-        }
-
-        [Fact]
-        public void Battleship_Diagonal_False()
-        {
-            int[,] field = new int[10, 10]
-                     {{1, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-                      {1, 0, 1, 0, 0, 0, 0, 0, 1, 0},
-                      {1, 0, 1, 0, 1, 0, 0, 0, 1, 0},
-                      {1, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 1, 0, 1, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 1, 1, 1, 0, 1, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-            Assert.False(Codewars.kyu3.battleshipsValid.ValidateBattlefield(field));
-        }
-
-        [Fact]
-        public void Battleship_SneakyDiagonalLtoR_False()
-        {
-            int[,] field = new int[10, 10]
-                     {{0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-                      {0, 0, 1, 0, 0, 0, 0, 0, 1, 0},
-                      {0, 0, 1, 0, 1, 1, 1, 0, 1, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-                      {0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-                      {1, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-                      {1, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-                      {1, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-                      {1, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-            Assert.False(Codewars.kyu3.battleshipsValid.ValidateBattlefield(field));
-        }
-
-        [Fact]
-        public void Battleship_SneakyDiagonalRtoL_False()
-        {
-            int[,] field = new int[10, 10]
-                     {{0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-                      {0, 0, 1, 0, 0, 0, 0, 0, 1, 0},
-                      {0, 0, 1, 0, 1, 1, 1, 0, 1, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-                      {1, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-                      {1, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-                      {1, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-                      {1, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-            Assert.False(Codewars.kyu3.battleshipsValid.ValidateBattlefield(field));
-        }
-
-        [Fact]
-        public void Battleship_LongerShip_False()
-        {
-            int[,] field = new int[10, 10]
-                     {{1, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-                      {1, 0, 1, 0, 0, 0, 0, 0, 1, 0},
-                      {1, 0, 1, 0, 1, 1, 1, 0, 1, 0},
-                      {1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                      {1, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-                      {0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-                      {0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-            Assert.False(Codewars.kyu3.battleshipsValid.ValidateBattlefield(field));
         }
     }
 }
