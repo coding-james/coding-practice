@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sandbox.Tests.CodewarsTests.kyu3
 {
-    public class battleshipValid
+    public class BattleshipValid
     {
         // CODEWARS: Battleship field validator
         [Fact]
@@ -23,7 +23,7 @@ namespace Sandbox.Tests.CodewarsTests.kyu3
                       {0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
                       {0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-            Assert.True(Codewars.kyu3.battleshipsValid.ValidateBattlefield(field));
+            Assert.True(Codewars.kyu3.BattleshipsValid.ValidateBattlefield(field));
         }
 
         [Fact]
@@ -40,7 +40,7 @@ namespace Sandbox.Tests.CodewarsTests.kyu3
                       {1, 0, 0, 1, 0, 0, 0, 0, 0, 0},
                       {1, 0, 0, 0, 0, 0, 0, 1, 0, 0},
                       {1, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-            Assert.True(Codewars.kyu3.battleshipsValid.ValidateBattlefield(field));
+            Assert.True(Codewars.kyu3.BattleshipsValid.ValidateBattlefield(field));
         }
 
         [Fact]
@@ -57,7 +57,7 @@ namespace Sandbox.Tests.CodewarsTests.kyu3
                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                       {0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-            Assert.False(Codewars.kyu3.battleshipsValid.ValidateBattlefield(field));
+            Assert.False(Codewars.kyu3.BattleshipsValid.ValidateBattlefield(field));
         }
 
         [Fact]
@@ -74,7 +74,7 @@ namespace Sandbox.Tests.CodewarsTests.kyu3
                       {1, 0, 0, 1, 0, 0, 0, 0, 0, 0},
                       {1, 0, 0, 0, 0, 0, 0, 1, 0, 0},
                       {1, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-            Assert.False(Codewars.kyu3.battleshipsValid.ValidateBattlefield(field));
+            Assert.False(Codewars.kyu3.BattleshipsValid.ValidateBattlefield(field));
         }
 
         [Fact]
@@ -91,7 +91,7 @@ namespace Sandbox.Tests.CodewarsTests.kyu3
                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                       {0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-            Assert.False(Codewars.kyu3.battleshipsValid.ValidateBattlefield(field));
+            Assert.False(Codewars.kyu3.BattleshipsValid.ValidateBattlefield(field));
         }
 
         [Fact]
@@ -108,7 +108,7 @@ namespace Sandbox.Tests.CodewarsTests.kyu3
                       {1, 0, 0, 1, 0, 0, 0, 0, 0, 0},
                       {1, 0, 0, 0, 0, 0, 0, 1, 0, 0},
                       {1, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-            Assert.False(Codewars.kyu3.battleshipsValid.ValidateBattlefield(field));
+            Assert.False(Codewars.kyu3.BattleshipsValid.ValidateBattlefield(field));
         }
 
         [Fact]
@@ -125,7 +125,7 @@ namespace Sandbox.Tests.CodewarsTests.kyu3
                       {1, 0, 0, 1, 0, 0, 0, 0, 0, 0},
                       {1, 0, 0, 0, 0, 0, 0, 1, 0, 0},
                       {1, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-            Assert.False(Codewars.kyu3.battleshipsValid.ValidateBattlefield(field));
+            Assert.False(Codewars.kyu3.BattleshipsValid.ValidateBattlefield(field));
         }
 
         [Fact]
@@ -142,7 +142,7 @@ namespace Sandbox.Tests.CodewarsTests.kyu3
                       {0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
                       {0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-            Assert.False(Codewars.kyu3.battleshipsValid.ValidateBattlefield(field));
+            Assert.False(Codewars.kyu3.BattleshipsValid.ValidateBattlefield(field));
         }
     }
 }

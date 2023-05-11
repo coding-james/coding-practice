@@ -17,12 +17,12 @@ namespace Sandbox.Codewars.kyu6
             foreach (string s in codeList)
             {
                 // message = s == ""? message.Trim() + " ": message + MorseCode.Get(s); //CodeWars challenge has MorseCode function
-                message = s == "" ? message.Trim() + " " : message + getMorseCode(s);
+                message = s == "" ? message.Trim() + " " : message + _getMorseCode(s);
             }
             return message;
         }
 
-        private static string getMorseCode(string snip)
+        private static string _getMorseCode(string snip)
         {
             switch (snip)
             {

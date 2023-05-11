@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Sandbox.Codewars.kyu4
 {
     // CODEWARS: Roman Numerals Helper
-    public class romanNumeralHelper
+    public class RomanNumeralHelper
     {
         private static List<string> romStr = new List<string>() { "M", "MM", "MMM", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
         private static List<int> romInt = new List<int>() { 1000, 2000, 3000, 100, 200, 300, 400, 500, 600, 700, 800, 900, 10, 20, 30, 40, 50, 60, 70, 80, 90, 1, 2, 3, 4, 5, 6, 7, 8, 9 };

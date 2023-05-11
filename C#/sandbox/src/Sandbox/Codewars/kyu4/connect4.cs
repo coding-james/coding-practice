@@ -45,7 +45,7 @@ namespace Sandbox.Codewars.kyu4
                     {
                         for (int col = 0; col < 4; col++)
                         {
-                            result = checks(row, col, row, col + 1, row, col + 2, row, col + 3, frame);
+                            result = _checks(row, col, row, col + 1, row, col + 2, row, col + 3, frame);
 
                             if (result != "No Winner")
                             {
@@ -60,7 +60,7 @@ namespace Sandbox.Codewars.kyu4
                     {
                         for (int row = 5; row >= 3; row--)
                         {
-                            result = checks(row, col, row - 1, col, row - 2, col, row - 3, col, frame);
+                            result = _checks(row, col, row - 1, col, row - 2, col, row - 3, col, frame);
 
                             if (result != "No Winner")
                             {
@@ -74,7 +74,7 @@ namespace Sandbox.Codewars.kyu4
                     {
                         for (int row = 0; row < 3; row++)
                         {
-                            result = checks(row, col, row + 1, col + 1, row + 2, col + 2, row + 3, col + 3, frame);
+                            result = _checks(row, col, row + 1, col + 1, row + 2, col + 2, row + 3, col + 3, frame);
 
                             if (result != "No Winner")
                             {
@@ -88,7 +88,7 @@ namespace Sandbox.Codewars.kyu4
                     {
                         for (int col = 0; col < 4; col++)
                         {
-                            result = checks(row, col, row - 1, col + 1, row - 2, col + 2, row - 3, col + 3, frame);
+                            result = _checks(row, col, row - 1, col + 1, row - 2, col + 2, row - 3, col + 3, frame);
 
                             if (result != "No Winner")
                             {
@@ -101,7 +101,7 @@ namespace Sandbox.Codewars.kyu4
             return "Draw";
         }
 
-        private static string checks(int row0, int col0, int row1, int col1, int row2, int col2, int row3, int col3, string[,] frame)
+        private static string _checks(int row0, int col0, int row1, int col1, int row2, int col2, int row3, int col3, string[,] frame)
         {
             if (frame[row0, col0] != "empty" && frame[row0, col0] == frame[row1, col1] && frame[row0, col0] == frame[row2, col2] && frame[row0, col0] == frame[row3, col3])
             {

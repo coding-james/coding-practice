@@ -8,8 +8,8 @@ namespace Sandbox.Codewars.kyu4
         // CODEWARS: Sum Strings as Numbers - without using BigInteger
         public static string sumStrings(string a, string b)
         {
-            List<int> aList = numList(a);
-            List<int> bList = numList(b);
+            List<int> aList = _numList(a);
+            List<int> bList = _numList(b);
             string sumString = "";
 
             if (aList.Count == bList.Count)
@@ -27,17 +27,17 @@ namespace Sandbox.Codewars.kyu4
             }
             else if (aList.Count > bList.Count)
             {
-                sumString = addLists(aList, bList);
+                sumString = _addLists(aList, bList);
             }
             else
             {
-                sumString = addLists(bList, aList);
+                sumString = _addLists(bList, aList);
             }
 
             return sumString.Substring(0, 1) == "0" ? sumString.Substring(1, sumString.Length - 1) : sumString;
         }
 
-        private static List<int> numList(string str)
+        private static List<int> _numList(string str)
         {
             List<int> strList = new List<int>();
             foreach (char s in str)
@@ -47,7 +47,7 @@ namespace Sandbox.Codewars.kyu4
             return strList;
         }
 
-        private static string addLists(List<int> larger, List<int> smaller)
+        private static string _addLists(List<int> larger, List<int> smaller)
         {
             string result2 = "";
             int carryForward2 = 0;

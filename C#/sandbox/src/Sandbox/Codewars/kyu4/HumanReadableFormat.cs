@@ -37,11 +37,11 @@ namespace Sandbox.Codewars.kyu4
             }
             else
             {
-                durList.Add(ConvertTime(years, "year"));
-                durList.Add(ConvertTime(days, "day"));
-                durList.Add(ConvertTime(hours, "hour"));
-                durList.Add(ConvertTime(mins, "minute"));
-                durList.Add(ConvertTime(sec, "second"));
+                durList.Add(_convertTime(years, "year"));
+                durList.Add(_convertTime(days, "day"));
+                durList.Add(_convertTime(hours, "hour"));
+                durList.Add(_convertTime(mins, "minute"));
+                durList.Add(_convertTime(sec, "second"));
                 durList.RemoveAll(x => x.Contains("remove"));
             }
 
@@ -66,7 +66,7 @@ namespace Sandbox.Codewars.kyu4
             return result;
         }
 
-        private static string ConvertTime(int time, string type)
+        private static string _convertTime(int time, string type)
         {
             if (time > 0 && time <= 1)
             {

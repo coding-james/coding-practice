@@ -16,7 +16,7 @@ namespace Sandbox.Codewars.kyu4
             {
                 for (int i = 0; i < intervals.Length; i++)
                 {
-                    ranges = collapseRange(intervals[i].Item1, intervals[i].Item2, ranges);
+                    ranges = _collapseRange(intervals[i].Item1, intervals[i].Item2, ranges);
                 }
             }
 
@@ -29,7 +29,7 @@ namespace Sandbox.Codewars.kyu4
                 List<int> rangesNew = new List<int>();
                 for (int i = 0; i < ranges.Count; i += 2)
                 {
-                    rangesNew = collapseRange(ranges[i], ranges[i + 1], rangesNew);
+                    rangesNew = _collapseRange(ranges[i], ranges[i + 1], rangesNew);
                 }
                 ranges = rangesNew;
                 newRangeCount = ranges.Count;
@@ -46,7 +46,7 @@ namespace Sandbox.Codewars.kyu4
             return result;
         }
 
-        private static List<int> collapseRange(int start, int end, List<int> inputRange)
+        private static List<int> _collapseRange(int start, int end, List<int> inputRange)
         {
             List<int> rangesTmp = inputRange;
             if (rangesTmp.Count == 0)

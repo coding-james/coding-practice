@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Sandbox.Tests.CodewarsTests.kyu4
 {
     // CODEWARS: Roman Numerals Helper
-    public class romanNumeralHelper
+    public class RomanNumeralHelper
     {
         [Theory]
         [InlineData(1, "I")]
@@ -30,7 +30,7 @@ namespace Sandbox.Tests.CodewarsTests.kyu4
 
         public void RomanNumerals_To_Roman(int input, string expected)
         {
-            Assert.Equal(expected, Codewars.kyu4.romanNumeralHelper.ToRoman(input));
+            Assert.Equal(expected, Codewars.kyu4.RomanNumeralHelper.ToRoman(input));
         }
 
         [Theory]
@@ -54,7 +54,7 @@ namespace Sandbox.Tests.CodewarsTests.kyu4
 
         public void RomanNumerals_From_Roman(int expected, string input)
         {
-            Assert.Equal(expected, Codewars.kyu4.romanNumeralHelper.FromRoman(input));
+            Assert.Equal(expected, Codewars.kyu4.RomanNumeralHelper.FromRoman(input));
         }
     }
 }

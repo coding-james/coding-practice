@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace Sandbox.Codewars.kyu4
 {
-    public class freqWords
+    public class FreqWords
     {
         // CODEWARS: Most frequently used words in a text
         // https://stackoverflow.com/questions/7265315/replace-multiple-characters-in-a-c-sharp-string - removing sequential characters
