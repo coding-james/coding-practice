@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "testAll": "mocha *.js --exit",
-    "test": "mocha 3kyu.test.js --exit"
+    "testAll": "mocha unit/**/*.js -exit",
+    "test6kyu": "mocha ./6kyu/*.js -exit",
+    "test": "mocha **.test.js --exit"
   },
   "keywords": [],
   "author": "",
