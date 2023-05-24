@@ -1,6 +1,5 @@
 const { assert } = require("chai");
-const {encodeRailFenceCipher, decodeRailFenceCipher} = require("../3 kyu/rail_fence_cipher");
-
+const {encodeRailFenceCipher, decodeRailFenceCipher} = require("../../../3 kyu/rail_fence_cipher");
 
 // CODEWARS: Rail Fence Cipher: Encoding and Decoding
 describe("Rail Fence Cipher: Encode", () => {
