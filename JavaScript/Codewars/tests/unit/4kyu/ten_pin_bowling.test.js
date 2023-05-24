@@ -1,5 +1,5 @@
 const { assert } = require("chai");
-const formatDuration = require("../../../4 kyu/ten_pin_bowling");
+const tenPinBowling = require("../../../4 kyu/ten_pin_bowling");
 
 // CODEWARS: Ten-Pin Bowling
 describe("Ten-Pin Bowling", () => {
