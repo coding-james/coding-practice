@@ -1,0 +1,21 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha unit/**/*.js -exit",
+    "test3kyu": "mocha unit/3kyu/*.js -exit",
+    "test4kyu": "mocha unit/4kyu/*.js -exit",
+    "test5kyu": "mocha unit/5kyu/*.js -exit",
+    "test6kyu": "mocha unit/6kyu/*.js -exit",
+    "test7kyu": "mocha unit/7kyu/*.js -exit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
+  }
+}
