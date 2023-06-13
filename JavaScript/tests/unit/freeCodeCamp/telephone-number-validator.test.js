@@ -1,6 +1,6 @@
 "use strict";
 const { assert } = require("chai");
-const { telephoneCheck } = require("../../../freeCodeCamp/telephone-number-validator");
+const { telephoneCheck } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/telephone-number-validator");
 
 describe("Telephone Number Validator", () => {
     it("should return a Bool", () => {

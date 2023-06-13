@@ -10,7 +10,8 @@
     "test5kyu": "mocha unit/5kyu/*.js -exit",
     "test6kyu": "mocha unit/6kyu/*.js -exit",
     "test7kyu": "mocha unit/7kyu/*.js -exit",
-    "testfreeCC": "mocha unit/freeCodeCamp/*.js -exit"
+    "testfreeCC": "mocha unit/freeCodeCamp/*.js -exit",
+    "test:single": "func() { mocha unit/**/${1}.test.js; }; func"
   },
   "keywords": [],
   "author": "",

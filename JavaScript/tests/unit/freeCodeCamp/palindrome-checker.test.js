@@ -1,6 +1,6 @@
 "use strict";
 const { assert } = require("chai");
-const { palindrome } = require("../../../freeCodeCamp/palindrome-checker");
+const { palindrome } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/palindrome-checker");
 
 describe("Is it a palindrome?", () => {
     const tests = [

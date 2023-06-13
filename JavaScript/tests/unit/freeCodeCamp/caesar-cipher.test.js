@@ -1,6 +1,6 @@
 "use strict";
 const { assert } = require("chai");
-const { rot13 } = require("../../../freeCodeCamp/caesar-cipher");
+const { rot13 } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/caesar-cipher");
 
 describe("Decode the Cipher", () => {
     const tests = [
