@@ -167,4 +167,14 @@ function sentensify(str) {
         .join(" ");
 };
 
-module.exports = { incrementer, incrementer2, addBook, removeBook, filmRatings, filmFilterByRating, sliceArray, nonMutatingSplice, nonMutatingConcat, nonMutatingPush, getRating, squareList, alphabeticalOrder, nonMutatingSort, splitify, sentensify };
+
+// Apply Functional Programming to Convert Strings to URL Slugs
+function urlSlug(title) {
+    return title
+        .toLowerCase()
+        .trim()
+        .split(/\s+/)
+        .join("-");
+};
+
+module.exports = { incrementer, incrementer2, addBook, removeBook, filmRatings, filmFilterByRating, sliceArray, nonMutatingSplice, nonMutatingConcat, nonMutatingPush, getRating, squareList, alphabeticalOrder, nonMutatingSort, splitify, sentensify, urlSlug };

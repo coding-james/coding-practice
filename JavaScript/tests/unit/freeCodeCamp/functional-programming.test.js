@@ -1,7 +1,7 @@
 "use strict";
 const { assert } = require("chai");
 const { incrementer, incrementer2, addBook, removeBook, filmRatings, filmFilterByRating, sliceArray, nonMutatingSplice } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
-const { nonMutatingConcat, nonMutatingPush, getRating, squareList, alphabeticalOrder, nonMutatingSort, splitify, sentensify } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
+const { nonMutatingConcat, nonMutatingPush, getRating, squareList, alphabeticalOrder, nonMutatingSort, splitify, sentensify, urlSlug } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
 const filmList = require('../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/films.json');
 
 // Incrementer
@@ -271,6 +271,28 @@ describe("Combine an a string by non-alphabet characters", () => {
     tests.forEach(({ inputString, expected }) => {
         it(`it should return ${expected}`, () => {
             assert.deepEqual(sentensify(inputString), expected);
+        });
+    });
+});
+
+// Apply Functional Programming to Convert Strings to URL Slugs
+describe("Convert Strings to URL Slugs", () => {
+
+    it("DATATYPE: It should return a String", () => {
+        assert.isString(urlSlug("May-the-force-be-with-you"));
+    });
+
+    const tests = [
+        { inputString: "May the force be with you", expected: "may-the-force-be-with-you" },
+        { inputString: "Winter Is Coming", expected: "winter-is-coming" },
+        { inputString: "A Mind Needs Books Like A Sword Needs A Whetstone", expected: "a-mind-needs-books-like-a-sword-needs-a-whetstone" },
+        { inputString: "Hold The Door", expected: "hold-the-door" },
+        { inputString: " Winter Is  Coming", expected: "winter-is-coming" },
+    ];
+
+    tests.forEach(({ inputString, expected }) => {
+        it(`it should return ${expected}`, () => {
+            assert.equal(urlSlug(inputString), expected);
         });
     });
 });
