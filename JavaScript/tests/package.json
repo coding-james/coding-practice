@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha unit/**/*.js -exit",
-    "test3kyu": "mocha unit/3kyu/*.js -exit",
-    "test4kyu": "mocha unit/4kyu/*.js -exit",
-    "test5kyu": "mocha unit/5kyu/*.js -exit",
-    "test6kyu": "mocha unit/6kyu/*.js -exit",
-    "test7kyu": "mocha unit/7kyu/*.js -exit",
-    "testfreeCC": "mocha unit/freeCodeCamp/*.js -exit",
-    "test:single": "func() { mocha unit/**/${1}.test.js; }; func"
+    "test": "mocha unit/**/*.js && cucumber-js bdd/",
+    "test3kyu": "mocha unit/3kyu/*.js",
+    "test4kyu": "mocha unit/4kyu/*.js",
+    "test5kyu": "mocha unit/5kyu/*.js",
+    "test6kyu": "mocha unit/6kyu/*.js",
+    "test7kyu": "mocha unit/7kyu/*.js",
+    "testfreeCC": "mocha unit/freeCodeCamp/*.js",
+    "test:single": "func() { mocha unit/**/${1}.test.js; }; func",
+    "test:bdd": "cucumber-js bdd/"
   },
   "keywords": [],
   "author": "",
@@ -19,5 +20,8 @@
   "dependencies": {
     "chai": "^4.3.7",
     "mocha": "^10.2.0"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.1.2"
   }
 }
