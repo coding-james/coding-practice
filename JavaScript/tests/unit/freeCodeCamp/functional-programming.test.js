@@ -1,7 +1,7 @@
 "use strict";
 const { assert } = require("chai");
 const { incrementer, incrementer2, addBook, removeBook, filmRatings, filmFilterByRating, sliceArray, nonMutatingSplice } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
-const { nonMutatingConcat, nonMutatingPush, getRating, squareList, alphabeticalOrder, nonMutatingSort, splitify, sentensify, urlSlug, checkPositive } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
+const { nonMutatingConcat, nonMutatingPush, getRating, squareList, alphabeticalOrder, nonMutatingSort, splitify, sentensify, urlSlug, checkPositive, add } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
 const filmList = require('../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/films.json');
 
 // Incrementer
@@ -313,6 +313,26 @@ describe("Check every element meets criteria", () => {
     tests.forEach(({ inputString, expected }) => {
         it(`it should return ${expected}`, () => {
             assert.equal(checkPositive(inputString), expected);
+        });
+    });
+});
+
+// Introduction to Currying and Partial Application
+describe("Currying and Partial Applications", () => {
+
+    it("DATATYPE: It should return a Number", () => {
+        assert.isNumber(add(10)(20)(30));
+    });
+
+    const tests = [
+        { input1: 10, input2: 20, input3: 30, expected: 60 },
+        { input1: 1, input2: 2, input3: 3, expected: 6 },
+        { input1: 11, input2: 22, input3: 33, expected: 66 },
+    ];
+
+    tests.forEach(({ input1, input2, input3, expected }) => {
+        it(`it should return ${expected}`, () => {
+            assert.equal(add(input1)(input2)(input3), expected);
         });
     });
 });

@@ -187,4 +187,14 @@ function checkPositive(arr) {
     return arr.every(val => val > 0); //more succient way. you can also use SOME instead of EVERY to test if some elements meet the criteria
 };
 
-module.exports = { incrementer, incrementer2, addBook, removeBook, filmRatings, filmFilterByRating, sliceArray, nonMutatingSplice, nonMutatingConcat, nonMutatingPush, getRating, squareList, alphabeticalOrder, nonMutatingSort, splitify, sentensify, urlSlug, checkPositive };
+
+// Introduction to Currying and Partial Application
+function add(x) {
+    return function(y) {
+        return function(z) {
+            return x + y + z;
+        }
+    }
+};
+
+module.exports = { incrementer, incrementer2, addBook, removeBook, filmRatings, filmFilterByRating, sliceArray, nonMutatingSplice, nonMutatingConcat, nonMutatingPush, getRating, squareList, alphabeticalOrder, nonMutatingSort, splitify, sentensify, urlSlug, checkPositive, add };
