@@ -1,7 +1,7 @@
 "use strict";
 const { assert } = require("chai");
 const { incrementer, incrementer2, addBook, removeBook, filmRatings, filmFilterByRating, sliceArray, nonMutatingSplice } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
-const { nonMutatingConcat, nonMutatingPush, getRating, squareList, alphabeticalOrder, nonMutatingSort, splitify, sentensify, urlSlug } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
+const { nonMutatingConcat, nonMutatingPush, getRating, squareList, alphabeticalOrder, nonMutatingSort, splitify, sentensify, urlSlug, checkPositive } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
 const filmList = require('../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/films.json');
 
 // Incrementer
@@ -293,6 +293,26 @@ describe("Convert Strings to URL Slugs", () => {
     tests.forEach(({ inputString, expected }) => {
         it(`it should return ${expected}`, () => {
             assert.equal(urlSlug(inputString), expected);
+        });
+    });
+});
+
+// Use the every Method to Check that Every Element in an Array Meets a Criteria
+describe("Check every element meets criteria", () => {
+
+    it("DATATYPE: It should return a Boolean", () => {
+        assert.isBoolean(checkPositive([1, 5, 8, 0, 10, 11]));
+    });
+
+    const tests = [
+        { inputString: [1, 2, 3, 4, 5], expected: true },
+        { inputString: [1, 2, 3, -4, 5], expected: false },
+        { inputString: [1, -2, 3, -4, 5], expected: false },
+    ];
+
+    tests.forEach(({ inputString, expected }) => {
+        it(`it should return ${expected}`, () => {
+            assert.equal(checkPositive(inputString), expected);
         });
     });
 });

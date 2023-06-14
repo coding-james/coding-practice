@@ -177,4 +177,14 @@ function urlSlug(title) {
         .join("-");
 };
 
-module.exports = { incrementer, incrementer2, addBook, removeBook, filmRatings, filmFilterByRating, sliceArray, nonMutatingSplice, nonMutatingConcat, nonMutatingPush, getRating, squareList, alphabeticalOrder, nonMutatingSort, splitify, sentensify, urlSlug };
+
+// Use the every Method to Check that Every Element in an Array Meets a Criteria
+function checkPositive(arr) {
+    // return arr.every(function(currentValue) {
+    //         return currentValue > 0; 
+    //     });
+
+    return arr.every(val => val > 0); //more succient way. you can also use SOME instead of EVERY to test if some elements meet the criteria
+};
+
+module.exports = { incrementer, incrementer2, addBook, removeBook, filmRatings, filmFilterByRating, sliceArray, nonMutatingSplice, nonMutatingConcat, nonMutatingPush, getRating, squareList, alphabeticalOrder, nonMutatingSort, splitify, sentensify, urlSlug, checkPositive };
