@@ -19,3 +19,8 @@ Feature: Example BDD test
       | list                              | number |
       | a a a  b  c c  d d d d  e e e e e |      3 |
       | , e   ..                          |      1 |
+
+  Scenario: When the user submits a empty list, no top list is returned
+    Given A user has a empty list " "
+    When this empty list is submitted
+    Then no words are returned

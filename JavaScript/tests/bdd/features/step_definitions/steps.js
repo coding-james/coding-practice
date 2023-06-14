@@ -14,3 +14,16 @@ When('this list is submitted', function () {
 Then('only {int} word\\(s) returned', function (number) {
     assert.deepEqual(this.output.length, number);
 });
+
+Given('A user has a empty list {string}', function (list) {
+    this.emptyList = list;
+    assert.equal(list, " ");
+});
+
+When('this empty list is submitted', function () {
+    this.blankOutput = topThreeWords(this.emptyList)
+});
+
+Then('no words are returned', function () {
+    assert.deepEqual(this.blankOutput, []);
+});
