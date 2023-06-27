@@ -1,6 +1,6 @@
 "use strict";
 const { assert } = require("chai");
-const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
+const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
 const { nonMutatingSort } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
 
 // Sum All Numbers in a Range
@@ -163,6 +163,26 @@ describe("Search and Replace", () => {
     tests.forEach(({ inputString, findWord, replaceWith, expected }) => {
         it(`it should find ${findWord} and replace with ${replaceWith}`, () => {
             assert.equal(myReplace(inputString, findWord, replaceWith), expected);
+        });
+    });
+});
+
+// DNA Pairing
+describe("DNA Pairing", () => {
+
+    it("DATATYPE: It should return an Array", () => {
+        assert.isArray(pairElement("ATCGA"));
+    })
+
+    const tests = [
+        { inputString: "ATCGA", expected: [["A", "T"], ["T", "A"], ["C", "G"], ["G", "C"], ["A", "T"]] },
+        { inputString: "TTGAG", expected: [["T", "A"], ["T", "A"], ["G", "C"], ["A", "T"], ["G", "C"]] },
+        { inputString: "CTCTA", expected: [["C", "G"], ["T", "A"], ["C", "G"], ["T", "A"], ["A", "T"]] },
+    ];
+
+    tests.forEach(({ inputString, expected }) => {
+        it(`it should return ${expected}`, () => {
+            assert.deepEqual(pairElement(inputString), expected);
         });
     });
 });

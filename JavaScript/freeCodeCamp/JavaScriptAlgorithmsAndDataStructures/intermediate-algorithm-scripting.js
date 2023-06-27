@@ -103,4 +103,33 @@ function myReplace(str, before, after) {
     return str.replace(before, afterFormatted);
 };
 
-module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace };
+// DNA Pairing
+function pairElement(str) {
+    let DNA = [];
+    for (let index = 0; index < str.length; index++) {
+
+        let tempArr = []
+
+        switch (str[index]) {
+            case "A":
+                tempArr.push("A", "T");
+                break;
+            case "T":
+                tempArr.push("T", "A");
+                break;
+            case "C":
+                tempArr.push("C", "G");
+                break;
+            case "G":
+                tempArr.push("G", "C");
+                break;
+            default:
+                break;
+        }
+
+        DNA.push(tempArr);
+    }
+    return DNA;
+};
+
+module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement };
