@@ -79,4 +79,22 @@ function spinalCase(str) {
         .toLowerCase(); //change all to lowercase
 };
 
-module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase };
+// Pig Latin
+function translatePigLatin(str) {
+    let vowels = /[aeiou]/i;
+    let vowelsArray = ["a", "e", "i", "o", "u"];
+
+    if (vowels.test(str[0])) { // if first letter is vowel, add WAY to end
+        return str + "way";
+    } else if (!vowels.test(str)) { // if no vowels, add AY to the end of the word
+        return str + "ay";
+    } else { // if word begins with consonant, take the first consonant or consonant cluster, move it to the end of the word, and add AY to it
+        for (let index = 0; index < str.length; index++) {
+            if (vowelsArray.indexOf(str[index]) != -1) {
+                return str.substr(index) + str.substr(0, index) + "ay"
+            }
+        }
+    };
+};
+
+module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin };

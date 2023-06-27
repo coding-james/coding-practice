@@ -1,6 +1,6 @@
 "use strict";
 const { assert } = require("chai");
-const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
+const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
 const { nonMutatingSort } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
 
 // Sum All Numbers in a Range
@@ -116,6 +116,30 @@ describe("Spinal Tap Case", () => {
     tests.forEach(({ inputString, expected }) => {
         it(`it should return ${expected}`, () => {
             assert.equal(spinalCase(inputString), expected);
+        });
+    });
+});
+
+// Pig Latin
+describe("Pig Latin", () => {
+
+    it("DATATYPE: It should return a String", () => {
+        assert.isString(translatePigLatin("california"));
+    })
+
+    const tests = [
+        { inputString: "california", expected: "aliforniacay" },
+        { inputString: "paragraphs", expected: "aragraphspay" },
+        { inputString: "glove", expected: "oveglay" },
+        { inputString: "algorithm", expected: "algorithmway" },
+        { inputString: "eight", expected: "eightway" },
+        { inputString: "schwartz", expected: "artzschway" },
+        { inputString: "rhythm", expected: "rhythmay" },
+    ];
+
+    tests.forEach(({ inputString, expected }) => {
+        it(`it should return ${expected}`, () => {
+            assert.equal(translatePigLatin(inputString), expected);
         });
     });
 });
