@@ -1,6 +1,6 @@
 "use strict";
 const { assert } = require("chai");
-const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
+const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
 const { nonMutatingSort } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
 
 // Sum All Numbers in a Range
@@ -140,6 +140,29 @@ describe("Pig Latin", () => {
     tests.forEach(({ inputString, expected }) => {
         it(`it should return ${expected}`, () => {
             assert.equal(translatePigLatin(inputString), expected);
+        });
+    });
+});
+
+// Search and Replace
+describe("Search and Replace", () => {
+
+    it("DATATYPE: It should return a String", () => {
+        assert.isString(myReplace("Let us go to the store", "store", "mall"));
+    })
+
+    const tests = [
+        { inputString: "Let us go to the store", findWord: "store", replaceWith: "mall", expected: "Let us go to the mall" },
+        { inputString: "He is Sleeping on the couch", findWord: "Sleeping", replaceWith: "sitting", expected: "He is Sitting on the couch" },
+        { inputString: "I think we should look up there", findWord: "up", replaceWith: "Down", expected: "I think we should look down there" },
+        { inputString: "This has a spellngi error", findWord: "spellngi", replaceWith: "spelling", expected: "This has a spelling error" },
+        { inputString: "His name is Tom", findWord: "Tom", replaceWith: "john", expected: "His name is John" },
+        { inputString: "Let us get back to more Coding", findWord: "Coding", replaceWith: "algorithms", expected: "Let us get back to more Algorithms" },
+    ];
+
+    tests.forEach(({ inputString, findWord, replaceWith, expected }) => {
+        it(`it should find ${findWord} and replace with ${replaceWith}`, () => {
+            assert.equal(myReplace(inputString, findWord, replaceWith), expected);
         });
     });
 });

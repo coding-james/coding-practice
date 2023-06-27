@@ -97,4 +97,10 @@ function translatePigLatin(str) {
     };
 };
 
-module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin };
+// Search and Replace - replace word and preserve case of the first charatcter of word
+function myReplace(str, before, after) {
+    let afterFormatted = before[0] == before[0].toUpperCase() ? after[0].toUpperCase() + after.substr(1).toLowerCase() : after[0].toLowerCase() + after.substr(1).toLowerCase();
+    return str.replace(before, afterFormatted);
+};
+
+module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace };
