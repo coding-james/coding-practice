@@ -1,6 +1,6 @@
 "use strict";
 const { assert } = require("chai");
-const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
+const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
 const { nonMutatingSort } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
 
 // Sum All Numbers in a Range
@@ -205,6 +205,28 @@ describe("Missing letters", () => {
     tests.forEach(({ inputString, expected }) => {
         it(`it should return ${expected}`, () => {
             assert.equal(fearNotLetter(inputString), expected);
+        });
+    });
+});
+
+// Sorted Union
+describe("Sorted Union - return unique", () => {
+
+    it("DATATYPE: It should return an Array", () => {
+        assert.isArray(uniteUnique("abce"));
+    })
+
+    const tests = [
+        { input: uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]), expected: [1, 3, 2, 5, 4] },
+        { input: uniteUnique([1, 2, 3], [5, 2, 1]), expected: [1, 2, 3, 5] },
+        { input: uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]), expected: [1, 2, 3, 5, 4, 6, 7, 8] },
+        { input: uniteUnique([1, 3, 2], [5, 4], [5, 6]), expected: [1, 3, 2, 5, 4, 6] },
+        { input: uniteUnique([1, 3, 2, 3], [5, 2, 1, 4], [2, 1]), expected: [1, 3, 2, 5, 4] },
+    ];
+
+    tests.forEach(({ input, expected }) => {
+        it(`it should return ${expected}`, () => {
+            assert.deepEqual((input), expected);
         });
     });
 });

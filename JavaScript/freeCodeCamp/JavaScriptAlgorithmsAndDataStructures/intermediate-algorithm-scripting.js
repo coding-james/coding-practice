@@ -148,4 +148,19 @@ function fearNotLetter(str) {
     return undefined;
 };
 
-module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter };
+// Sorted Union
+function uniteUnique(arr) {
+    let results = [];
+    for (let i = 0; i < arguments.length; i++) {
+        for (let j = 0; j < arguments[i].length; j++) {
+            if (!results.includes(arguments[i][j])) {
+                results.push(arguments[i][j]);
+            } else {
+                continue;
+            }
+        };
+    }
+    return results;
+};
+
+module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique };
