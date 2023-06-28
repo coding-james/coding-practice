@@ -163,4 +163,18 @@ function uniteUnique(arr) {
     return results;
 };
 
-module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique };
+// Convert HTML Entities
+function convertHTML(str) {
+
+    let htmlEntities = {
+        '&': "&amp;",
+        '<': "&lt;",
+        '>': "&gt;",
+        '"': "&quot;",
+        "'": "&apos;"
+    };
+
+    return str.replace(/([&<>\"'])/g, match => htmlEntities[match]);
+};
+
+module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML };

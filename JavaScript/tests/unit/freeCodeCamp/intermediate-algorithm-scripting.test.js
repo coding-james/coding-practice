@@ -1,6 +1,6 @@
 "use strict";
 const { assert } = require("chai");
-const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
+const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
 const { nonMutatingSort } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
 
 // Sum All Numbers in a Range
@@ -227,6 +227,30 @@ describe("Sorted Union - return unique", () => {
     tests.forEach(({ input, expected }) => {
         it(`it should return ${expected}`, () => {
             assert.deepEqual((input), expected);
+        });
+    });
+});
+
+// Convert HTML Entities
+describe("Convert HTML Entities", () => {
+
+    it("DATATYPE: It should return a String", () => {
+        assert.isString(convertHTML("abc"));
+    })
+
+    const tests = [
+        { input: "Dolce & Gabbana", expected: "Dolce &amp; Gabbana" },
+        { input: "Hamburgers < Pizza < Tacos", expected: "Hamburgers &lt; Pizza &lt; Tacos" },
+        { input: "Sixty > twelve", expected: "Sixty &gt; twelve" },
+        { input: 'Stuff in "quotation marks"', expected: "Stuff in &quot;quotation marks&quot;" },
+        { input: "Schindler's List", expected: "Schindler&apos;s List" },
+        { input: "<>", expected: "&lt;&gt;" },
+        { input: "abc", expected: "abc" },
+    ];
+
+    tests.forEach(({ input, expected }) => {
+        it(`it should return ${expected}`, () => {
+            assert.equal(convertHTML(input), expected);
         });
     });
 });
