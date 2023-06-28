@@ -132,4 +132,20 @@ function pairElement(str) {
     return DNA;
 };
 
-module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement };
+// Missing letters
+function fearNotLetter(str) {
+    let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    let current = letters.indexOf(str[0]);
+
+    for (let index = 0; index < str.length; index++) {
+        if (letters[current] != str[index]) {
+            return letters[current];
+        } else {
+            current++;
+        }
+    }
+
+    return undefined;
+};
+
+module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter };

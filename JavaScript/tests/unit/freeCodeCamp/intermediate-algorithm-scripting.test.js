@@ -1,6 +1,6 @@
 "use strict";
 const { assert } = require("chai");
-const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
+const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
 const { nonMutatingSort } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
 
 // Sum All Numbers in a Range
@@ -183,6 +183,28 @@ describe("DNA Pairing", () => {
     tests.forEach(({ inputString, expected }) => {
         it(`it should return ${expected}`, () => {
             assert.deepEqual(pairElement(inputString), expected);
+        });
+    });
+});
+
+// Missing letters
+describe("Missing letters", () => {
+
+    it("DATATYPE: It should return a String", () => {
+        assert.isString(fearNotLetter("abce"));
+    })
+
+    const tests = [
+        { inputString: "abce", expected: "d" },
+        { inputString: "abcdefghjklmno", expected: "i" },
+        { inputString: "stvwx", expected: "u" },
+        { inputString: "bcdf", expected: "e" },
+        { inputString: "abcdefghijklmnopqrstuvwxyz", expected: undefined },
+    ];
+
+    tests.forEach(({ inputString, expected }) => {
+        it(`it should return ${expected}`, () => {
+            assert.equal(fearNotLetter(inputString), expected);
         });
     });
 });
