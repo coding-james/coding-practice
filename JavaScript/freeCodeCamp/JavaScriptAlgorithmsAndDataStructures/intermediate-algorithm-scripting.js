@@ -177,4 +177,21 @@ function convertHTML(str) {
     return str.replace(/([&<>\"'])/g, match => htmlEntities[match]);
 };
 
-module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML };
+// Sum All Odd Fibonacci Numbers
+function sumFibs(num) {
+    let total = 0;
+    let previous1 = 0;
+    let previous2 = 0;
+
+    for (let current = 1; current <= num; current = previous1 + previous2) {
+
+        if (current % 2 != 0) {
+            total += current;
+        }
+        previous1 = previous2;
+        previous2 = current;
+    }
+    return total;
+};
+
+module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumFibs };

@@ -1,6 +1,7 @@
 "use strict";
 const { assert } = require("chai");
 const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
+const { sumFibs } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
 const { nonMutatingSort } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
 
 // Sum All Numbers in a Range
@@ -251,6 +252,28 @@ describe("Convert HTML Entities", () => {
     tests.forEach(({ input, expected }) => {
         it(`it should return ${expected}`, () => {
             assert.equal(convertHTML(input), expected);
+        });
+    });
+});
+
+// Sum All Odd Fibonacci Numbers
+describe("Sum All Odd Fibonacci Numbers", () => {
+
+    it("DATATYPE: It should return a Number", () => {
+        assert.isNumber(sumFibs(1));
+    })
+
+    const tests = [
+        { input: 1000, expected: 1785 },
+        { input: 4000000, expected: 4613732 },
+        { input: 4, expected: 5 },
+        { input: 75024, expected: 60696 },
+        { input: 75025, expected: 135721 },
+    ];
+
+    tests.forEach(({ input, expected }) => {
+        it(`it should return ${expected}`, () => {
+            assert.equal(sumFibs(input), expected);
         });
     });
 });
