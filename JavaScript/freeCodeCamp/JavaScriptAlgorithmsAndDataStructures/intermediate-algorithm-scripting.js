@@ -217,4 +217,30 @@ function sumPrimes(num) {
     return total;
 };
 
-module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumFibs, sumPrimes };
+// Smallest Common Multiple
+function smallestCommons(arr) {
+    let result = 0;
+    let num = Math.max(arr[0], arr[1]);
+    let outcomes = [];
+
+    while (result == 0) {
+        for (let numInRange = Math.min(arr[0], arr[1]); numInRange <= Math.max(arr[0], arr[1]); numInRange++) {
+            if (num % numInRange != 0) {
+                break;
+            } else {
+                outcomes.push(num);
+            };
+        }
+
+        if (outcomes.length == (Math.max(arr[0], arr[1]) - Math.min(arr[0], arr[1])) + 1) {
+            result = num;
+        } else {
+            num++;
+            outcomes.length = 0; //empty array
+        }
+    }
+
+    return result;
+};
+
+module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumFibs, sumPrimes, smallestCommons };

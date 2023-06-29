@@ -1,7 +1,7 @@
 "use strict";
 const { assert } = require("chai");
 const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumPrimes } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
-const { sumFibs } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
+const { sumFibs, smallestCommons } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
 const { nonMutatingSort } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
 
 // Sum All Numbers in a Range
@@ -293,6 +293,29 @@ describe("Sum All Primes", () => {
     tests.forEach(({ input, expected }) => {
         it(`it should return ${expected}`, () => {
             assert.equal(sumPrimes(input), expected);
+        });
+    });
+});
+
+// Smallest Common Multiple
+describe("Smallest Common Multiple", () => {
+
+    it("DATATYPE: It should return a Number", () => {
+        assert.isNumber(smallestCommons([1, 5]));
+    })
+
+    const tests = [
+        { input: [1, 5], expected: 60 },
+        { input: [5, 1], expected: 60 },
+        { input: [2, 10], expected: 2520 },
+        { input: [1, 13], expected: 360360 },
+        { input: [23, 18], expected: 6056820 },
+
+    ];
+
+    tests.forEach(({ input, expected }) => {
+        it(`it should return ${expected}`, () => {
+            assert.equal(smallestCommons(input), expected);
         });
     });
 });
