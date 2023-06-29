@@ -194,4 +194,27 @@ function sumFibs(num) {
     return total;
 };
 
-module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumFibs };
+// Sum All Primes
+function sumPrimes(num) {
+    // Prime Check 
+    function isPrime(n) {
+        const sqrt = Math.sqrt(n);
+        for (let i = 2; i <= sqrt; i++) {
+            if (n % i === 0)
+                return false;
+        }
+        return true;
+    };
+
+    let total = 0;
+
+    for (let i = 2; i <= num; i++) {
+        if (isPrime(i)) {
+            total += i;
+        }
+    }
+
+    return total;
+};
+
+module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumFibs, sumPrimes };
