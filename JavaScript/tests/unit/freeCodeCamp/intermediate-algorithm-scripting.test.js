@@ -1,7 +1,7 @@
 "use strict";
 const { assert } = require("chai");
 const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumPrimes } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
-const { sumFibs, smallestCommons, dropElements } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
+const { sumFibs, smallestCommons, dropElements, steamrollArray } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
 const { nonMutatingSort } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
 
 // Sum All Numbers in a Range
@@ -339,6 +339,27 @@ describe("Drop it", () => {
     tests.forEach(({ input, expected }) => {
         it(`it should return ${expected}`, () => {
             assert.deepEqual((input), expected);
+        });
+    });
+});
+
+// Steamroller - flatten nested arrays
+describe("Steamroller", () => {
+
+    it("DATATYPE: It should return an Array", () => {
+        assert.isArray(steamrollArray([[["a"]], [["b"]]]));
+    })
+
+    const tests = [
+        { input: [[["a"]], [["b"]]], expected: ["a", "b"] },
+        { input: [1, [2], [3, [[4]]]], expected: [1, 2, 3, 4] },
+        { input: [1, [], [3, [[4]]]], expected: [1, 3, 4] },
+        { input: [1, {}, [3, [[4]]]], expected: [1, {}, 3, 4] },
+    ];
+
+    tests.forEach(({ input, expected }) => {
+        it(`it should return ${expected}`, () => {
+            assert.deepEqual(steamrollArray(input), expected);
         });
     });
 });

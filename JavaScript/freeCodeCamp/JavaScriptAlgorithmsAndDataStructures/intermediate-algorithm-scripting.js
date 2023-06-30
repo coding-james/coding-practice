@@ -254,4 +254,19 @@ function dropElements(arr, func) {
     return [];
 };
 
-module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumFibs, sumPrimes, smallestCommons, dropElements };
+// Steamroller - flatten nested arrays
+function steamrollArray(arr) {
+    let resultArr = [];
+
+    for (let index = 0; index < arr.length; index++) {
+
+        if (arr[index].constructor == Array) {
+            resultArr.push(...steamrollArray(arr[index]));
+        } else {
+            resultArr.push(arr[index]);
+        }
+    }
+    return resultArr;
+};
+
+module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumFibs, sumPrimes, smallestCommons, dropElements, steamrollArray };
