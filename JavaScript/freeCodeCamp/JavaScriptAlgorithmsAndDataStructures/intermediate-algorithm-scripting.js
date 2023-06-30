@@ -296,4 +296,9 @@ function binaryAgent(str) {
     return result;
 };
 
-module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumFibs, sumPrimes, smallestCommons, dropElements, steamrollArray, binaryAgent };
+// Everything Be True
+function truthCheck(collection, pre) {
+    return collection.every(item => item[pre]);
+};
+
+module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumFibs, sumPrimes, smallestCommons, dropElements, steamrollArray, binaryAgent, truthCheck };
