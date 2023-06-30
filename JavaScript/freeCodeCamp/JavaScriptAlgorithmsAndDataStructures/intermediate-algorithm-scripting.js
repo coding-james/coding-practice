@@ -243,4 +243,15 @@ function smallestCommons(arr) {
     return result;
 };
 
-module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumFibs, sumPrimes, smallestCommons };
+// Drop it
+function dropElements(arr, func) {
+    for (let index = 0; index < arr.length; index++) {
+        if (func(arr[index])) {
+            return arr.slice(index);
+        };
+    }
+
+    return [];
+};
+
+module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumFibs, sumPrimes, smallestCommons, dropElements };

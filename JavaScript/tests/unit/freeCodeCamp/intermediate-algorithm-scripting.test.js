@@ -1,7 +1,7 @@
 "use strict";
 const { assert } = require("chai");
 const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumPrimes } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
-const { sumFibs, smallestCommons } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
+const { sumFibs, smallestCommons, dropElements } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
 const { nonMutatingSort } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
 
 // Sum All Numbers in a Range
@@ -316,6 +316,29 @@ describe("Smallest Common Multiple", () => {
     tests.forEach(({ input, expected }) => {
         it(`it should return ${expected}`, () => {
             assert.equal(smallestCommons(input), expected);
+        });
+    });
+});
+
+// Drop it
+describe("Drop it", () => {
+
+    it("DATATYPE: It should return an Array", () => {
+        assert.isArray(dropElements([1, 2, 3, 4], function (n) { return n >= 3; }));
+    })
+
+    const tests = [
+        { input: dropElements([1, 2, 3, 4], function (n) { return n >= 3; }), expected: [3, 4] },
+        { input: dropElements([0, 1, 0, 1], function (n) { return n === 1; }), expected: [1, 0, 1] },
+        { input: dropElements([1, 2, 3], function (n) { return n > 0; }), expected: [1, 2, 3] },
+        { input: dropElements([1, 2, 3, 4], function (n) { return n > 5; }), expected: [] },
+        { input: dropElements([1, 2, 3, 7, 4], function (n) { return n > 3; }), expected: [7, 4] },
+        { input: dropElements([1, 2, 3, 9, 2], function (n) { return n > 2; }), expected: [3, 9, 2] },
+    ];
+
+    tests.forEach(({ input, expected }) => {
+        it(`it should return ${expected}`, () => {
+            assert.deepEqual((input), expected);
         });
     });
 });
