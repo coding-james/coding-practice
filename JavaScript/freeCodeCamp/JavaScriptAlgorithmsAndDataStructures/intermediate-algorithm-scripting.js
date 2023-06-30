@@ -269,4 +269,31 @@ function steamrollArray(arr) {
     return resultArr;
 };
 
-module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumFibs, sumPrimes, smallestCommons, dropElements, steamrollArray };
+// Binary Agents - https://www.wikihow.com/Read-Binary
+function binaryAgent(str) {
+    let binaryElements = str.split(" ");
+    let result = "";
+    let sum = 0;
+    let power = 0;
+
+    for (let index = 0; index < binaryElements.length; index++) {
+        let tmpArr = binaryElements[index].split('');
+
+        for (let j = tmpArr.length - 1; j >= 0; j--) {
+            // iterate backwards, with each digit x 2 to power of
+            // add to sum
+            sum += parseInt(tmpArr[j]) * Math.pow(2, power);
+            power++;
+        }
+
+        result += String.fromCharCode(sum); // use sum to find character
+
+        // reset sum and power
+        sum = 0;
+        power = 0;
+    }
+
+    return result;
+};
+
+module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumFibs, sumPrimes, smallestCommons, dropElements, steamrollArray, binaryAgent };

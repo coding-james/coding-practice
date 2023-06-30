@@ -1,7 +1,7 @@
 "use strict";
 const { assert } = require("chai");
 const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumPrimes } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
-const { sumFibs, smallestCommons, dropElements, steamrollArray } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
+const { sumFibs, smallestCommons, dropElements, steamrollArray, binaryAgent } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
 const { nonMutatingSort } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
 
 // Sum All Numbers in a Range
@@ -360,6 +360,25 @@ describe("Steamroller", () => {
     tests.forEach(({ input, expected }) => {
         it(`it should return ${expected}`, () => {
             assert.deepEqual(steamrollArray(input), expected);
+        });
+    });
+});
+
+// Binary Agents
+describe("Binary Agents", () => {
+
+    it("DATATYPE: It should return a String", () => {
+        assert.isString(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"));
+    })
+
+    const tests = [
+        { input: "01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111", expected: "Aren't bonfires fun!?" },
+        { input: "01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001", expected: "I love FreeCodeCamp!" },
+    ];
+
+    tests.forEach(({ input, expected }) => {
+        it(`it should return ${expected}`, () => {
+            assert.deepEqual(binaryAgent(input), expected);
         });
     });
 });
