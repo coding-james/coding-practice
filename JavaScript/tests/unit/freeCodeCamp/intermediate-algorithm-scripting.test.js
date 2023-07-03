@@ -1,7 +1,7 @@
 "use strict";
 const { assert } = require("chai");
 const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumPrimes } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
-const { sumFibs, smallestCommons, dropElements, steamrollArray, binaryAgent, truthCheck } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
+const { sumFibs, smallestCommons, dropElements, steamrollArray, binaryAgent, truthCheck, addTogether } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
 const { nonMutatingSort } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
 
 // Sum All Numbers in a Range
@@ -406,6 +406,35 @@ describe("Everything Be True", () => {
     tests.forEach(({ input, inputKey, expected }) => {
         it(`it should return ${expected}`, () => {
             assert.deepEqual(truthCheck(input, inputKey), expected);
+        });
+    });
+});
+
+// Arguments Optional
+describe("Arguments Optional", () => {
+
+    it("DATATYPE: It should return a Number, if arguments valid", () => {
+        assert.isNumber(addTogether(2, 3));
+    })
+
+    it("DATATYPE: It should return Undefined, if any arguments invalid", () => {
+        assert.isUndefined(addTogether("2", 3));
+    })
+
+    const tests = [
+        { input: addTogether(2, 3), expected: 5 },
+        { input: addTogether(23, 30), expected: 53 },
+        { input: addTogether("2", 3), expected: undefined },
+        { input: addTogether(5, undefined), expected: undefined },
+        { input: addTogether("https://www.youtube.com/watch?v=dQw4w9WgXcQ"), expected: undefined },
+        { input: addTogether(5)(7), expected: 12 },
+        { input: addTogether(2)([3]), expected: undefined },
+        { input: addTogether(2, "3"), expected: undefined },
+    ];
+
+    tests.forEach(({ input, expected }) => {
+        it(`it should return ${expected}`, () => {
+            assert.equal(input, expected);
         });
     });
 });

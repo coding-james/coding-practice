@@ -301,4 +301,17 @@ function truthCheck(collection, pre) {
     return collection.every(item => item[pre]);
 };
 
-module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumFibs, sumPrimes, smallestCommons, dropElements, steamrollArray, binaryAgent, truthCheck };
+// Arguments Optional
+function addTogether() {
+    const [arg1, arg2] = arguments;
+
+    if (arguments.length == 2 && typeof arg1 == "number" && typeof arg2 == "number") {
+        return arg1 + arg2;
+    } else if (arguments.length == 1 && typeof arg1 == "number") {
+        return (arg2) => addTogether(arg1, arg2);
+    } else {
+        return undefined;
+    }
+};
+
+module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumFibs, sumPrimes, smallestCommons, dropElements, steamrollArray, binaryAgent, truthCheck, addTogether };
