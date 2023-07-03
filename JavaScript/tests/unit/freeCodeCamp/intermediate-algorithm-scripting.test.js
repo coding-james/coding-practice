@@ -1,7 +1,7 @@
 "use strict";
 const { assert } = require("chai");
 const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumPrimes } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
-const { sumFibs, smallestCommons, dropElements, steamrollArray, binaryAgent, truthCheck, addTogether, Person } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
+const { sumFibs, smallestCommons, dropElements, steamrollArray, binaryAgent, truthCheck, addTogether, Person, orbitalPeriod } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
 const { nonMutatingSort } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
 
 // Sum All Numbers in a Range
@@ -491,5 +491,24 @@ describe("Make a person", () => {
     it("setting a new fullName should return an updated lastName", () => {
         bob.setFullName("Haskell Curry");
         assert.equal(bob.getLastName(), "Curry");
+    });
+});
+
+// Map the Debris
+describe("Map the Debris", () => {
+
+    it("DATATYPE: It should return an Array", () => {
+        assert.isArray(orbitalPeriod([{ name: "sputnik", avgAlt: 35873.5553 }]));
+    })
+
+    const tests = [
+        { input: orbitalPeriod([{ name: "sputnik", avgAlt: 35873.5553 }]), expected: [{ name: "sputnik", orbitalPeriod: 86400 }] },
+        { input: orbitalPeriod([{ name: "iss", avgAlt: 413.6 }, { name: "hubble", avgAlt: 556.7 }, { name: "moon", avgAlt: 378632.553 }]), expected: [{ name: "iss", orbitalPeriod: 5557 }, { name: "hubble", orbitalPeriod: 5734 }, { name: "moon", orbitalPeriod: 2377399 }] },
+    ];
+
+    tests.forEach(({ input, expected }) => {
+        it(`it should return ${JSON.stringify(expected)}`, () => {
+            assert.deepEqual(input, expected);
+        });
     });
 });

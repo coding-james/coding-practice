@@ -343,4 +343,17 @@ const Person = function (firstAndLast) {
     };
 };
 
-module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumFibs, sumPrimes, smallestCommons, dropElements, steamrollArray, binaryAgent, truthCheck, addTogether, Person };
+// Map the Debris
+function orbitalPeriod(arr) {
+    const GM = 398600.4418;
+    const earthRadius = 6367.4447;
+
+    return arr.map(p => {
+        return {
+            name: p.name,
+            orbitalPeriod: Math.round(2 * Math.PI * Math.sqrt(Math.pow((p.avgAlt + earthRadius), 3) / GM))
+        }
+    })
+};
+
+module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumFibs, sumPrimes, smallestCommons, dropElements, steamrollArray, binaryAgent, truthCheck, addTogether, Person, orbitalPeriod };
