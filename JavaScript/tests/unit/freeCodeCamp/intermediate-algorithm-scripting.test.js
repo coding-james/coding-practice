@@ -1,7 +1,7 @@
 "use strict";
 const { assert } = require("chai");
 const { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumPrimes } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
-const { sumFibs, smallestCommons, dropElements, steamrollArray, binaryAgent, truthCheck, addTogether } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
+const { sumFibs, smallestCommons, dropElements, steamrollArray, binaryAgent, truthCheck, addTogether, Person } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/intermediate-algorithm-scripting");
 const { nonMutatingSort } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/functional-programming");
 
 // Sum All Numbers in a Range
@@ -436,5 +436,60 @@ describe("Arguments Optional", () => {
         it(`it should return ${expected}`, () => {
             assert.equal(input, expected);
         });
+    });
+});
+
+// Make a person
+describe("Make a person", () => {
+
+    const bob = new Person("Bob Ross");
+
+    it("No properties should be added, should always return 6", () => {
+        assert.equal(Object.keys(bob).length, 6);
+    });
+
+    it("bob.firstName should equal undefined", () => {
+        assert.isUndefined(bob.firstName);
+    });
+
+    it("bob.lastName should equal undefined", () => {
+        assert.isUndefined(bob.lastName);
+    });
+
+    it("getFirstName() should return Bob", () => {
+        assert.equal(bob.getFirstName(), "Bob");
+    });
+
+    it("getLastName() should return Ross", () => {
+        assert.equal(bob.getLastName(), "Ross");
+    });
+
+    it("getFullName() should return Bob Ross", () => {
+        assert.equal(bob.getFullName(), "Bob Ross");
+    });
+
+    it("setting a new firstName should return an updated fullName", () => {
+        bob.setFirstName("Haskell");
+        assert.equal(bob.getFullName(), "Haskell Ross");
+    });
+
+    it("setting a new lastName should return an updated fullName", () => {
+        bob.setLastName("Curry");
+        assert.equal(bob.getFullName(), "Haskell Curry");
+    });
+
+    it("setting a new fullName should return an updated fullName", () => {
+        bob.setFullName("John Smith");
+        assert.equal(bob.getFullName(), "John Smith");
+    });
+
+    it("setting a new fullName should return an updated firstName", () => {
+        bob.setFullName("Haskell Curry");
+        assert.equal(bob.getFirstName(), "Haskell");
+    });
+
+    it("setting a new fullName should return an updated lastName", () => {
+        bob.setFullName("Haskell Curry");
+        assert.equal(bob.getLastName(), "Curry");
     });
 });

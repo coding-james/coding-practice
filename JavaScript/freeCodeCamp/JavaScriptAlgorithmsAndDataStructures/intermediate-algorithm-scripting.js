@@ -314,4 +314,33 @@ function addTogether() {
     }
 };
 
-module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumFibs, sumPrimes, smallestCommons, dropElements, steamrollArray, binaryAgent, truthCheck, addTogether };
+// Make a person
+const Person = function (firstAndLast) {
+    let fullName = firstAndLast;
+
+    this.getFirstName = function () {
+        return fullName.split(" ")[0];
+    };
+
+    this.getLastName = function () {
+        return fullName.split(" ")[1];
+    };
+
+    this.getFullName = function () {
+        return fullName;
+    };
+
+    this.setFirstName = function (first) {
+        fullName = fullName.replace(fullName.split(" ")[0], first);
+    };
+
+    this.setLastName = function (last) {
+        fullName = fullName.replace(fullName.split(" ")[1], last);
+    };
+
+    this.setFullName = function (firstAndLast) {
+        fullName = firstAndLast;
+    };
+};
+
+module.exports = { sumAll, diffArray, destroyer, whatIsInAName, spinalCase, translatePigLatin, myReplace, pairElement, fearNotLetter, uniteUnique, convertHTML, sumFibs, sumPrimes, smallestCommons, dropElements, steamrollArray, binaryAgent, truthCheck, addTogether, Person };
