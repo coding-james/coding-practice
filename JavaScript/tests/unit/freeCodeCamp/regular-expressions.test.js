@@ -1,7 +1,7 @@
 "use strict";
 const { assert } = require("chai");
-const { found, findWally, findOptions, wildcardFind, similarWords, matchSpecified, matchExclude } = require("../../../freeCodeCamp/regular-expressions");
-const { multiCharacters, charZeroOrMore, alphanumeric, nonAlphanumeric, usernameCheck, changeOrder, trimPhrase } = require("../../../freeCodeCamp/regular-expressions");
+const { found, findWally, findOptions, wildcardFind, similarWords, matchSpecified, matchExclude } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/regular-expressions");
+const { multiCharacters, charZeroOrMore, alphanumeric, nonAlphanumeric, usernameCheck, changeOrder, trimPhrase } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/regular-expressions");
 
 describe("Hello Included", () => {
     it("Should return True", () => {
