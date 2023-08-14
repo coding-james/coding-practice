@@ -3,6 +3,10 @@ const topThreeWords = require("../../../Codewars/4 kyu/top3words");
 
 // CODEWARS: Most frequently used words in a text
 describe("Most frequently used words in a text", () => {
+    it(`DATATYPE: It should return an Array`, () => {
+        assert.isArray(topThreeWords("a a a  b  c c  d d d d  e e e e e"));
+    });
+
     const tests = [
         { arg: "a a a  b  c c  d d d d  e e e e e", expected: ['e', 'd', 'a'] },
         { arg: "a a c b b", expected: ['a', 'b', 'c'] },
