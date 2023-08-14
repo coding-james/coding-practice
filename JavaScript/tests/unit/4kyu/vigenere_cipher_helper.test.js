@@ -3,10 +3,13 @@ const { VigenèreCipher } = require("../../../Codewars/4 kyu/vigenere_cipher_hel
 
 // CODEWARS: Vigenère Cipher Helper
 describe("Vigenère Cipher Helper: Encode", () => {
-    var abc, key;
-    abc = "abcdefghijklmnopqrstuvwxyz";
-    key = "password"
-    c = new VigenèreCipher(key, abc);
+    const abc = "abcdefghijklmnopqrstuvwxyz";
+    const key = "password"
+    const c = new VigenèreCipher(key, abc);
+
+    it(`DATATYPE: It should return a String`, () => {
+        assert.isString(c.encode("codewars"));
+    });
 
     const tests = [
         { arg: "codewars", expected: "rovwsoiv" },
@@ -24,10 +27,13 @@ describe("Vigenère Cipher Helper: Encode", () => {
 });
 
 describe("Vigenère Cipher Helper: Decode", () => {
-    var abc, key;
-    abc = "abcdefghijklmnopqrstuvwxyz";
-    key = "password"
-    d = new VigenèreCipher(key, abc);
+    const abc = "abcdefghijklmnopqrstuvwxyz";
+    const key = "password"
+    const c = new VigenèreCipher(key, abc);
+
+    it(`DATATYPE: It should return a String`, () => {
+        assert.isString(c.decode("rovwsoiv"));
+    });
 
     const tests = [
         { arg: "rovwsoiv", expected: "codewars" },
@@ -37,16 +43,15 @@ describe("Vigenère Cipher Helper: Decode", () => {
 
     tests.forEach(({ arg, expected }) => {
         it(`should return ${expected}`, () => {
-            assert.equal(d.decode(arg), expected);
+            assert.equal(c.decode(arg), expected);
         });
     });
 });
 
 describe("Vigenère Cipher Helper: Encode pizza", () => {
-    var abc, key;
-    abc = "abcdefghijklmnopqrstuvwxyz";
-    key = "pizza"
-    h = new VigenèreCipher(key, abc);
+    const abc = "abcdefghijklmnopqrstuvwxyz";
+    const key = "pizza"
+    const c = new VigenèreCipher(key, abc);
 
     const tests = [
         { arg: "asodavwt", expected: "pancakes" },
@@ -54,16 +59,15 @@ describe("Vigenère Cipher Helper: Encode pizza", () => {
 
     tests.forEach(({ arg, expected }) => {
         it(`should return ${expected}`, () => {
-            assert.equal(h.encode(arg), expected);
+            assert.equal(c.encode(arg), expected);
         });
     });
 });
 
 describe("Vigenère Cipher Helper: Encode katakana alphabet", () => {
-    var abc, key;
-    abc = "アイウエオァィゥェォカキクケコサシスセソタチツッテトナニヌネノハヒフヘホマミムメモヤャユュヨョラリルレロワヲンー";
-    key = "カタカナ"
-    f = new VigenèreCipher(key, abc);
+    const abc = "アイウエオァィゥェォカキクケコサシスセソタチツッテトナニヌネノハヒフヘホマミムメモヤャユュヨョラリルレロワヲンー";
+    const key = "カタカナ"
+    const c = new VigenèreCipher(key, abc);
 
     const tests = [
         { arg: "カタカナ", expected: "タモタワ" },
@@ -73,16 +77,15 @@ describe("Vigenère Cipher Helper: Encode katakana alphabet", () => {
 
     tests.forEach(({ arg, expected }) => {
         it(`should return ${expected}`, () => {
-            assert.equal(f.encode(arg), expected);
+            assert.equal(c.encode(arg), expected);
         });
     });
 });
 
 describe("Vigenère Cipher Helper: Decode katakana alphabet", () => {
-    var abc, key;
-    abc = "アイウエオァィゥェォカキクケコサシスセソタチツッテトナニヌネノハヒフヘホマミムメモヤャユュヨョラリルレロワヲンー";
-    key = "カタカナ"
-    g = new VigenèreCipher(key, abc);
+    const abc = "アイウエオァィゥェォカキクケコサシスセソタチツッテトナニヌネノハヒフヘホマミムメモヤャユュヨョラリルレロワヲンー";
+    const key = "カタカナ"
+    const c = new VigenèreCipher(key, abc);
 
     const tests = [
         { arg: "タモタワ", expected: "カタカナ" },
@@ -92,7 +95,7 @@ describe("Vigenère Cipher Helper: Decode katakana alphabet", () => {
 
     tests.forEach(({ arg, expected }) => {
         it(`should return ${expected}`, () => {
-            assert.equal(g.decode(arg), expected);
+            assert.equal(c.decode(arg), expected);
         });
     });
 });
