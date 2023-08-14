@@ -3,6 +3,10 @@ const high = require("../../../Codewars/6 kyu/highest_scoring_word");
 
 // CODEWARS: Highest Scoring Word
 describe("Highest Scoring Word", () => {
+    it(`DATATYPE: It should return a String`, () => {
+        assert.isString(high('man i need a taxi up to ubud'));
+    });
+    
     const tests = [
         { input: 'man i need a taxi up to ubud', expected: 'taxi' },
         { input: 'what time are we climbing up the volcano', expected: 'volcano' },
@@ -16,7 +20,7 @@ describe("Highest Scoring Word", () => {
 
     tests.forEach(({ input, expected }) => {
         it(`should return ${expected}`, () => {
-            assert.deepEqual(high(input), expected);
+            assert.equal(high(input), expected);
         });
     });
 });

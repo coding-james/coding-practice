@@ -3,6 +3,10 @@ const formatDuration = require("../../../Codewars/4 kyu/human_readable");
 
 // CODEWARS: Human readable duration format
 describe("Human readable duration format", () => {
+    it(`DATATYPE: It should return a String`, () => {
+        assert.isString(formatDuration(1));
+    });
+    
     const tests = [
         { arg: 1, expected: "1 second" },
         { arg: 62, expected: "1 minute and 2 seconds" },

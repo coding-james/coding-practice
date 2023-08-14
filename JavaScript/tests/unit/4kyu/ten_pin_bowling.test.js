@@ -3,6 +3,10 @@ const tenPinBowling = require("../../../Codewars/4 kyu/ten_pin_bowling");
 
 // CODEWARS: Ten-Pin Bowling
 describe("Ten-Pin Bowling", () => {
+    it(`DATATYPE: It should return a Number`, () => {
+        assert.isNumber(tenPinBowling("11 11 11 11 11 11 11 11 11 11"));
+    });
+    
     const tests = [
         { arg: "11 11 11 11 11 11 11 11 11 11", expected: 20 },
         { arg: "X X X X X X X X X XXX", expected: 300 },
