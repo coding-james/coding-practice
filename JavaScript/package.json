@@ -1,0 +1,24 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha test/unit/**/*.test.js && cucumber-js test/bdd/",
+    "testN": "func() { mocha test/unit/${1}kyu/*.test.js; }; func",
+    "testFreeCC": "mocha test/unit/freeCodeCamp/*.test.js",
+    "test:single": "func() { mocha test/unit/**/${1}.test.js; }; func",
+    "test:bdd": "cucumber-js test/bdd/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.4.0",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
+  }
+}
