@@ -5,6 +5,10 @@ const { repeatStringNumTimes, truncateString, findElement, booWho, titleCase, fr
 
 // Convert Celsius to Fahrenheit
 describe("Convert Celsius to Fahrenheit", () => {
+    it("DATATYPE: It should return a Number", () => {
+        assert.isNumber(convertCtoF(-30));
+    });
+    
     const tests = [
         { arg: -30, expected: -22 },
         { arg: -10, expected: 14 },

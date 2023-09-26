@@ -3,6 +3,10 @@ const { assert } = require("chai");
 const { palindrome } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/palindrome-checker");
 
 describe("Is it a palindrome?", () => {
+    it("DATATYPE: It should return a Boolean", () => {
+        assert.isBoolean(palindrome("eye"));
+    });
+    
     const tests = [
         { arg: "eye", expected: true },
         { arg: "Eye", expected: true },

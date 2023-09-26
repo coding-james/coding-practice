@@ -3,6 +3,10 @@ const { assert } = require("chai");
 const { rot13 } = require("../../../freeCodeCamp/JavaScriptAlgorithmsAndDataStructures/caesar-cipher");
 
 describe("Decode the Cipher", () => {
+    it("DATATYPE: It should return a String", () => {
+        assert.isString(rot13("SERR PBQR PNZC"));
+    });
+    
     const tests = [
         { arg: "SERR PBQR PNZC", expected: "FREE CODE CAMP" },
         { arg: "SERR CVMMN!", expected: "FREE PIZZA!" },

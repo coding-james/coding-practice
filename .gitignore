@@ -4,7 +4,7 @@ C#/sandbox/src/Sandbox/obj/
 C#/sandbox/test/Sandbox.Tests/bin
 C#/sandbox/test/Sandbox.Tests/obj
 JavaScript/Codewars/tests/node_modules
-JavaScript/tests/node_modules
+JavaScript/node_modules
 
 # Exclude from ignore
 !.gitignore
