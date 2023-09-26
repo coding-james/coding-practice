@@ -11,7 +11,8 @@
     "testN": "func() { mocha test/unit/${1}kyu/*.test.js; }; func",
     "testFreeCC": "mocha test/unit/freeCodeCamp/*.test.js",
     "test:single": "func() { mocha test/unit/**/${1}.test.js; }; func",
-    "test:bdd": "cucumber-js test/bdd/"
+    "test:bdd": "cucumber-js test/bdd/",
+    "test:jest": "jest"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@cucumber/cucumber": "^9.4.0",
     "chai": "^4.3.7",
+    "jest": "^29.6.4",
     "mocha": "^10.2.0"
   }
 }
